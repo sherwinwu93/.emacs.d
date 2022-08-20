@@ -12,8 +12,9 @@
 ;; --------------------Search
 (use-package avy
   :ensure t)
-(evil-leader/set-key "aw" 'avy-goto-char-2)
-(evil-leader/set-key "af" 'avy-goto-line)
+;; (evil-leader/set-key "a" 'avy-goto-char-2)
+(evil-leader/set-key "a" 'avy-goto-char-2)
+(evil-leader/set-key "f" 'avy-goto-line)
 
 (use-package swiper)
 (global-set-key (kbd "C-s") 'swiper)

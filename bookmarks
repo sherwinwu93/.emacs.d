@@ -12,11 +12,6 @@
  (front-context-string . "#+LATEX_HEADER: ")
  (rear-context-string)
  (position . 1))
-("init-edit.el"
- (filename . "~/.emacs.d/lisp/init-edit.el")
- (front-context-string . ")\n(define-key gl")
- (rear-context-string . " (bookmark-save)")
- (position . 3382))
 ("nce2"
  (filename . "~/notes/nce2/")
  (front-context-string . "0.NCE2.md\n  -rwx")
