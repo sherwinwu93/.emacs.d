@@ -6,16 +6,16 @@
   (setq projectile-cache-file (expand-file-name ".cache/projectile.cache" user-emacs-directory))
   ;; 全局 enable 这个 minor mode
   (projectile-mode 1)
+  (evil-leader/set-key "p" 'projectile-command-map)
   )
-(evil-leader/set-key "p" 'projectile-command-map)
-;; --------------------search
+(use-package counsel-projectile
+  :ensure t
+  :after (projectile)
+  :init (counsel-projectile-mode))
 
 ;; ----------------------------------------neotree
 (use-package neotree
  )
 ;; (global-set-key (kbd "s-p") 'neotree-toggle)
-(defun neotree-doc()
-  (interactive)
-  (find-file "~/.emacs.d/lisp/neotree.org"))
 
 (provide 'init-project)

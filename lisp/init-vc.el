@@ -1,9 +1,7 @@
-(use-package magit)
-(evil-leader/set-key
-  "g" 'magit)
-
-(defun vc-file()
-  (interactive)
-  (find-file "~/.emacs.d/lisp/init-vc.el"))
+(use-package magit
+  :config
+  (evil-leader/set-key
+    "g" 'magit)
+  )
 
 (provide 'init-vc)

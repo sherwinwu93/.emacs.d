@@ -14,9 +14,9 @@
   ;; 根据选择的频率进行排序
   (setq company-transformers '(company-sort-by-occurrence)))
 ;; --------------------company-box
-(use-package company-box
-  :ensure t
-  :hook (company-mode . company-box-mode))
+;; (use-package company-box
+;;   :ensure t
+;;   :hook (company-mode . company-box-mode))
 
 ;; ----------------------------------------Formatting
 ;; --------------------indent
