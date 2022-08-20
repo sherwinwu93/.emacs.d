@@ -13,11 +13,15 @@
 (use-package avy
   :ensure t)
 ;; (evil-leader/set-key "a" 'avy-goto-char-2)
-(evil-leader/set-key "a" 'avy-goto-char-2)
-(evil-leader/set-key "s" 'avy-goto-line)
+(evil-leader/set-key
+  "a" 'avy-goto-char-2
+  "s" 'avy-goto-line
+  )
 
 (use-package swiper)
 (global-set-key (kbd "C-s") 'swiper)
+;; --------------------Search
+(global-set-key (kbd "s-s") 'query-replace)
 
 ;; ----------------------------------------edit
 ;; 设置自动换行字数
@@ -52,7 +56,7 @@
 ;;对应Windows上面的Ctrl-c 复制
 (global-set-key (kbd "s-c") 'kill-ring-save)
 ;; 对应Windows上面的Ctrl-s 保存
-(global-set-key (kbd "s-s") 'save-buffer)
+;; (global-set-key (kbd "s-s") 'save-buffer)
 ;;对应Windows上面的Ctrl-v 粘贴
 (global-set-key (kbd "s-v") 'yank)
 ;;对应Windows上面的Ctrol-z 撤销
