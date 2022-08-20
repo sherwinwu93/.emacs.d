@@ -4,10 +4,10 @@
 (setq default-directory "~/notes/")
 ;; 自动同步硬盘文件
 (global-auto-revert-mode 1)
-(global-set-key (kbd "C-x d") 'find-file)
+(global-set-key (kbd "C-x d") 'dired-jump)
 (evil-leader/set-key
-  "d" 'find-file
-  "s" 'save-buffer
+  "d" 'dired-jump
+  "f" 'find-file
   )
 ;; --------------------auto save
 ;; 自动保存

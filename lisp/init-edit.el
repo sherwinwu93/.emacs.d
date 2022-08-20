@@ -14,7 +14,7 @@
   :ensure t)
 ;; (evil-leader/set-key "a" 'avy-goto-char-2)
 (evil-leader/set-key "a" 'avy-goto-char-2)
-(evil-leader/set-key "f" 'avy-goto-line)
+(evil-leader/set-key "s" 'avy-goto-line)
 
 (use-package swiper)
 (global-set-key (kbd "C-s") 'swiper)
