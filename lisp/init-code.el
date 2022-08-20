@@ -56,13 +56,13 @@
 ;;快速注释
 (evilnc-default-hotkeys)
 (evil-leader/set-key
-  "\\" 'evilnc-comment-or-uncomment-lines
+  "/" 'evilnc-comment-or-uncomment-lines
   )
 
 ;; ----------------------------------------语法检查
-(use-package flycheck
-  :ensure t
-  :init (global-flycheck-mode))
+;; (use-package flycheck
+;;   :ensure t
+;;   :init (global-flycheck-mode))
 
 
 (provide 'init-code)
