@@ -1,0 +1,45 @@
+;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;; This format is meant to be slightly human-readable;
+;;; nevertheless, you probably don't want to edit it.
+;;; -*- End Of Bookmark File Format Version Stamp -*-
+(("org-refile-last-stored"
+ (filename . "~/notes/todos/finished.org")
+ (front-context-string . "** Learning[3/3]")
+ (rear-context-string . "8-18 Thu 19:13]\n")
+ (position . 2784))
+("task.org"
+ (filename . "~/notes/todos/task.org")
+ (front-context-string . "#+LATEX_HEADER: ")
+ (rear-context-string)
+ (position . 1))
+("init-edit.el"
+ (filename . "~/.emacs.d/lisp/init-edit.el")
+ (front-context-string . ")\n(define-key gl")
+ (rear-context-string . " (bookmark-save)")
+ (position . 3382))
+("nce2"
+ (filename . "~/notes/nce2/")
+ (front-context-string . "0.NCE2.md\n  -rwx")
+ (rear-context-string . "10 8月  13 00:26 ")
+ (position . 164))
+("finance.org"
+ (filename . "~/notes/todos/finance.org")
+ (front-context-string . "* Quick finance\n")
+ (rear-context-string)
+ (position . 1))
+("todos"
+ (filename . "~/notes/todos/")
+ (front-context-string . "0106.md\n  drwxrw")
+ (rear-context-string . "41 8月  13 00:26 ")
+ (position . 164))
+(".emacs.d"
+ (filename . "~/.emacs.d/")
+ (front-context-string)
+ (rear-context-string . "e-bookmarks.eld\n")
+ (position . 645))
+("notes"
+ (filename . "~/notes/")
+ (front-context-string . "  /root/notes:\n ")
+ (rear-context-string)
+ (position . 1))
+)
