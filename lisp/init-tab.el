@@ -1,7 +1,14 @@
 (use-package awesome-tab
   :load-path "~/.emacs.d/lisp/awesome-tab"
+  :init
+  (setq awesome-tab-height 120)
+  :bind
+  (("M-<left>" . awesome-tab-backward-tab)
+   ("M-<right>" . awesome-tab-forward-tab)
+   ("M-\\" . awesome-tab-kill-other-buffers-in-current-group))
   :config
-  (awesome-tab-mode t))
+  (awesome-tab-mode t)
+  )
 
 ;; if return t, tab will hide
 (defun awesome-tab-hide-tab (x)
@@ -46,10 +53,6 @@
      "project"))))
 ;; fixedWidth
 ;; (setq awesome-tab-label-fixed-length 14)
-(setq awesome-tab-height 120)
-(global-set-key (kbd "M-<left>") 'awesome-tab-backward-tab)
-(global-set-key (kbd "M-<right>") 'awesome-tab-forward-tab)
-(global-set-key (kbd "M-\\") 'awesome-tab-kill-other-buffers-in-current-group)
 
 
 

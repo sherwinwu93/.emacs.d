@@ -15,7 +15,7 @@
 
 ;; ----------------------------------------neotree
 (use-package neotree
- )
-;; (global-set-key (kbd "s-p") 'neotree-toggle)
+  :bind (("M-`" . neotree-toggle))
+  )
 
 (provide 'init-project)

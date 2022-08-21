@@ -13,7 +13,7 @@
 (global-set-key (kbd "<f11>") 'keyboard-escape-quit)
 
 ;; 改键<menu>为modifier
-(define-key global-map (kbd "<menu>") nil)
+(global-set-key (kbd "<menu>") nil)
 (define-key key-translation-map (kbd "<menu>") 'event-apply-super-modifier)
 ;; --------------------Ctrl
 (define-key key-translation-map (kbd "<SPC> x") (kbd "C-x"))
@@ -26,20 +26,17 @@
 (define-key key-translation-map (kbd "C-l") (kbd "<right>"))
 
 ;; ----------------------------------------Commmand
-(use-package counsel)
-(define-key global-map (kbd "M-x") 'counsel-M-x)
-(defun move-end-$-exec-it()
-  (interactive)
-  (execute-kbd-macro (kbd "<escape>"))
-  (execute-kbd-macro (kbd "A"))
-  (execute-kbd-macro (kbd "C-x C-e"))
-  (execute-kbd-macro (kbd "<escape>")))
 ;; 显示最新调用的命令
 (use-package amx
   :ensure t
-  :init (amx-mode))
-
-(global-set-key (kbd "<f5>") 'move-end-$-exec-it)
+  :init (amx-mode 1))
+;; 移动到最后并执行代码
+(global-set-key (kbd "<f5>") (lambda()
+			       (interactive)
+			       (execute-kbd-macro (kbd "<escape>"))
+			       (execute-kbd-macro (kbd "A"))
+			       (execute-kbd-macro (kbd "C-x C-e"))
+			       (execute-kbd-macro (kbd "<escape>"))))
 
 ;; ----------------------------------------Emacs画面
 ;; 设置Emacs默认全屏
@@ -73,16 +70,10 @@
   (dashboard-setup-startup-hook))
 
 ;; ----------------------------------------主题
-(require 'monokai-theme)
-(load-theme 'monokai 1)
-;; (require 'spacemacs-dark-theme)
-;; (load-theme 'spacemacs-dark 1)
-;; (use-package jetbrains-darcula-theme
-;;  :config
-;;   (load-theme 'jetbrains-darcula t))
+(use-package monokai-theme
+  :load-path "~/.emacs.d/lisp/extensions/monokai-theme.el"
+  :config
+  (load-theme 'monokai 1))
 
-
-(defun better-defaults-file()
-  (find-file "~/.emacs.d/lisp/init-better-defaults.el"))
 
 (provide 'init-better-defaults)

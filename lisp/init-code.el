@@ -50,13 +50,19 @@
   ;;设置hook,自动括号匹配
   (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
   )
-;; 选中区域S(增加括号
-(global-evil-surround-mode)
+(use-package evil-surround
+  :config
+  ;; 选中区域S(增加括号
+  (global-evil-surround-mode))
+
 ;; --------------------comment
 ;;快速注释
-(evilnc-default-hotkeys)
-(evil-leader/set-key
-  "/" 'evilnc-comment-or-uncomment-lines
+(use-package evil-nerd-commenter
+  :config
+  (evilnc-default-hotkeys t)
+  (evil-leader/set-key
+    "/" 'evilnc-comment-or-uncomment-lines
+    )
   )
 
 ;; ----------------------------------------语法检查

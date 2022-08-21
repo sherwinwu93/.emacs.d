@@ -1,18 +1,18 @@
 
 ;; ----------------------------------------agenda
 (use-package org
-  :config
+  :init (setq org-agenda-files '("~/notes/todos/")) 
+  :config (add-hook 'org-mode-hook (lambda() (org-indent-mode t)))
+  :bind (("C-c a" . org-agenda)
+	 ("C-c c" . org-capture)
+	 :map org-mode-map
+	 ("C-c r" . org-refile)
+	 ("M-<left>" . 'awesome-tab-backward-tab)
+	 ("M-<right>" . 'awesome-tab-forward-tab)
+	 ("C-c t" . org-todo)
+	 )
   )
-(add-hook 'org-mode-hook (lambda() (org-indent-mode t)))
 
-(define-key org-mode-map (kbd "M-<left>") 'awesome-tab-backward-tab)
-(define-key org-mode-map (kbd "M-<right>") 'awesome-tab-forward-tab)
-;; (define-key org-mode-map (kbd "<RET>") 'org-return-indent)
-;; (define-key org-mode-map (kbd "C-j") 'org-return)
-;; 快速查询等等
-(global-set-key (kbd "C-c a") 'org-agenda)
-;; 设置agenda路径
-(setq org-agenda-files '("~/notes/todos/"))
 ;; ----------------------------------------priority & tags & TODO
 ;; 优先级
 (setq org-agenda-custom-commands
@@ -33,10 +33,6 @@
           (tags-todo "family")
           ))
         ))
-;; 代办事项 state
-(define-key org-mode-map (kbd "C-c t") 'org-todo)
-;; !:增加时间戳
-;; @:会空出一行
 ;; @/!: 同时使用
 (setq org-todo-keywords
       '(
@@ -45,7 +41,6 @@
 	))
 ;; ----------------------------------------capture
 ;; 绑定键位
-(define-key global-map (kbd "C-c c") 'org-capture)
 
 ;; 这边就是为路径赋值
 (defvar org-agenda-dir "" "gtd org files location")
@@ -85,7 +80,6 @@
         )
       )
 ;; --------------------refile
-(define-key global-map (kbd "C-c r") 'org-refile)
 (setq org-refile-targets '(
 			   ;;修复bug,不可删除
 			   (nil :maxlevel . 1)
@@ -99,7 +93,4 @@
 (use-package org-pomodoro)
 
 
-(defun org-file()
-  (interactive)
-  (find-file "~/.emacs.d/lisp/init-org.el"))
 (provide 'init-org)

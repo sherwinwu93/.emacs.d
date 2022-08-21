@@ -9,18 +9,24 @@
 (setq-default display-line-numbers-type 'relative)
 
 ;; ----------------------------------------Search
+;; --------------------ivy
+(use-package ivy
+  :init
+  (ivy-mode 1)
+  (counsel-mode 1)
+  :config
+  :bind
+  (("C-s" . 'swiper)))
 ;; --------------------Search
 (use-package avy
-  :ensure t)
-
-(evil-leader/set-key
-  ;; 跳char
-  "s" 'avy-goto-char-2
-  ;; 跳line
-  "j" 'avy-goto-line
-  )
-(use-package swiper)
-(global-set-key (kbd "C-s") 'swiper)
+  :ensure t
+  :config
+  (evil-leader/set-key
+    ;; 跳char
+    "s" 'avy-goto-char-2
+    ;; 跳line
+    "j" 'avy-goto-line
+    ))
 ;; --------------------Replace
 (global-set-key (kbd "s-s") 'query-replace)
 
@@ -75,17 +81,10 @@
 
 
 ;; ----------------------------------------bookmarks
-(defun bookmark-set$save()
-  (interactive)
-  (bookmark-set)
-  (bookmark-save))
 (evil-leader/set-key
   "mm" 'counsel-bookmark
   "ml" 'list-bookmarks
   )
-(defun bookmarks-file()
-  (interactive)
-  (find-file "~/.emacs.d/bookmarks"))
 
 
 (provide 'init-edit)

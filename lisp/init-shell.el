@@ -1,8 +1,5 @@
-(use-package nodejs-repl)
-(use-package exec-path-from-shell)
 (evil-leader/set-key "'" 'shell)
+;; 增强与OS的互动
+(use-package exec-path-from-shell)
 
-(defun shell-file()
-  (interactive)
-  (find-file "~/.emacs.d/lisp/init-shell.el"))
 (provide 'init-shell)

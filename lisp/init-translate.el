@@ -1,5 +1,7 @@
-(use-package youdao-dictionary)
-(evil-leader/set-key "t" 'youdao-dictionary-search-at-point)
+(use-package youdao-dictionary
+  :config (evil-leader/set-key "t" 'youdao-dictionary-search-at-point)
+  )
+
 
 
 
