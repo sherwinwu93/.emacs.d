@@ -1,6 +1,7 @@
 
 ;; ----------------------------------------agenda
 (use-package org
+  :pin melpa
   :init (setq org-agenda-files '("~/notes/todos/")) 
   :config (add-hook 'org-mode-hook (lambda() (org-indent-mode t)))
   :bind (("C-c a" . org-agenda)
@@ -11,6 +12,9 @@
 	 ("M-<right>" . 'awesome-tab-forward-tab)
 	 ("C-c t" . org-todo)
 	 )
+  )
+(use-package org-contrib
+  :pin nongnu
   )
 
 ;; ----------------------------------------priority & tags & TODO
