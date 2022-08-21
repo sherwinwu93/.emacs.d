@@ -11,12 +11,16 @@
 ;; ----------------------------------------Search
 ;; --------------------Search
 (use-package ivy
-  :init
-  (ivy-mode 1)
-  (counsel-mode 1)
   :config
+  (ivy-mode 1)
+  )
+(use-package swiper
   :bind
   (("C-s" . 'swiper)))
+(use-package counsel
+  :config
+  (counsel-mode 1))
+  
 (use-package avy
   :ensure t
   :config

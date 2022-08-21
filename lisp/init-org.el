@@ -8,13 +8,8 @@
 	 ("C-c c" . org-capture)
 	 :map org-mode-map
 	 ("C-c r" . org-refile)
-	 ("M-<left>" . 'awesome-tab-backward-tab)
-	 ("M-<right>" . 'awesome-tab-forward-tab)
 	 ("C-c t" . org-todo)
 	 )
-  )
-(use-package org-contrib
-  :pin nongnu
   )
 
 ;; ----------------------------------------priority & tags & TODO
