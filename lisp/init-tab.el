@@ -1,15 +1,12 @@
 (use-package awesome-tab
   :load-path "~/.emacs.d/lisp/awesome-tab"
-  :init
-  (setq awesome-tab-height 120)
-  :bind
-  (("M-<left>" . awesome-tab-backward-tab)
-   ("M-<right>" . awesome-tab-forward-tab)
-   ("M-\\" . awesome-tab-kill-other-buffers-in-current-group))
   :config
   (awesome-tab-mode t)
   )
-
+(global-set-key (kbd "M-<left>")  'awesome-tab-backward-tab)
+(global-set-key (kbd "M-<right>") 'awesome-tab-forward-tab)
+(global-set-key (kbd "M-\\") 'awesome-tab-kill-other-buffers-in-current-group)
+(setq awesome-tab-height 120)
 ;; if return t, tab will hide
 (defun awesome-tab-hide-tab (x)
   (let ((name (format "%s" x)))
