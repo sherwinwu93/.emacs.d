@@ -41,6 +41,7 @@
 
 
 ;; ----------------------------------------window
+(use-package window-numbering)
 ;; 绘制弹窗
 (use-package popwin
   :config

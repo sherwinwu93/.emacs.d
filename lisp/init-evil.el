@@ -1,9 +1,7 @@
 (use-package evil)
 (use-package evil-leader)
-(use-package window-numbering)
 (use-package evil-surround)
 (use-package evil-nerd-commenter)
-(use-package which-key)
 (evil-leader/set-key
   "i" 'string-insert-rectangle
   ":" 'counsel-M-x
@@ -18,6 +16,11 @@
 ;; 清空evil insert模式的map,使用默认
 (setcdr evil-insert-state-map nil)
 (define-key evil-insert-state-map [escape] 'evil-normal-state)
+(define-key evil-motion-state-map [escape] 'evil-normal-state)
+(define-key evil-normal-state-map [escape] 'evil-normal-state)
+(define-key evil-visual-state-map [escape] 'evil-normal-state)
+(define-key evil-replace-state-map [escape] 'evil-normal-state)
+(define-key evil-operator-state-map [escape] 'evil-normal-state)
 
 
 (defun evil-file()

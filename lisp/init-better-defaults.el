@@ -1,6 +1,7 @@
 ;; ----------------------------------------其他
-;; which-key
-(which-key-mode 1)
+(use-package which-key
+  :config
+  (which-key-mode 1))
 ;; 关闭按键提示功能
 (setq suggest-key-bindings nil)
 ;; yes no -> y n
@@ -9,6 +10,7 @@
 ;; (global-set-key (kbd "<escape>")  'keyboard-escape-quit)
 ;; 把Capslock改为C-g键
 (define-key key-translation-map (kbd "<f11>") (kbd "C-g"))
+(global-set-key (kbd "<f11>") 'keyboard-escape-quit)
 
 ;; 改键<menu>为modifier
 (define-key global-map (kbd "<menu>") nil)
