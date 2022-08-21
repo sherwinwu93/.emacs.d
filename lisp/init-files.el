@@ -58,9 +58,14 @@
   "3" 'select-window-3
   "4" 'select-window-4
   "5" 'select-window-5
+  "w0" 'delete-window
+  "w1" 'delete-other-windows
+  "w2" 'split-window-below
+  "w3" 'split-window-right
   )
+
 (global-set-key (kbd "s-0") 'delete-window)
-(global-set-key (kbd "s-1") 'delete-other-window)
+(global-set-key (kbd "s-1") 'delete-other-windows)
 (global-set-key (kbd "s-2") 'split-window-below)
 (global-set-key (kbd "s-3") 'split-window-right)
 ;; 设置dired-mode只有一个buffer

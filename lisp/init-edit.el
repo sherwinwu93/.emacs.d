@@ -25,6 +25,8 @@
 (global-set-key (kbd "s-s") 'query-replace)
 
 ;; ----------------------------------------edit
+(evil-leader/set-key
+  "l" 'recenter-top-bottom)
 ;; 设置自动换行字数
 (setq-default fill-column 1024)
 ;; 临时标记模式
