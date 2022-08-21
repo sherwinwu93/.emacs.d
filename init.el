@@ -41,7 +41,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(auto-save company flycheck dashboard multiple-cursors undo-tree amx smartparens rime posframe cnfonts window-numbering which-key use-package evil-surround evil-nerd-commenter evil-leader counsel avy))
+   '(emms emms-setup auto-save company flycheck dashboard multiple-cursors undo-tree amx smartparens rime posframe cnfonts window-numbering which-key use-package evil-surround evil-nerd-commenter evil-leader counsel avy))
  '(warning-suppress-types '((use-package) (use-package))))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
