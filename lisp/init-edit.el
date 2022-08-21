@@ -9,7 +9,7 @@
 (setq-default display-line-numbers-type 'relative)
 
 ;; ----------------------------------------Search
-;; --------------------ivy
+;; --------------------Search
 (use-package ivy
   :init
   (ivy-mode 1)
@@ -17,13 +17,13 @@
   :config
   :bind
   (("C-s" . 'swiper)))
-;; --------------------Search
 (use-package avy
   :ensure t
   :config
   (evil-leader/set-key
     ;; 跳char
-    "s" 'avy-goto-char-2
+    "s" 'avy-goto-char
+    "f" 'avy-goto-char-2
     ;; 跳line
     "j" 'avy-goto-line
     ))
