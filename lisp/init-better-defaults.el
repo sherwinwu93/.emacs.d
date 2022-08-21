@@ -7,6 +7,7 @@
 (fset 'yes-or-no-p 'y-or-n-p)
 ;; ----------------------------------------系统级按键
 ;; (global-set-key (kbd "<escape>")  'keyboard-escape-quit)
+;; 把Capslock改为C-g键
 (define-key key-translation-map (kbd "<f11>") (kbd "C-g"))
 
 ;; 改键<menu>为modifier
