@@ -58,7 +58,12 @@
 ;; undo
 (use-package undo-tree
   :ensure t
-  :init (global-undo-tree-mode 1))
+  :init (global-undo-tree-mode 1)
+  :config
+  (define-key evil-normal-state-map
+    "u" 'undo-tree-visualize
+    )
+  )
 ;; --------------------CUDA
 ;;对应Windows上面的Ctrl-a 全选
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
