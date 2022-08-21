@@ -1,8 +1,13 @@
+
 ;; ----------------------------------------agenda
-(require 'org)
+(use-package org
+  :config
+  )
+(add-hook 'org-mode-hook (lambda() (org-indent-mode t)))
+
 (define-key org-mode-map (kbd "M-<left>") 'awesome-tab-backward-tab)
 (define-key org-mode-map (kbd "M-<right>") 'awesome-tab-forward-tab)
-(define-key org-mode-map (kbd "<RET>") 'org-return-indent)
+;; (define-key org-mode-map (kbd "<RET>") 'org-return-indent)
 ;; (define-key org-mode-map (kbd "C-j") 'org-return)
 ;; 快速查询等等
 (global-set-key (kbd "C-c a") 'org-agenda)
