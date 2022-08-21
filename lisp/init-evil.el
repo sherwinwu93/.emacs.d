@@ -17,13 +17,6 @@
 
 ;; 清空evil insert模式的map,使用默认
 (setcdr evil-insert-state-map nil)
-(define-key key-translation-map (kbd "<escape>") (kbd "C-g"))
-(define-key evil-normal-state-map (kbd "C-g") 'evil-normal-state)
-(define-key evil-insert-state-map (kbd "C-g") 'evil-normal-state)
-(define-key evil-replace-state-map (kbd "C-g") 'evil-normal-state)
-(define-key evil-visual-state-map (kbd "C-g") 'evil-normal-state)
-(define-key evil-motion-state-map (kbd "C-g") 'evil-normal-state)
-(define-key evil-operator-state-map (kbd "C-g") 'evil-normal-state)
 ;; escape
 (define-key evil-normal-state-map (kbd "<escape>") 'evil-normal-state)
 (define-key evil-insert-state-map (kbd "<escape>") 'evil-normal-state)
