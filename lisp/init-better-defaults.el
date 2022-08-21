@@ -69,7 +69,6 @@
 			  ;; 显示多少个最近项目
 			  (projects . 5)))
   (dashboard-setup-startup-hook))
-(evil-leader/set-key "b" 'dashboard-refresh-buffer)
 
 ;; ----------------------------------------主题
 (require 'monokai-theme)

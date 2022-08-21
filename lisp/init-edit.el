@@ -12,15 +12,16 @@
 ;; --------------------Search
 (use-package avy
   :ensure t)
-;; (evil-leader/set-key "a" 'avy-goto-char-2)
-(evil-leader/set-key
-  "a" 'avy-goto-char-2
-  "s" 'avy-goto-line
-  )
 
+(evil-leader/set-key
+  ;; 跳char
+  "s" 'avy-goto-char-2
+  ;; 跳line
+  "j" 'avy-goto-line
+  )
 (use-package swiper)
 (global-set-key (kbd "C-s") 'swiper)
-;; --------------------Search
+;; --------------------Replace
 (global-set-key (kbd "s-s") 'query-replace)
 
 ;; ----------------------------------------edit

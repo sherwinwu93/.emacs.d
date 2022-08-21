@@ -1,14 +1,10 @@
 ;; ----------------------------------------file
-(evil-leader/set-key "d" 'find-file)
+(global-set-key (kbd "s-d") 'dired-jump)
+(global-set-key (kbd "s-f") 'counsel-find-file)
 ;; 更改默认目录
 (setq default-directory "~/notes/")
 ;; 自动同步硬盘文件
 (global-auto-revert-mode 1)
-(global-set-key (kbd "C-x d") 'dired-jump)
-(evil-leader/set-key
-  "d" 'dired-jump
-  "f" 'find-file
-  )
 ;; --------------------auto save
 ;; 自动保存
 (require 'auto-save)
@@ -62,10 +58,6 @@
   "3" 'select-window-3
   "4" 'select-window-4
   "5" 'select-window-5
-  "w0" 'delete-window
-  "w1" 'delete-other-windows
-  "w2" 'split-window-below
-  "w3" 'split-window-right
   )
 (global-set-key (kbd "s-0") 'delete-window)
 (global-set-key (kbd "s-1") 'delete-other-window)
