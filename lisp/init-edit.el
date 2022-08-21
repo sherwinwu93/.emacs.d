@@ -58,7 +58,7 @@
 ;; undo
 (use-package undo-tree
   :ensure t
-  :init (global-undo-tree-mode))
+  :init (global-undo-tree-mode 1))
 ;; --------------------CUDA
 ;;对应Windows上面的Ctrl-a 全选
 (global-set-key (kbd "s-a") 'mark-whole-buffer)
