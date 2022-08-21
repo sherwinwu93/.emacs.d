@@ -5,7 +5,7 @@
 (setq package-archives '(
 			 ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
 			 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-			 ("nongnu"       . "https://elpa.nongnu.org/nongnu/")
+			 ;; ("nongnu"       . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
 			 ))
 			 
 ;;; 这个配置一定要配置在 use-package 的初始化之前，否则无法正常安装
