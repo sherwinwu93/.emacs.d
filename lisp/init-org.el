@@ -1,7 +1,6 @@
 
 ;; ----------------------------------------agenda
 (use-package org
- :pin nongnu
  :init (setq org-agenda-files '("~/notes/todos/")) 
  :config (add-hook 'org-mode-hook (lambda() (org-indent-mode t)))
  :bind (("C-c a" . org-agenda)
@@ -11,9 +10,10 @@
 	 ("C-c t" . org-todo)
 	 )
  )
-(use-package org-contrib
- :pin nongnu
- )
+;; (use-package org-contrib
+;;  :pin nongnu
+;;  :ensure t
+;;  )
 
 
 ;; ----------------------------------------priority & tags & TODO
@@ -92,8 +92,6 @@
 			   (org-agenda-file-finished :maxlevel . 1)
 			   (org-agenda-file-canceled :maxlevel . 1)
 			   ))
-;; ----------------------------------------番茄闹钟
-(use-package org-pomodoro)
 
 
 (provide 'init-org)
