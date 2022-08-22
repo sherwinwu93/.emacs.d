@@ -25,17 +25,17 @@
   :ensure t
   :config
   (evil-leader/set-key
-    ;; 跳char
-    "s" 'avy-goto-char
-    "f" 'avy-goto-char-2
+    "s" 'avy-goto-char-2
     ;; 跳line
-    "j" 'avy-goto-line
+    "f" 'avy-goto-line
     ))
 ;; --------------------Replace
 (global-set-key (kbd "s-s") 'query-replace)
 
 ;; ----------------------------------------edit
 (evil-leader/set-key
+  "j" 'scroll-other-window
+  "k" 'scroll-other-window-down
   "l" 'recenter-top-bottom)
 ;; 设置自动换行字数
 (setq-default fill-column 1024)
