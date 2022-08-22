@@ -1,0 +1,19 @@
+
+;; ----- amx-history -----
+(
+ shell
+ package-install
+ cd
+ 5x5
+ amx
+ arp
+ dbx
+)
+
+;; ----- amx-data -----
+(
+ (package-install . 1)
+ (dashboard-refresh-buffer . 1)
+ (split-window-below-move-to-next . 2)
+ (shell . 1)
+)
