@@ -12,6 +12,7 @@
   :ensure t
   :after (projectile)
   :init (counsel-projectile-mode))
+(evil-leader/set-key "ps" 'counsel-projectile-grep)
 
 ;; ----------------------------------------neotree
 (use-package neotree
