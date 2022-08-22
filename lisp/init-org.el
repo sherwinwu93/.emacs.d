@@ -1,6 +1,7 @@
 
 ;; ----------------------------------------agenda
 (use-package org
+ :pin nongnu
  :init (setq org-agenda-files '("~/notes/todos/")) 
  :config (add-hook 'org-mode-hook (lambda() (org-indent-mode t)))
  :bind (("C-c a" . org-agenda)
@@ -10,17 +11,10 @@
 	 ("C-c t" . org-todo)
 	 )
  )
-;; (require 'org)
-;; (add-hook 'org-mode-hook (lambda() (org-indent-mode t)))
-;;  :bind (("C-c a" . org-agenda)
-;;	 ("C-c c" . org-capture)
-;;	 :map org-mode-map
-;;	 ("C-c r" . org-refile)
-;;	 ("C-c t" . org-todo)
+(use-package org-contrib
+ :pin nongnu
+ )
 
-;;(use-package org-contrib
-;;  :pin nongnu
-;;  )
 
 ;; ----------------------------------------priority & tags & TODO
 ;; 优先级
