@@ -4,9 +4,18 @@
 (package-initialize)
 (setq package-archives '(
 			 ("gnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/gnu/")
+			 ("melpa-stable" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/stable-melpa/")
 			 ("melpa" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/melpa/")
-			 ;; ("nongnu"       . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+			 ("org" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/org/")
+			 ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
+			 ;;("nongnu" . "http://elpa.zilongshanren.com/nongnu/")
 			 ))
+;;(setq package-archives '(("melpa"        . "https://melpa.org/packages/")
+;;                         ("melpa-stable" . "https://stable.melpa.org/packages/")
+;;                         ("org"          . "https://orgmode.org/elpa/")
+;;                         ("gnu"          . "https://elpa.gnu.org/packages/")
+;;                         ("nongnu"       . "https://elpa.nongnu.org/nongnu/")))			 
+	 
 			 
 ;;; 这个配置一定要配置在 use-package 的初始化之前，否则无法正常安装
 (assq-delete-all 'org package--builtins)
