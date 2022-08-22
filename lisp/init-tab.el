@@ -3,8 +3,8 @@
   :config
   (awesome-tab-mode t)
   )
-(global-set-key (kbd "M-<left>")  'awesome-tab-backward-tab)
-(global-set-key (kbd "M-<right>") 'awesome-tab-forward-tab)
+(global-set-key (kbd "M-l")  'awesome-tab-forward-tab)
+(global-set-key (kbd "M-h") 'awesome-tab-backward-tab)
 (global-set-key (kbd "M-\\") 'awesome-tab-kill-other-buffers-in-current-group)
 (setq awesome-tab-height 120)
 ;; if return t, tab will hide
