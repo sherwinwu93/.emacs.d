@@ -4,6 +4,7 @@ elpa
 rime
 auto-save-list
 transient
+url
 // 忽略文件
 temp.json
 recentf
