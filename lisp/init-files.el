@@ -31,8 +31,8 @@
   (setq recentf-max-menu-item 10)
   :config
   (recentf-mode 1)
-  (evil-leader/set-key "h" 'recentf-open-files)
   )
+(global-set-key (kbd "<f12>") 'recentf-open-files)
 
 
 

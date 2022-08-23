@@ -18,7 +18,7 @@
 ;; --------------------Ctrl
 (define-key key-translation-map (kbd "<SPC> x") (kbd "C-x"))
 (define-key key-translation-map (kbd "<SPC> c") (kbd "C-c"))
-(define-key key-translation-map (kbd "<f12>") (kbd "C-h"))
+(define-key key-translation-map (kbd "<SPC> h") (kbd "C-h"))
 ;; --------------------方向
 (define-key key-translation-map (kbd "C-k") (kbd "<up>"))
 (define-key key-translation-map (kbd "C-j") (kbd "<down>"))

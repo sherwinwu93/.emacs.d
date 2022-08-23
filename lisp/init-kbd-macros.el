@@ -9,10 +9,11 @@
 ;; macro
 (evil-leader/set-key
   "mn" 'name-last-kbd-macro
-  "mo" 'kbd-macro-config
+  "mo" 'macros-file
   "mi" 'insert-kbd-macro
   )
-
+(fset 'complete-pronounce
+   (kmacro-lambda-form [?  ?o ?y ?$ ?  ?o ?p] 0 "%d"))
 
 (defun macros-file()
   (interactive)
