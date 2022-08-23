@@ -68,6 +68,8 @@
 			  ;; 显示多少个最近项目
 			  (projects . 5)))
   (dashboard-setup-startup-hook))
+(use-package good-scroll
+  :init (good-scroll-mode))
 
 ;; ----------------------------------------主题
 (use-package monokai-theme

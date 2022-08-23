@@ -17,5 +17,6 @@
 	("C-`" . 'rime-send-keybinding)    ;; <----
 	("M-j" . 'rime-force-enable))
   )
+(define-key key-translation-map (kbd "<f11>") (kbd "C-\\"))
 
 (provide 'init-input)

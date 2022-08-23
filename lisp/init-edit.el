@@ -10,17 +10,25 @@
 
 ;; ----------------------------------------Search
 ;; --------------------Search
+;; 补全系统
 (use-package ivy
+  :init
   :config
   (ivy-mode 1)
   )
+;; 搜索功能  
 (use-package swiper
   :bind
   (("C-s" . 'swiper)))
+;; 常用命令
 (use-package counsel
   :config
-  (counsel-mode 1))
-  
+  (counsel-mode 1)
+  :bind (("C-h f" . counsel-describe-function)
+	 ("C-h v" . counsel-describe-variable)
+	 ("C-h o" . counsel-describe-symbol)
+	 ("C-h l" . counsel-find-library))
+  )
 (use-package avy
   :ensure t
   :config
@@ -87,13 +95,6 @@
 (setq-default abbrev-mode t)
 (read-abbrev-file "~/.emacs.d/abbrev_defs")
 
-
-
-;; ----------------------------------------bookmarks
-(evil-leader/set-key
-  "mm" 'counsel-bookmark
-  "ml" 'list-bookmarks
-  )
 
 
 (provide 'init-edit)

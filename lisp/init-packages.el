@@ -33,6 +33,14 @@
   ;; 之后安装它。use-package 应该是你配置中唯一一个需要这样安装的包。
   (package-install 'use-package))
 (require 'use-package)
+;; (use-package ivy
+;;   ;; 加载前执行
+;;   :init
+;;   ;; 加载后执行
+;;   :config
+;;   ;; 也可以认为是执行后
+;;   :bind
+;;   )
 (require 'use-package-ensure)
 ;; 让 use-package 永远按需安装软件包
 (setq use-package-always-ensure t)
