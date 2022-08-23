@@ -61,9 +61,10 @@
   :config
   (evilnc-default-hotkeys t)
   (evil-leader/set-key
-    "/" 'evilnc-comment-or-uncomment-lines
-    )
+    "/" 'evilnc-comment-or-uncomment-lines)
   )
+(define-key key-translation-map (kbd "C-/") (kbd "s-/"))
+(define-key global-map (kbd "s-/") 'evilnc-comment-or-uncomment-lines)
 
 ;; ----------------------------------------语法检查
 ;; (use-package flycheck
