@@ -9,6 +9,7 @@ url
 temp.json
 recentf
 *~
+amx-items
 #*#
 // 忽略文件夹下所有目录
 temp/*
