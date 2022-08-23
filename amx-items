@@ -1,19 +1,19 @@
 
 ;; ----- amx-history -----
 (
- counsel-ag
  shell
  package-install
  cd
  5x5
  amx
  arp
+ counsel-ag
 )
 
 ;; ----- amx-data -----
 (
  (package-install . 1)
- (dashboard-refresh-buffer . 1)
+ (dashboard-refresh-buffer . 2)
  (split-window-below-move-to-next . 2)
  (shell . 1)
  (counsel-ag . 2)

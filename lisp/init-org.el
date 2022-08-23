@@ -3,6 +3,9 @@
 (use-package org
  :init (setq org-agenda-files '("~/notes/todos/")) 
  :config (add-hook 'org-mode-hook (lambda() (org-indent-mode t)))
+(define-key org-mode-map (kbd "M-l")  'awesome-tab-forward-tab)
+(define-key org-mode-map (kbd "M-h") 'awesome-tab-backward-tab)
+(define-key org-mode-map (kbd "M-\\") 'awesome-tab-kill-other-buffers-in-current-group)
  :bind (("C-c a" . org-agenda)
 	 ("C-c c" . org-capture)
 	 :map org-mode-map
