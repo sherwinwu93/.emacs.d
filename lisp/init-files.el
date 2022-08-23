@@ -32,7 +32,7 @@
   :config
   (recentf-mode 1)
   )
-(global-set-key (kbd "<f12>") 'recentf-open-files)
+(global-set-key (kbd "s-h") 'recentf-open-files)
 
 
 
