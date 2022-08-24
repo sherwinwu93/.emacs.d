@@ -50,8 +50,8 @@
 (menu-bar-mode -1)
 ;; 关闭文件滑动控件
 (scroll-bar-mode -1)
-;; (add-to-list 'default-frame-alist '(width . 110))
-;; (add-to-list 'default-frame-alist '(height . 45))
+(set-frame-width (selected-frame) 120)
+(set-frame-height (selected-frame) 50)
 (use-package dashboard
   :ensure t
   :config
