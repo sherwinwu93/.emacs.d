@@ -50,7 +50,8 @@
 (menu-bar-mode -1)
 ;; 关闭文件滑动控件
 (scroll-bar-mode -1)
-(set-frame-width (selected-frame) 120)
+(set-frame-position (selected-frame) 800 80)
+(set-frame-width (selected-frame) 110)
 (set-frame-height (selected-frame) 50)
 (use-package dashboard
   :ensure t
