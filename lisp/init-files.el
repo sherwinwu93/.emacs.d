@@ -1,6 +1,7 @@
 ;; ----------------------------------------file
 (global-set-key (kbd "s-d") 'dired-jump)
 (evil-leader/set-key "d" 'dired-jump)
+(evil-leader/set-key "f" 'find-file)
 (global-set-key (kbd "s-f") 'counsel-find-file)
 ;; 更改默认目录
 (setq default-directory "~/notes/")

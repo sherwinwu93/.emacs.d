@@ -37,18 +37,17 @@
 (use-package avy
   :ensure t
   :config
-  (evil-leader/set-key
-    "s" 'avy-goto-char-2
+  )
+(evil-leader/set-key
     ;; 跳line
-    "f" 'avy-goto-line
-    ))
+    "j" 'avy-goto-line
+    "k" 'avy-goto-char-2
+    )
 ;; --------------------Replace
 (global-set-key (kbd "s-s") 'query-replace)
 
 ;; ----------------------------------------edit
 (evil-leader/set-key
-  "j" 'scroll-other-window
-  "k" 'scroll-other-window-down
   "l" 'recenter-top-bottom)
 ;; 设置自动换行字数
 (setq-default fill-column 1024)
