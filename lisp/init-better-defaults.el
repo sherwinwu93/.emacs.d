@@ -10,6 +10,7 @@
 ;; (global-set-key (kbd "<escape>")  'keyboard-escape-quit)
 ;; 把Capslock改为C-g键
 (define-key key-translation-map (kbd "<f10>") (kbd "C-g"))
+(define-key key-translation-map (kbd "<f12>") (kbd "C-h"))
 (global-set-key (kbd "<f10>") 'keyboard-escape-quit)
 
 ;; 改键<menu>为modifier

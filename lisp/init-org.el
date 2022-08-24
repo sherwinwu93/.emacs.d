@@ -14,7 +14,16 @@
 	 ("C-c t" . org-todo)
 	 )
   )
+(define-key org-mode-map (kbd "s-k")  'org-metaup)
+(define-key org-mode-map (kbd "s-j")  'org-metadown)
+(define-key org-mode-map (kbd "s-h")  'org-metaleft)
+(define-key org-mode-map (kbd "s-l")  'org-metaright)
+(define-key org-mode-map (kbd "s-n")  'org-shiftdown)
+(define-key org-mode-map (kbd "s-t")  'org-todo)
 (define-key org-mode-map (kbd "<tab>")  'insert-two-spaces)
+(evil-leader/set-key
+  "<tab>" 'org-cycle
+  )
 
 ;; (use-package org-contrib
 ;;  :pin nongnu
