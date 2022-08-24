@@ -70,8 +70,6 @@
 			  ;; 显示多少个最近项目
 			  (projects . 5)))
   (dashboard-setup-startup-hook))
-(evil-leader/set-key
-  "b" 'dashboard-refresh-buffer)
 (use-package good-scroll
   :init (good-scroll-mode))
 

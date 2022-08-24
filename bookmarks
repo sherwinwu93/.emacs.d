@@ -9,9 +9,9 @@
  (position . 1226))
 ("org-refile-last-stored"
  (filename . "~/notes/todos/finished.org")
- (front-context-string . "** Learning[3/3]")
- (rear-context-string . "8-18 Thu 19:13]\n")
- (position . 2784))
+ (front-context-string . "** DONE [#A] L27")
+ (rear-context-string . "8-24 Wed 15:41]\n")
+ (position . 4439))
 ("task.org"
  (filename . "~/notes/todos/task.org")
  (front-context-string . "#+LATEX_HEADER: ")

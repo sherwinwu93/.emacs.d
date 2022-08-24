@@ -15,10 +15,15 @@
   :init
   :config
   (ivy-mode 1)
+  :bind
   )
+(evil-leader/set-key
+  "bb" 'ivy-switch-view
+  "bs" 'quick-ivy-push-view
+  "bd" 'quick-ivy-pop-view)
 ;; 搜索功能  
 (use-package swiper
-  :bind
+  bind
   (("C-s" . 'swiper)))
 ;; 常用命令
 (use-package counsel

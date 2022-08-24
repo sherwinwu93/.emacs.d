@@ -23,6 +23,8 @@
   )
 (evil-leader/set-key
   "<tab>" 'org-cycle
+  "a" 'org-agenda
+  "r" 'org-refile
   )
 
 ;; (use-package org-contrib
@@ -37,7 +39,7 @@
       '(
         ("w" . "任务安排")
         ("wa" "重要且紧急的任务" tags-todo "+PRIORITY=\"A\"")
-        ("wb" "重要且不紧急的任务" tags-todo "-weekly-monthly-daily+PRIORITY=\"B\"")
+        ("wb" "重要且不紧急的任务" tags-todo "+PRIORITY=\"B\"")
         ("wc" "不重要且紧急的任务" tags-todo "+PRIORITY=\"C\"")
         ("W" "Weekly Review"
 	 ;; 尚未进行管理的任务
