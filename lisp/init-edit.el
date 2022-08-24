@@ -94,7 +94,7 @@
 ;; ----------------------------------------Abbreviation
 (setq-default abbrev-mode t)
 (read-abbrev-file "~/.emacs.d/abbrev_defs")
-
-
+;; ----------------------------------------Flyspell
+(flyspell-mode t)
 
 (provide 'init-edit)

@@ -1,6 +1,5 @@
 
 ;; ----------------------------------------agenda
-(use-package ispell)
 (use-package org
   :init (setq org-agenda-files '("~/notes/todos/")) 
   :config (add-hook 'org-mode-hook (lambda() (org-indent-mode t)
