@@ -15,6 +15,8 @@
 	 ("C-c t" . org-todo)
 	 )
   )
+(define-key org-mode-map (kbd "<tab>")  'insert-two-spaces)
+
 ;; (use-package org-contrib
 ;;  :pin nongnu
 ;;  :ensure t

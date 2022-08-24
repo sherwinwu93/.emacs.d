@@ -73,7 +73,7 @@
   :init (global-undo-tree-mode 1)
   :config
   (define-key evil-normal-state-map
-    "u" 'undo-tree-visualize
+    "u" 'undo-tree-undo
     )
   )
 ;; --------------------CUDA
