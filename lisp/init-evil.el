@@ -5,6 +5,7 @@
   (setcdr evil-insert-state-map nil)
   (define-key evil-insert-state-map (kbd "<escape>") 'evil-normal-state)
   )
+
 (use-package evil-leader
   :config
   ;; 激活evil的leaderKey
