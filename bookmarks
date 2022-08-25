@@ -17,21 +17,11 @@
  (front-context-string . "** DONE 中消发布\nCLO")
  (rear-context-string . "2022-08-17 Wed>\n")
  (position . 356))
-("task.org"
- (filename . "~/notes/todos/task.org")
- (front-context-string . "#+LATEX_HEADER: ")
- (rear-context-string)
- (position . 1))
 ("nce2"
  (filename . "~/notes/nce2/")
  (front-context-string . "0.NCE2.md\n  -rwx")
  (rear-context-string . "10 8月  13 00:26 ")
  (position . 164))
-("finance.org"
- (filename . "~/notes/todos/finance.org")
- (front-context-string . "* Quick finance\n")
- (rear-context-string)
- (position . 1))
 ("todos"
  (filename . "~/notes/todos/")
  (front-context-string . "0106.md\n  drwxrw")
