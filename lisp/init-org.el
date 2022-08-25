@@ -3,10 +3,6 @@
 (use-package org
   :config (add-hook 'org-mode-hook (lambda() (org-indent-mode t)
 				     (flyspell-mode)
-				     (define-key evil-normal-state-map (kbd "`p") 'org-ctrl-c-ctrl-c)
-				     (define-key evil-normal-state-map (kbd "`t") 'org-todo)
-				     (define-key evil-normal-state-map (kbd "`d") 'org-deadline)
-				     (define-key evil-normal-state-map (kbd "`s") 'org-schedule)
 				     (define-key evil-normal-state-map (kbd "<tab>") 'org-cycle)))
   :bind (
 	 :map org-mode-map
@@ -16,10 +12,15 @@
 	 ("<tab>" . insert-two-spaces)
 	 )
   )
-(define-key evil-normal-state-map (kbd "`a") 'org-agenda)
-(define-key evil-normal-state-map (kbd "`c") 'org-capture)
-(define-key evil-normal-state-map (kbd "`r") 'org-refile)
-(define-key evil-visual-state-map (kbd "`r") 'org-refile)
+(evil-leader/set-key
+  "ap" 'org-ctrl-c-ctrl-c
+  "at" 'org-todo
+  "ad" 'org-deadline
+  "as" 'org-schedule
+  "aa" 'org-agenda
+  "ac" 'org-capture
+  "ar" 'org-refile
+  )
 
 (define-key global-map (kbd "C-c a") 'org-agenda)
 (define-key global-map (kbd "C-c c") 'org-capture)
