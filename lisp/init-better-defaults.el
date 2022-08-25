@@ -25,6 +25,8 @@
 (define-key key-translation-map (kbd "C-j") (kbd "<down>"))
 (define-key key-translation-map (kbd "C-h") (kbd "<left>"))
 (define-key key-translation-map (kbd "C-l") (kbd "<right>"))
+(define-key global-map (kbd "C-f") 'scroll-up-command)
+(define-key global-map (kbd "C-b") 'scroll-down-command)
 
 ;; ----------------------------------------Commmand
 ;; 显示最新调用的命令

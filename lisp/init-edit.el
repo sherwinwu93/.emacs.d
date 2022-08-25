@@ -12,23 +12,14 @@
 ;; --------------------Search
 ;; 补全系统
 (use-package ivy
-  :init
-  :config
-  (ivy-mode 1)
-  :bind
+  :config (ivy-mode 1)
   )
-(evil-leader/set-key
-  "bb" 'ivy-switch-view
-  "bs" 'quick-ivy-push-view
-  "bd" 'quick-ivy-pop-view)
 ;; 搜索功能  
 (use-package swiper
-  bind
-  (("C-s" . 'swiper)))
+  :bind (("C-s" . 'swiper)))
 ;; 常用命令
 (use-package counsel
-  :config
-  (counsel-mode 1)
+  :config (counsel-mode 1)
   :bind (("C-h f" . counsel-describe-function)
 	 ("C-h v" . counsel-describe-variable)
 	 ("C-h o" . counsel-describe-symbol)
@@ -38,17 +29,10 @@
   :ensure t
   :config
   )
-(evil-leader/set-key
-    ;; 跳line
-    "j" 'avy-goto-line
-    "k" 'avy-goto-char-2
-    )
-;; --------------------Replace
 (global-set-key (kbd "s-s") 'query-replace)
+;; --------------------Replace
 
 ;; ----------------------------------------edit
-(evil-leader/set-key
-  "l" 'recenter-top-bottom)
 ;; 设置自动换行字数
 (setq-default fill-column 1024)
 ;; 临时标记模式
@@ -100,5 +84,20 @@
 (read-abbrev-file "~/.emacs.d/abbrev_defs")
 ;; ----------------------------------------Flyspell
 (flyspell-mode t)
+
+(evil-leader/set-key
+  ;; buffer
+  "bb" 'ivy-switch-view
+  "bs" 'quick-ivy-push-view
+  "bd" 'quick-ivy-pop-view
+  ;; search replace
+  "r" 'query-replace
+  "s" 'swiper
+  ;; jump
+  "j" 'avy-goto-line
+  "k" 'avy-goto-char-2
+  ;; recenter
+  "l" 'recenter-top-bottom
+  )
 
 (provide 'init-edit)

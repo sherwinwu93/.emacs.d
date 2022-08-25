@@ -52,7 +52,6 @@
     "2" 'select-window-2
     "3" 'select-window-3
     "4" 'select-window-4
-    "5" 'select-window-5
     )
   )
 ;; 绘制弹窗
@@ -77,6 +76,9 @@
 ;; (with-eval-after-load 'dired
 ;;   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
 ;; ----------------------------------------frames
+(evil-leader/set-key
+  "5o" 'other-frame
+  "5f" 'find-file-other-frame)
 
 
 

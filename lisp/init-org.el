@@ -1,114 +1,149 @@
-
-;; ----------------------------------------agenda
+;; GTD实践方法的配置
+;; ----------------------------------------org package
 (use-package org
-  :init (setq org-agenda-files '("~/notes/todos/")) 
   :config (add-hook 'org-mode-hook (lambda() (org-indent-mode t)
-				     (flyspell-mode)))
-  :bind (("C-c a" . org-agenda)
-	 ("C-c c" . org-capture)
+				     (flyspell-mode)
+				     (define-key evil-normal-state-map (kbd "<tab>") 'org-cycle)))
+  :bind (
 	 :map org-mode-map
-	 ("C-c r" . org-refile)
-	 ("C-c t" . org-todo)
 	 ("M-l" . awesome-tab-forward-tab)
 	 ("M-h" . awesome-tab-backward-tab)
 	 ("M-\\". awesome-tab-kill-other-buffers-in-current-group)
-	 ("s-k" . org-metaup)
-	 ("s-j" . org-metadown)
-	 ("s-h" . org-metaleft)
-	 ("s-l" . org-metaright)
-	 ("s-n" . org-shiftdown)
-	 ("s-t" . org-todo)
 	 ("<tab>" . insert-two-spaces)
 	 )
   )
 (evil-leader/set-key
   "<tab>" 'org-cycle
-  "a" 'org-agenda
-  "r" 'org-refile
+  "aa" 'org-agenda
+  "ac" 'org-capture
+  "at" 'org-ctrl-c-ctrl-c
+  "ar" 'org-refile
+  "as" 'org-todo
   )
 
-;; (use-package org-contrib
-;;  :pin nongnu
-;;  :ensure t
-;;  )
+(define-key global-map (kbd "C-c a") 'org-agenda)
+(define-key global-map (kbd "C-c c") 'org-capture)
+;; ----------------------------------------diary
+;; 设置生日
+;; In order to include entries from the Emacs diary into Org mode's agenda
+(setq org-agenda-include-diary t
+      diary-file (locate-user-emacs-file "~/notes/todos/diary.org")
+      org-agenda-diary-file 'diary-file)
 
+;; diary for chinese birthday
+;; https://emacs-china.org/t/topic/2119/14
+(defun my--diary-chinese-anniversary (lunar-month lunar-day &optional year mark)
+  (if year
+      (let* ((d-date (diary-make-date lunar-month lunar-day year))
+	     (a-date (calendar-absolute-from-gregorian d-date))
+	     (c-date (calendar-chinese-from-absolute a-date))
+	     (cycle (car c-date))
+	     (yy (cadr c-date))
+	     (y (+ (* 100 cycle) yy)))
+        (diary-chinese-anniversary lunar-month lunar-day y mark))
+    (diary-chinese-anniversary lunar-month lunar-day year mark)))
 
-;; ----------------------------------------priority & tags & TODO
-;; 优先级
-(setq org-agenda-custom-commands
-      '(
-        ("w" . "任务安排")
-        ("wa" "重要且紧急的任务" tags-todo "+PRIORITY=\"A\"")
-        ("wb" "重要且不紧急的任务" tags-todo "+PRIORITY=\"B\"")
-        ("wc" "不重要且紧急的任务" tags-todo "+PRIORITY=\"C\"")
-        ("W" "Weekly Review"
-	 ;; 尚未进行管理的任务
-         ((stuck "") ;; review stuck projects as designated by org-stuck-projects
-	  ;; 标签
-          (tags-todo "daily")
-          (tags-todo "weekly")
-          (tags-todo "monthly")
-          (tags-todo "school")
-          (tags-todo "code")
-          (tags-todo "family")
-          ))
-        ))
-;; @/!: 同时使用
+;; 中国节假日
+(require 'cal-china-x)
+(setq mark-holidays-in-calendar t)
+(setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
+(setq cal-china-x-general-holidays '((holiday-lunar 1 15 "元宵节")))
+(setq calendar-holidays
+      (append cal-china-x-important-holidays
+	      cal-china-x-general-holidays
+	      ))
+
+;; ----------------------------------------agenda
+
+;; 定义 agenda 文件的位置
+(setq org-agenda-files '("~/notes/todos/inbox.org"))
+
+;; 大项目state的hook
+(defun org-summary-todo (n-done n-not-done)
+  "Switch entry to DONE when all subentries are done, to TODO otherwise."
+  (let (org-log-done org-log-states)   ; turn off logging
+    (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+(add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
+
 (setq org-todo-keywords
-      '(
-	(sequence "TODO(t!)" "DOING(g!)" "|" "DONE(d!)" "CANCELED(c @/!)")
-	(sequence "OUT(o!)"  "IN(i @/!)")
+      '((sequence "TODO(t)"
+		  "DOING(g)"
+		  "WAITING(b)"
+		  "REVIEW(r)"
+		  "|"
+		  "DONE(d)"
+		  )
 	))
-;; ----------------------------------------capture
-;; 绑定键位
+;; state的颜色
+(setq org-todo-keyword-faces
+      (quote (("TODO" :foreground "red" :weight bold)
+	      ("DONE" :foreground "forest green" :weight bold)
+	      ("DOING" :foreground "yellow" :weight bold)
+	      ("BLOCKED" :foreground "red" :weight bold)
+	      ("REVIEW" :foreground "orange" :weight bold)
+	      )))
 
-;; 这边就是为路径赋值
-(defvar org-agenda-dir "" "gtd org files location")
-(setq-default org-agenda-dir "~/notes/todos/")
+;; If task state is turned into done, it will  insert "Closed [timestamp]".
+(setq org-log-done 'time)
 
-(setq org-agenda-file-note (expand-file-name "notes.org" org-agenda-dir))
-(setq org-agenda-file-task (expand-file-name "task.org" org-agenda-dir))
-(setq org-agenda-file-calendar (expand-file-name "calendar.org" org-agenda-dir))
-(setq org-agenda-file-finished (expand-file-name "finished.org" org-agenda-dir))
-(setq org-agenda-file-canceled (expand-file-name "canceled.org" org-agenda-dir))
-(setq org-agenda-file-finance (expand-file-name "finance.org" org-agenda-dir))
+;; Change task state to DOING when clocking in
+(setq org-clock-in-switch-to-state "DOING")
+;; Change task state to STARTED when clocking in
+(setq org-clock-out-switch-to-state "DONE")
 
-;; --------------------templates
-(setq org-capture-templates
-      '(
-        ("t" "Todo_work" entry (file+headline org-agenda-file-task "Work")
-         "* TODO [#B] %?\n  %i\n"
-         :empty-lines 1)
-        ("l" "Todo_learning" entry (file+headline org-agenda-file-task "Learning")
-         "* TODO [#B] %?\n  %i\n"
-         :empty-lines 1)
-        ("h" "Todo_hobbies" entry (file+headline org-agenda-file-task "Hobbies")
-         "* TODO [#C] %?\n  %i\n"
-         :empty-lines 1)
-        ("o" "Todo_others" entry (file+headline org-agenda-file-task "Others")
-         "* TODO [#C] %?\n  %i\n"
-         :empty-lines 1)
-        ("n" "notes" entry (file+headline org-agenda-file-note "Quick notes")
-         "* %?\n  %i\n %U"
-         :empty-lines 1)
-        ("i" "ideas" entry (file+headline org-agenda-file-note "Quick ideas")
-         "* %?\n  %i\n %U"
-         :empty-lines 1)
-        ("f" "finance" entry (file+headline org-agenda-file-finance "Quick finance")
-         "* | | |%i|"
-         :empty-lines 1)
-        )
-      )
-;; --------------------refile
+;; fast tags
+(setq org-tag-alist '(("@work" . ?w)
+		      ("@home" . ?h)
+		      ("@buy" . ?b)
+		      ("@bossurgent" . ?o)
+		      ("@ungroup" . ?u)
+		      ("@study" . ?s)))
+
 (setq org-refile-targets '(
 			   ;;修复bug,不可删除
 			   (nil :maxlevel . 1)
-			   (org-agenda-file-note :maxlevel . 1)
-			   (org-agenda-file-task :maxlevel . 1)
-			   (org-agenda-file-calendar :maxlevel . 1)
-			   (org-agenda-file-finished :maxlevel . 1)
-			   (org-agenda-file-canceled :maxlevel . 1)
+			   ("~/notes/todos/inbox.org" :maxlevel . 1)
 			   ))
 
+;; ----------------------------------------capture
+(setq org-capture-templates '(("t" "Todo [inbox]" entry
+			       (file+headline "~/notes/todos/inbox.org" "Tasks")
+			       "* TODO %i%?")
+			      ))
+
+;; ----------------------------------------pomodoro 
+;; 通知功能
+(defun notify-osx (title message)
+  (call-process "terminal-notifier"
+		nil 0 nil
+		"-group" "Emacs"
+		"-title" title
+		"-message" message
+		;;"-sender" "org.gnu.Emacs"
+		"-activate" "oeg.gnu.Emacs"))
+
+;; ----------------------------------------任务提醒功能
+;; https://emacs-china.org/t/org-agenda/232
+(require 'appt)
+(setq appt-time-msg-list nil)    ;; clear existing appt list
+(setq appt-display-interval '10)  ;; warn every 5 minutes from t - appt-message-warning-time
+(setq
+ appt-message-warning-time '20  ;; send first warning 15 minutes before appointment
+ appt-display-mode-line nil     ;; don't show in the modeline
+ appt-display-format 'window)   ;; pass warnings to the designated window function
+(appt-activate 1)                ;; activate appointment notification
+(display-time)                   ;; activate time display
+
+(org-agenda-to-appt)             ;; generate the appt list from org agenda files on emacs launch
+(run-at-time "24:01" 3600 'org-agenda-to-appt)           ;; update appt list hourly
+(add-hook 'org-finalize-agenda-hook 'org-agenda-to-appt) ;; update appt list on agenda view
+
+(defun my-appt-display (min-to-app new-time msg)
+  (notify-osx
+   (format "Appointment in %s minutes" min-to-app)    ;; passed to -title in terminal-notifier call
+   (format "%s" msg)))                                ;; passed to -message in terminal-notifier call
+(setq appt-disp-window-function (function my-appt-display))
+
+(require 'init-org-agenda-custom-commands)
 
 (provide 'init-org)

@@ -25,9 +25,8 @@
 (require 'init-better-defaults)
 (require 'init-files)
 (require 'init-tabs)
-(require 'init-history)
 (require 'init-edit)
-(require 'init-tab)
+;;(require 'init-tab)
 (require 'init-project)
 ;; ----------------------------------------
 (require 'init-code)
@@ -47,11 +46,10 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(smart-tabs-mode smart-tabs smart-tab good-scroll smart-mode-line-dark smart-mode-line help-find-org-mode org org-contrib emms emms-setup auto-save company flycheck dashboard multiple-cursors undo-tree amx smartparens rime posframe cnfonts window-numbering which-key use-package evil-surround evil-nerd-commenter evil-leader counsel avy))
- '(warning-suppress-types '((use-package) (use-package))))
+   '(appt youdao-dictionary window-numbering which-key use-package undo-tree smartparens smart-tabs-mode smart-tab smart-mode-line rime popwin org-pomodoro org neotree magit good-scroll exec-path-from-shell evil-surround evil-nerd-commenter evil-leader dashboard counsel-projectile company cnfonts cal-china-x avy amx)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
- '(whitespace-tab ((t (:foreground "#636363")))))
+ )
