@@ -9,9 +9,9 @@
  (position . 93))
 ("org-capture-last-stored"
  (filename . "~/notes/todos/inbox.org")
- (front-context-string . "** DONE 中消发布\nCLO")
- (rear-context-string . "phants\n\n* Tasks\n")
- (position . 50))
+ (front-context-string . "** TODO \n* DONE ")
+ (rear-context-string . "group:\n** TODO \n")
+ (position . 124))
 ("org-refile-last-stored"
  (filename . "~/notes/todos/inbox.org")
  (front-context-string . "** DONE 中消发布\nCLO")
