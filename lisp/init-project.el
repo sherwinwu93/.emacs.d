@@ -12,10 +12,14 @@
   :after (projectile)
   :init (counsel-projectile-mode))
 (evil-leader/set-key "p" 'projectile-command-map)
+;; 忽略文件夹
+(setq projectile-globally-ignored-directories '("~/.emacs.d/elpa/"
+						"~/.emacs.d/url/"))
 
 ;; ----------------------------------------neotree
 (use-package neotree
   :bind (("M-`" . neotree-toggle))
   )
+
 
 (provide 'init-project)

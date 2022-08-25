@@ -9,14 +9,14 @@
  (position . 93))
 ("org-capture-last-stored"
  (filename . "~/notes/todos/inbox.org")
- (front-context-string . "** TODO 測試一下\nSCH")
- (rear-context-string . " TODO \n** TODO \n")
- (position . 142))
+ (front-context-string . "** TODO L28 Patt")
+ (rear-context-string . "2022-08-26 Fri>\n")
+ (position . 2382))
 ("org-refile-last-stored"
  (filename . "~/notes/todos/inbox.org")
- (front-context-string . "** DONE 中消发布\nCLO")
- (rear-context-string . "2022-08-17 Wed>\n")
- (position . 356))
+ (front-context-string . "** TODO 现在完成时\nSC")
+ (rear-context-string . "2022-08-28 Sun>\n")
+ (position . 2391))
 ("nce2"
  (filename . "~/notes/nce2/")
  (front-context-string . "0.NCE2.md\n  -rwx")
