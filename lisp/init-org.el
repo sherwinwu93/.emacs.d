@@ -23,7 +23,6 @@
 
 (define-key global-map (kbd "C-c a") 'org-agenda)
 (define-key global-map (kbd "C-c c") 'org-capture)
-(setq inbox-url "~/notes/todos/inbox.org")
 ;; ----------------------------------------diary
 ;; 设置生日
 ;; In order to include entries from the Emacs diary into Org mode's agenda
@@ -57,7 +56,7 @@
 ;; ----------------------------------------agenda
 
 ;; 定义 agenda 文件的位置
-(setq org-agenda-files '(inbox-url))
+(setq org-agenda-files '("~/notes/todos/inbox.org"))
 
 ;; 大项目state的hook
 (defun org-summary-todo (n-done n-not-done)
@@ -103,18 +102,18 @@
 (setq org-refile-targets '(
 			   ;;修复bug,不可删除
 			   (nil :maxlevel . 1)
-			   (inbox-url :maxlevel . 1)
+			   ("~/notes/todos/inbox.org" :maxlevel . 1)
 			   ))
 (defun agenda-file()
   (interactive)
-  (find-file inbox-url))
+  (find-file "~/notes/todos/inbox.org"))
 
 ;; ----------------------------------------capture
 (setq org-capture-templates '(("c" "Todo [inbox]" entry
-			       (file+headline inbox-url "Tasks")
+			       (file+headline "~/notes/todos/inbox.org" "Tasks")
 			       "* TODO %i%?")
 			      ("l" "Todo [NCE2]" entry
-			       (file+headline inbox-url "NCE2")
+			       (file+headline "~/notes/todos/inbox.org" "NCE2")
 			       "* TODO %i%?")
 			      ))
 
