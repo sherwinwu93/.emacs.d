@@ -6,27 +6,6 @@
 (setq suggest-key-bindings nil)
 ;; yes no -> y n
 (fset 'yes-or-no-p 'y-or-n-p)
-;; ----------------------------------------系统级按键
-;; (global-set-key (kbd "<escape>")  'keyboard-escape-quit)
-;; 把Capslock改为C-g键
-(define-key key-translation-map (kbd "<f10>") (kbd "C-g"))
-(define-key key-translation-map (kbd "<f12>") (kbd "C-h"))
-(global-set-key (kbd "<f10>") 'keyboard-escape-quit)
-
-;; 改键<menu>为modifier
-(global-set-key (kbd "<menu>") nil)
-(define-key key-translation-map (kbd "<menu>") 'event-apply-super-modifier)
-;; --------------------Ctrl
-(define-key key-translation-map (kbd "<SPC> x") (kbd "C-x"))
-(define-key key-translation-map (kbd "<SPC> c") (kbd "C-c"))
-(define-key key-translation-map (kbd "<SPC> h") (kbd "C-h"))
-;; --------------------方向
-(define-key key-translation-map (kbd "C-k") (kbd "<up>"))
-(define-key key-translation-map (kbd "C-j") (kbd "<down>"))
-(define-key key-translation-map (kbd "C-h") (kbd "<left>"))
-(define-key key-translation-map (kbd "C-l") (kbd "<right>"))
-(define-key global-map (kbd "C-f") 'scroll-up-command)
-(define-key global-map (kbd "C-b") 'scroll-down-command)
 
 ;; ----------------------------------------Commmand
 ;; 显示最新调用的命令
@@ -34,12 +13,13 @@
   :ensure t
   :init (amx-mode 1))
 ;; 移动到最后并执行代码
-(global-set-key (kbd "<f5>") (lambda()
-			       (interactive)
-			       (execute-kbd-macro (kbd "<escape>"))
-			       (execute-kbd-macro (kbd "A"))
-			       (execute-kbd-macro (kbd "C-x C-e"))
-			       (execute-kbd-macro (kbd "<escape>"))))
+(defun wusd/execute()
+  (interactive)
+  (execute-kbd-macro (kbd "<escape>"))
+  (execute-kbd-macro (kbd "A"))
+  (execute-kbd-macro (kbd "C-x C-e"))
+  (execute-kbd-macro (kbd "<escape>")))
+
 
 ;; ----------------------------------------Emacs画面
 ;; 设置Emacs默认全屏

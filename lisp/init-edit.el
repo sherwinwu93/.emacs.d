@@ -15,21 +15,13 @@
   :config (ivy-mode 1)
   )
 ;; 搜索功能  
-(use-package swiper
-  :bind (("C-s" . 'swiper)))
+(use-package swiper)
 ;; 常用命令
 (use-package counsel
-  :config (counsel-mode 1)
-  :bind (("C-h f" . counsel-describe-function)
-	 ("C-h v" . counsel-describe-variable)
-	 ("C-h o" . counsel-describe-symbol)
-	 ("C-h l" . counsel-find-library))
-  )
+  :config (counsel-mode 1))
 (use-package avy
   :ensure t
-  :config
   )
-(global-set-key (kbd "s-s") 'query-replace)
 ;; --------------------Replace
 
 ;; ----------------------------------------edit
@@ -64,19 +56,6 @@
     "u" 'undo-tree-undo
     )
   )
-;; --------------------CUDA
-;;对应Windows上面的Ctrl-a 全选
-(global-set-key (kbd "s-a") 'mark-whole-buffer)
-;;对应Windows上面的Ctrl-c 复制
-(global-set-key (kbd "s-c") 'kill-ring-save)
-;; 对应Windows上面的Ctrl-s 保存
-;; (global-set-key (kbd "s-s") 'save-buffer)
-;;对应Windows上面的Ctrl-v 粘贴
-(global-set-key (kbd "s-v") 'yank)
-;;对应Windows上面的Ctrol-z 撤销
-(global-set-key (kbd "s-z") 'undo)
-;;对应Windows上面的Ctrol-x 剪切
-(global-set-key (kbd "s-x") 'kill-region)
 ;; --------------------多光标操作
 
 ;; ----------------------------------------Abbreviation
@@ -84,20 +63,5 @@
 (read-abbrev-file "~/.emacs.d/abbrev_defs")
 ;; ----------------------------------------Flyspell
 (flyspell-mode t)
-
-(evil-leader/set-key
-  ;; buffer
-  "bb" 'ivy-switch-view
-  "bs" 'quick-ivy-push-view
-  "bd" 'quick-ivy-pop-view
-  ;; search replace
-  "r" 'query-replace
-  "s" 'swiper
-  ;; jump
-  "j" 'avy-goto-line
-  "k" 'avy-goto-char-2
-  ;; recenter
-  "l" 'recenter-top-bottom
-  )
 
 (provide 'init-edit)

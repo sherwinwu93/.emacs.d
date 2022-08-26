@@ -37,7 +37,8 @@
 (require 'init-translate)
 (require 'init-vc)
 (require 'init-scheme)
-
+;; ----------------------------------------快捷键放最后
+(require 'init-key-maps)
 
 
 (custom-set-variables

@@ -1,7 +1,6 @@
 (use-package xscheme
   :load-path "~/.emacs.d/lisp/extensions/x-scheme.el"
   :init (setq scheme-program-name "/usr/local/bin/mit-scheme --stack 10000")
-  :bind (("<f9>" . open-mit-scheme)) 
   )
 
 (defun open-mit-scheme()

@@ -4,26 +4,8 @@
   :config (add-hook 'org-mode-hook (lambda() (org-indent-mode t)
 				     (flyspell-mode)
 				     (define-key evil-normal-state-map (kbd "<tab>") 'org-cycle)))
-  :bind (
-	 :map org-mode-map
-	 ("M-l" . awesome-tab-forward-tab)
-	 ("M-h" . awesome-tab-backward-tab)
-	 ("M-\\". awesome-tab-kill-other-buffers-in-current-group)
-	 ("<tab>" . insert-two-spaces)
-	 )
-  )
-(evil-leader/set-key
-  "ap" 'org-ctrl-c-ctrl-c
-  "at" 'org-todo
-  "ad" 'org-deadline
-  "as" 'org-schedule
-  "aa" 'org-agenda
-  "ac" 'org-capture
-  "ar" 'org-refile
   )
 
-(define-key global-map (kbd "C-c a") 'org-agenda)
-(define-key global-map (kbd "C-c c") 'org-capture)
 ;; ----------------------------------------diary
 ;; 设置生日
 ;; In order to include entries from the Emacs diary into Org mode's agenda
