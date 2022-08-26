@@ -13,7 +13,7 @@
   :ensure t
   :init (amx-mode 1))
 ;; 移动到最后并执行代码
-(defun wusd/execute()
+(defun wusd/eval-last-sexp()
   (interactive)
   (execute-kbd-macro (kbd "<escape>"))
   (execute-kbd-macro (kbd "A"))

@@ -11,7 +11,7 @@
 (define-key rime-mode-map (kbd "M-j") 'rime-force-enable)
 ;; ------------------------------------------------------------better-defaults
 ;; ----------------------------------------系统级按键
-;; 把Capslock改为C-g键
+;; 先sharpKey改Capslock键, 把Capslock改为C-g键
 (define-key key-translation-map (kbd "<f10>") (kbd "C-g"))
 (define-key global-map (kbd "<f10>") 'keyboard-escape-quit)
 (define-key key-translation-map (kbd "<f12>") (kbd "C-h"))
@@ -23,29 +23,32 @@
 (define-key key-translation-map (kbd "<SPC> c") (kbd "C-c"))
 (define-key key-translation-map (kbd "<SPC> h") (kbd "C-h"))
 ;; --------------------方向
-(define-key key-translation-map (kbd "C-k") (kbd "<up>"))
-(define-key key-translation-map (kbd "C-j") (kbd "<down>"))
-(define-key key-translation-map (kbd "C-h") (kbd "<left>"))
-(define-key key-translation-map (kbd "C-l") (kbd "<right>"))
+;; 都不要了,直接用方向键,保护手指
+;; (define-key key-translation-map (kbd "C-k") (kbd "<up>"))
+;; (define-key key-translation-map (kbd "C-j") (kbd "<down>"))
+;; (define-key key-translation-map (kbd "C-h") (kbd "<left>"))
+;; (define-key key-translation-map (kbd "C-l") (kbd "<right>"))
 (define-key global-map (kbd "C-f") 'scroll-up-command)
 (define-key global-map (kbd "C-b") 'scroll-down-command)
 ;; ----------------------------------------Command
-(define-key global-map (kbd "<f5>") 'wusd/execute)
+(define-key global-map (kbd "<f5>") 'wusd/eval-last-sexp)
 ;; ------------------------------------------------------------files
 (define-key global-map (kbd "s-f") 'counsel-find-file)
 (define-key global-map (kbd "s-d") 'dired-jump)
-(define-key global-map (kbd "s-h") 'recentf-open-files)
 (evil-leader/set-key
   "f" 'find-file
   "d" 'dired-jump
   "<SPC>" 'switch-to-buffer
+  "r" 'recentf-open-files
   ;; view
   "bb" 'ivy-switch-view
-  "bs" 'quick-ivy-push-view
-  "bd" 'quick-ivy-pop-view
+  "bs" 'wusd/ivy-push-view
+  "bd" 'wusd/ivy-pop-view
   ;; jump
   "j" 'avy-goto-char-2
   "k" 'avy-goto-line
+  "l" 'recenter-top-bottom
+  ;; windows
   "1" 'select-window-1
   "2" 'select-window-2
   "3" 'select-window-3
@@ -63,13 +66,6 @@
   "5f" 'find-file-other-frame
   )
 ;; ------------------------------------------------------------edit
-(evil-leader/set-key
-  "s" 'swiper
-  ;; search replace
-  "r" 'query-replace
-  ;; recenter
-  "l" 'recenter-top-bottom
-  )
 (define-key global-map (kbd "C-s")  'swiper)
 (define-key global-map (kbd "s-s") 'query-replace)
 (define-key global-map (kbd "C-h f")  'counsel-describe-function)
@@ -90,8 +86,10 @@
 ;;对应Windows上面的Ctrol-x 剪切
 (define-key global-map (kbd "s-x") 'kill-region)
 ;; ------------------------------------------------------------project
-(define-key global-map (kbd "C-c p") 'projectile-command-map)
-(evil-leader/set-key "p" 'projectile-command-map)
+(evil-leader/set-key
+  "p" 'projectile-command-map
+  "ps" 'projectile-grep
+  )
 ;; ------------------------------------------------------------code
 (define-key global-map (kbd "C-M-l") 'indent-region-or-buffer)
 (evil-leader/set-key ";" 'evilnc-comment-or-uncomment-lines)

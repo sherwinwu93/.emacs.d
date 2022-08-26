@@ -12,7 +12,8 @@
   :init (counsel-projectile-mode))
 ;; 忽略文件夹
 (setq projectile-globally-ignored-directories '("~/.emacs.d/elpa/"
-						"~/.emacs.d/url/"))
+						"~/.emacs.d/url/"
+						"~/.emacs.d/lisp/extensions/"))
 
 ;; ----------------------------------------neotree
 (use-package neotree)
