@@ -62,6 +62,10 @@
   "w1" 'delete-other-windows
   "w2" 'split-window-below
   "w3" 'split-window-right
+  "wd" 'delete-window
+  "wm" 'delete-other-windows
+  "wj" 'split-window-below
+  "wl" 'split-window-right
   "5o" 'other-frame
   "5f" 'find-file-other-frame
   )
