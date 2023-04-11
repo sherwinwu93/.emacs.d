@@ -23,7 +23,7 @@
 
 ;; ----------------------------------------Emacs画面
 ;; 设置Emacs默认全屏
-;; (setq initial-frame-alist '((fullscreen . maximized)))
+(setq initial-frame-alist '((fullscreen . maximized)))
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)
 ;; 关闭工具栏
@@ -45,21 +45,22 @@
   ;; 也可以自定义图片
   (setq dashboard-startup-banner 'official)
   (setq dashboard-items '(
+			  (projects . 5)
 			  ;; 显示多少个最近书签
-			  (bookmarks . 10)
+			  ;;(bookmarks . 10)
 			  ;; 显示多少个最近文件
 			  (recents  . 5)
 			  ;; 显示多少个最近项目
-			  (projects . 5)))
+			  ))
   (dashboard-setup-startup-hook))
 (use-package good-scroll
   :init (good-scroll-mode))
 
 ;; ----------------------------------------主题
-(use-package monokai-theme
-  :load-path "~/.emacs.d/lisp/extensions/monokai-theme.el"
+(use-package spacemacs-dark-theme
+  :load-path "~/.emacs.d/lisp/extensions/spacemacs-dark-theme.el"
   :config
-  (load-theme 'monokai 1))
+  (load-theme 'spacemacs-dark 1))
 
 
 

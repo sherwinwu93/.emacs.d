@@ -9,38 +9,38 @@
 ;; ----------------------------------------diary
 ;; 设置生日
 ;; In order to include entries from the Emacs diary into Org mode's agenda
-(setq org-agenda-include-diary t
-      diary-file (locate-user-emacs-file "~/notes/todos/diary.org")
-      org-agenda-diary-file 'diary-file)
-
-;; diary for chinese birthday
-;; https://emacs-china.org/t/topic/2119/14
-(defun my--diary-chinese-anniversary (lunar-month lunar-day &optional year mark)
-  (if year
-      (let* ((d-date (diary-make-date lunar-month lunar-day year))
-	     (a-date (calendar-absolute-from-gregorian d-date))
-	     (c-date (calendar-chinese-from-absolute a-date))
-	     (cycle (car c-date))
-	     (yy (cadr c-date))
-	     (y (+ (* 100 cycle) yy)))
-        (diary-chinese-anniversary lunar-month lunar-day y mark))
-    (diary-chinese-anniversary lunar-month lunar-day year mark)))
-
-;; 中国节假日
-(use-package cal-china-x)
-;; (require 'cal-china-x)
-(setq mark-holidays-in-calendar t)
-(setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
-(setq cal-china-x-general-holidays '((holiday-lunar 1 15 "元宵节")))
-(setq calendar-holidays
-      (append cal-china-x-important-holidays
-	      cal-china-x-general-holidays
-	      ))
+;;(setq org-agenda-include-diary t
+;;      diary-file (locate-user-emacs-file "/mnt/webdav/org/diary.org")
+;;      org-agenda-diary-file 'diary-file)
+;;
+;;;; diary for chinese birthday
+;;;; https://emacs-china.org/t/topic/2119/14
+;;(defun my--diary-chinese-anniversary (lunar-month lunar-day &optional year mark)
+;;  (if year
+;;      (let* ((d-date (diary-make-date lunar-month lunar-day year))
+;;	     (a-date (calendar-absolute-from-gregorian d-date))
+;;	     (c-date (calendar-chinese-from-absolute a-date))
+;;	     (cycle (car c-date))
+;;	     (yy (cadr c-date))
+;;	     (y (+ (* 100 cycle) yy)))
+;;        (diary-chinese-anniversary lunar-month lunar-day y mark))
+;;    (diary-chinese-anniversary lunar-month lunar-day year mark)))
+;;
+;;;; 中国节假日
+;;(use-package cal-china-x)
+;;;; (require 'cal-china-x)
+;;(setq mark-holidays-in-calendar t)
+;;(setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
+;;(setq cal-china-x-general-holidays '((holiday-lunar 1 15 "元宵节")))
+;;(setq calendar-holidays
+;;      (append cal-china-x-important-holidays
+;;	      cal-china-x-general-holidays
+;;	      ))
 
 ;; ----------------------------------------agenda
 
 ;; 定义 agenda 文件的位置
-(setq org-agenda-files '("~/notes/todos/inbox.org"))
+(setq org-agenda-files '("/mnt/webdav/org/inbox.org"))
 
 ;; 大项目state的hook
 (defun org-summary-todo (n-done n-not-done)
@@ -86,18 +86,18 @@
 (setq org-refile-targets '(
 			   ;;修复bug,不可删除
 			   (nil :maxlevel . 1)
-			   ("~/notes/todos/inbox.org" :maxlevel . 1)
+			   ("/mnt/webdav/org/inbox.org" :maxlevel . 1)
 			   ))
 (defun agenda-file()
   (interactive)
-  (find-file "~/notes/todos/inbox.org"))
+  (find-file "/mnt/webdav/org/inbox.org"))
 
 ;; ----------------------------------------capture
 (setq org-capture-templates '(("c" "Todo [inbox]" entry
-			       (file+headline "~/notes/todos/inbox.org" "Tasks")
+			       (file+headline "/mnt/webdav/org/inbox.org" "Tasks")
 			       "* TODO %i%?")
 			      ("l" "Todo [NCE2]" entry
-			       (file+headline "~/notes/todos/inbox.org" "NCE2")
+			       (file+headline "/mnt/webdav/org/inbox.org" "NCE2")
 			       "* TODO %i%?")
 			      ))
 
