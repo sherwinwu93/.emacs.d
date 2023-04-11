@@ -32,6 +32,8 @@
 (define-key global-map (kbd "C-b") 'scroll-down-command)
 ;; ----------------------------------------Command
 (define-key global-map (kbd "<f5>") 'wusd/eval-last-sexp)
+;; ------------------------------------------------------------dotfile
+(evil-leader/set-key "f" 'init-file)
 ;; ------------------------------------------------------------files
 (define-key global-map (kbd "s-f") 'counsel-find-file)
 (define-key global-map (kbd "s-d") 'dired-jump)
