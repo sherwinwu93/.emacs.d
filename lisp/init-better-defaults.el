@@ -62,6 +62,12 @@
   :config
   (load-theme 'spacemacs-dark 1))
 
+;; ----------------------------------------fonts
+(when (display-graphic-p)
+  (dolist (charset '(kana han cjk-misc bopomofo))
+    (set-fontset-font (frame-parameter nil 'font) charset
+                      (font-spec :family "Microsoft YaHei Mono"
+                                 :size 15))))
 
 
 (provide 'init-better-defaults)
