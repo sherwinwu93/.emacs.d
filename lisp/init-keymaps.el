@@ -13,17 +13,8 @@
   ;; satets
   :global-prefix "M-SPC"
 ) 
-(wusd/leader-def "q" '(:wk "quit"))
 
-(wusd/leader-def "f" '(:wk "file"))
-(wusd/leader-def "fe" '(:wk "dotfile"))
-(wusd/leader-def "b" '(:wk "buffer"))
-(wusd/leader-def "w" '(:wk "window"))
-
-(wusd/leader-def "g" '(:wk "git"))
-(wusd/leader-def "p" '(:wk "project"))
-
-(general-create-definer wusd/mode-leader-def
+(general-create-definer wusd-local-leader-def
   :states '(normal motion emacs)
   :prefix ",")
 
@@ -51,28 +42,35 @@
 (wusd/leader-def "jk" 'avy-goto-char-timer)
 ;; ----------------------------------------Command
 (define-key global-map (kbd "s-e") 'wusd/eval-last-sexp)
+(general-def 'override "C-." 'evil-repeat)
 ;; ----------------------------------------emacs
+(wusd/leader-def "q" '(:wk "quit"))
 (wusd/leader-def "qQ" 'save-buffers-kill-terminal)
 (wusd/leader-def "qr" 'restart-emacs)
 
 ;; ------------------------------------------------------------files
 ;; ----------------------------------------file
+(wusd/leader-def "f" '(:wk "file"))
 (wusd/leader-def "ff" 'counsel-find-file)
 (wusd/leader-def "fs" 'save-buffer)
 (wusd/leader-def "fr" 'recentf-open-files)
 (wusd/leader-def "d" 'dired-jump)
 ;; --------------------dotfile
+(wusd/leader-def "fe" '(:wk "dotfile"))
 (wusd/leader-def "fed" 'init-file)
 (wusd/leader-def "fee" 'init-keymaps-file)
 (wusd/leader-def "fer" 'load-init-file)
 ;; ----------------------------------------buffer
+(wusd/leader-def "b" '(:wk "buffer"))
 (wusd/leader-def "bb" 'switch-to-buffer)
 (wusd/leader-def "bk" 'kill-buffer)
 (wusd/leader-def "bh" 'dashboard-open)
 ;; ----------------------------------------window
+(wusd/leader-def "w" '(:wk "window"))
 (wusd/leader-def "wo" 'other-window)
 (wusd/leader-def "<tab>" 'other-window)
 (define-key global-map (kbd "s-d") 'delete-window)
+(wusd/leader-def "wd" 'delete-window)
 (wusd/leader-def "wm" 'delete-other-windows)
 (wusd/leader-def "we" 'split-window-right-and-focus)
 (wusd/leader-def "ws" 'split-window-below-and-focus)
@@ -105,38 +103,40 @@
 ;;对应Windows上面的Ctrol-x 剪切
 (define-key global-map (kbd "s-x") 'kill-region)
 ;; ------------------------------------------------------------project
+(wusd/leader-def "p" '(:wk "project"))
 (wusd/leader-def
   "p" 'projectile-command-map
   "ps" 'projectile-grep)
 ;; ------------------------------------------------------------code
 (define-key global-map (kbd "C-M-l") 'indent-region-or-buffer)
 (wusd/leader-def ";" 'evilnc-comment-or-uncomment-lines)
-(wusd/mode-leader-def  with-editor-mode-map ","  'with-editor-finish)
+(wusd-local-leader-def  with-editor-mode-map ","  'with-editor-finish)
 ;; ------------------------------------------------------------macros
 (define-key global-map (kbd "<f5>")  'name-last-kbd-macro)
 (define-key global-map (kbd "<f6>")  'insert-kbd-macro)
 ;; ------------------------------------------------------------org
 (define-key global-map (kbd "<f9>")  'wusd/org-agenda)
 (define-key global-map (kbd "<f10>")  'wusd/org-capture)
-(wusd/mode-leader-def :keymaps 'org-mode-map "c" 'org-capture)
+(wusd-local-leader-def :keymaps 'org-mode-map "c" 'org-capture)
 ;; ----------------------------------------org-agenda
 (general-def 'emacs org-agenda-mode-map "j" 'org-agenda-next-line)
 (general-def 'emacs org-agenda-mode-map "k" 'org-agenda-previous-line)
-(wusd/mode-leader-def org-agenda-mode-map "d"  '(:wk "date"))
-(wusd/mode-leader-def org-agenda-mode-map "ds"  'org-agenda-schedule)
-(wusd/mode-leader-def org-agenda-mode-map "dd"  'org-agenda-deadline)
-(wusd/mode-leader-def org-agenda-mode-map "c"  'org-agenda-capture)
+(wusd-local-leader-def org-agenda-mode-map "d"  '(:wk "date"))
+(wusd-local-leader-def org-agenda-mode-map "ds"  'org-agenda-schedule)
+(wusd-local-leader-def org-agenda-mode-map "dd"  'org-agenda-deadline)
+(wusd-local-leader-def org-agenda-mode-map "c"  'org-agenda-capture)
 
-(wusd/mode-leader-def org-capture-mode-map ","  'org-capture-finalize)
-(wusd/mode-leader-def org-capture-mode-map "c"  'org-capture-finalize)
-(wusd/mode-leader-def org-capture-mode-map "k"  'org-capture-kill)
+(wusd-local-leader-def org-capture-mode-map ","  'org-capture-finalize)
+(wusd-local-leader-def org-capture-mode-map "c"  'org-capture-finalize)
+(wusd-local-leader-def org-capture-mode-map "k"  'org-capture-kill)
 
 ;; ------------------------------------------------------------shell
 ;; ------------------------------------------------------------translate
 (define-key global-map (kbd "<f7>")  'youdao-dictionary-search-at-point)
 (define-key global-map (kbd "<f8>")  'youdao-dictionary-search-at-point+)
 ;; ------------------------------------------------------------vc
-(wusd/leader-def "g" 'magit)
+(wusd/leader-def "g" '(:wk "git"))
+(wusd/leader-def "gs" 'magit)
 (general-def 'emacs magit-mode-map "C-k" 'magit-delete-thing)
 (general-def 'emacs magit-mode-map "j" 'evil-next-line)
 (general-def 'emacs magit-mode-map "k" 'evil-previous-line)
@@ -148,33 +148,5 @@
 (define-key global-map (kbd "C-h v")  'counsel-describe-variable)
 (define-key global-map (kbd "C-h o")  'counsel-describe-symbol)
 (define-key global-map (kbd "C-h l")  'counsel-find-library)
-
-;; state: 'emacs (evil-state)
-;; keymaps: 'override(global mode?) or 'org-mode-map (local mode)
-;; prefix: "SPC"
-;; global-prefix: "M-SPC"
-;; (general-create-definer my-leader-def
-;;   ;; :prefix my-leader
-;;   :states '(emacs insert normal motion)
-;;   :prefix "SPC"
-;;   ;; :global-prefix "M-SPC"
-;;   ;; :non-normal-prefix "M-SPC"
-;;   ;; :non-normal-prefix "M-SPC"
-;;   :keymaps 'override
-;;   )
-;; (my-leader-def "a" 'org-agenda)
-
-;; (general-create-definer my-local-leader-def
-;;   ;; :prefix my-local-leader
-;;   :prefix "SPC m")
-
-
-;; (my-local-leader-def
-;;   :states 'normal
-;;   :keymaps 'org-mode-map
-;;   "y" 'org-store-link
-;;   "p" 'org-insert-link
-;;   ;; ...
-;;   )
 
 (provide 'init-keymaps)
