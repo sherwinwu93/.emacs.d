@@ -24,7 +24,6 @@
   :prefix ","
   :global-prefix "M-,")
 
-(wusd/mode-leader-def :keymaps 'org-mode-map "c" 'org-capture)
 
 ;;; 所有快捷键
 ;; ------------------------------------------------------------evil
@@ -68,8 +67,9 @@
 (wusd/leader-def "bk" 'kill-buffer)
 (wusd/leader-def "bh" 'dashboard-open)
 ;; ----------------------------------------window
-(define-key global-map (kbd "s-d") 'delete-window)
 (wusd/leader-def "wo" 'other-window)
+(wusd/leader-def "<tab>" 'other-window)
+(define-key global-map (kbd "s-d") 'delete-window)
 (wusd/leader-def "wd" 'delete-window)
 (wusd/leader-def "wm" 'delete-other-windows)
 (wusd/leader-def "we" 'split-window-right-and-focus)
@@ -114,9 +114,21 @@
 (define-key global-map (kbd "<f5>")  'name-last-kbd-macro)
 (define-key global-map (kbd "<f6>")  'insert-kbd-macro)
 ;; ------------------------------------------------------------org
-
 (define-key global-map (kbd "<f9>")  'wusd/org-agenda)
 (define-key global-map (kbd "<f10>")  'wusd/org-capture)
+(wusd/mode-leader-def :keymaps 'org-mode-map "c" 'org-capture)
+;; ----------------------------------------org-agenda
+;; (add-hook 'org-agenda-mode-hook
+;;           (lambda()
+;;             (wusd/mode-leader-def :keymaps org-agenda-mode-map "ds"  'org-agenda-schedule)
+;;             (wusd/mode-leader-def :keymaps org-agenda-mode-map "dd"  'org-agenda-deadline)
+;;             (wusd/mode-leader-def :keymaps org-agenda-mode-map "c"  'org-agenda-capture)))
+
+;; (add-hook 'org-capture-mode-hook
+;;           (lambda()
+;;             (wusd/mode-leader-def :keymaps org-capture-mode-map ","  'org-capture-finalize)
+;;             (wusd/mode-leader-def :keymaps org-capture-mode-map "k"  'org-capture-kill)))
+
 ;; ------------------------------------------------------------shell
 ;; ------------------------------------------------------------translate
 (define-key global-map (kbd "<f7>")  'youdao-dictionary-search-at-point)

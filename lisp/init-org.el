@@ -6,6 +6,8 @@
                            ;; (toc-org-mode 1)
                            ))
 ;; ----------------------------------------agenda
+(add-hook 'org-agenda-mode-hook (lambda()
+                                  (turn-on-evil-mode)))
 ;; 定义 agenda 文件的位置
 (setq org-agenda-files '("/mnt/webdav/org/inbox.org"))
 (setq org-agenda-window-setup 'only-window)
@@ -73,7 +75,7 @@
           (tags-todo "+PRIORITY=\"A\"")
           (agenda "" ((org-agenda-span 7)
                       (org-deadline-warning-days 0))))
-        )))
+         )))
 
 (fset 'sync-inbox
       (kmacro-lambda-form [?\s-o ?\C-x ?k ?i ?n ?b ?o ?x ?. ?o ?r ?g return ?\M-m ?! ?s ?y ?n ?c ?  ?/ ?m ?n ?t ?/ ?w ?e ?b ?d ?a ?v ?/ ?o ?r ?g ?/ ?i ?n ?b ?o ?x ?. ?o ?r ?g return] 0 "%d"))
