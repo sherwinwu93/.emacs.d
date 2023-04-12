@@ -37,6 +37,7 @@
 (require 'init-vc)
 (require 'init-scheme)
 ;; ----------------------------------------快捷键放最后
+(require 'my-mode)
 (require 'init-keymaps)
 
 

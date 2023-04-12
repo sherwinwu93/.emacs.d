@@ -15,10 +15,10 @@
   ;; quietly save
   (setq auto-save-silent t)   
   (setq auto-save-disable-predicates
-	'((lambda ()
-	    (string-suffix-p
-	     "gpg"
-	     (file-name-extension (buffer-name)) t))))
+	      '((lambda ()
+	          (string-suffix-p
+	           "gpg"
+	           (file-name-extension (buffer-name)) t))))
   :config
   (auto-save-enable))
 
@@ -49,6 +49,14 @@
 ;; (put 'dired-find-alternate-file 'disabled nil)
 ;; (with-eval-after-load 'dired
 ;;   (define-key dired-mode-map (kbd "RET") 'dired-find-alternate-file))
+(defun split-window-right-and-focus()
+  (interactive)
+  (split-window-right)
+  (other-window 1))
+(defun split-window-below-and-focus()
+  (interactive)
+  (split-window-below)
+  (other-window 1))
 ;; ----------------------------------------frames
 
 

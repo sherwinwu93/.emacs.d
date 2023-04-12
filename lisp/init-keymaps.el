@@ -1,6 +1,30 @@
 (defun init-keymaps-file()
   (interactive)
   (find-file "~/.emacs.d/lisp/init-keymaps.el"))
+(general-create-definer wusd/leader-def
+  :states '(normal insert visual emacs motion)
+  :keymaps 'override
+  :prefix "SPC"
+  :global-prefix "M-m"
+  :prefix-command 'tyrant-prefix-command
+  :prefix-map 'tyrant-prefix-map)
+(wusd/leader-def "q" '(:wk "quit"))
+
+(wusd/leader-def "f" '(:wk "file"))
+(wusd/leader-def "fe" '(:wk "dotfile"))
+(wusd/leader-def "b" '(:wk "buffer"))
+(wusd/leader-def "w" '(:wk "window"))
+
+(wusd/leader-def "g" '(:wk "git"))
+(wusd/leader-def "p" '(:wk "project"))
+
+(general-create-definer wusd/mode-leader-def
+  :states '(normal insert visual emacs motion)
+  :keymaps 'override
+  :prefix ","
+  :global-prefix "M-,")
+
+(wusd/mode-leader-def :keymaps 'org-mode-map "c" 'org-capture)
 
 ;;; 所有快捷键
 ;; ------------------------------------------------------------evil
@@ -18,10 +42,10 @@
 (define-key global-map (kbd "<menu>") nil)
 (define-key key-translation-map (kbd "<menu>") 'event-apply-super-modifier)
 ;; ----------------------------------------navigation
-(define-key global-map (kbd "C-f") 'scroll-up-command)
-(define-key global-map (kbd "C-b") 'scroll-down-command)
+(define-key my-mode-map (kbd "C-f") 'scroll-up-command)
+(define-key my-mode-map (kbd "C-b") 'scroll-down-command)
 (wusd/leader-def "jj" 'avy-goto-line)
-(wusd/leader-def "jk" 'avy-goto-char-2)
+(wusd/leader-def "jk" 'avy-goto-char-timer)
 ;; ----------------------------------------Command
 (define-key global-map (kbd "s-e") 'wusd/eval-last-sexp)
 ;; ----------------------------------------emacs
@@ -30,7 +54,6 @@
 
 ;; ------------------------------------------------------------files
 ;; ----------------------------------------file
-(define-key global-map (kbd "s-d") 'dired-jump)
 (wusd/leader-def "ff" 'counsel-find-file)
 (wusd/leader-def "fs" 'save-buffer)
 (wusd/leader-def "fr" 'recentf-open-files)
@@ -45,15 +68,17 @@
 (wusd/leader-def "bk" 'kill-buffer)
 (wusd/leader-def "bh" 'dashboard-open)
 ;; ----------------------------------------window
+(define-key global-map (kbd "s-d") 'delete-window)
 (wusd/leader-def "wo" 'other-window)
 (wusd/leader-def "wd" 'delete-window)
 (wusd/leader-def "wm" 'delete-other-windows)
-;;   "w2" 'split-window-below
-;;   "w3" 'split-window-right
-;;   "-" 'shrink-window
-;;   "=" 'enlarge-window
-;;   "[" 'shrink-window-horizontally
-;;   "]" 'enlarge-window-horizontally
+(wusd/leader-def "we" 'split-window-right-and-focus)
+(wusd/leader-def "ws" 'split-window-below-and-focus)
+;; 配合evil-repeat重复做使用
+(wusd/leader-def "-" 'shrink-window)
+(wusd/leader-def "=" 'enlarge-window)
+(wusd/leader-def "[" 'shrink-window-horizontally)
+(wusd/leader-def "]" 'enlarge-window-horizontally)
 (wusd/leader-def "1" 'select-window-1)
 (wusd/leader-def "2" 'select-window-2)
 (wusd/leader-def "3" 'select-window-3)
@@ -71,8 +96,6 @@
 (define-key global-map (kbd "s-a") 'mark-whole-buffer)
 ;;对应Windows上面的Ctrl-c 复制
 (define-key global-map (kbd "s-c") 'kill-ring-save)
-;; 对应Windows上面的Ctrl-s 保存
-;; (define-key global-map (kbd "s-s") 'save-buffer)
 ;;对应Windows上面的Ctrl-v 粘贴
 (define-key global-map (kbd "s-v") 'yank)
 ;;对应Windows上面的Ctrol-z 撤销
@@ -91,8 +114,9 @@
 (define-key global-map (kbd "<f5>")  'name-last-kbd-macro)
 (define-key global-map (kbd "<f6>")  'insert-kbd-macro)
 ;; ------------------------------------------------------------org
-(define-key global-map (kbd "<f11>")  'org-capture)
-(define-key global-map (kbd "<f12>")  'org-agenda)
+
+(define-key global-map (kbd "<f9>")  'wusd/org-agenda)
+(define-key global-map (kbd "<f10>")  'wusd/org-capture)
 ;; ------------------------------------------------------------shell
 ;; ------------------------------------------------------------translate
 (define-key global-map (kbd "<f7>")  'youdao-dictionary-search-at-point)
@@ -101,8 +125,8 @@
 (wusd/leader-def "gs" 'magit)
 ;; ------------------------------------------------------------scheme
 ;; ------------------------------------------------------------help
-(define-key global-map (kbd "<f9>")  'describe-key)
-(define-key global-map (kbd "<f10>")  'describe-mode)
+(define-key global-map (kbd "<f11>")  'describe-mode)
+(define-key global-map (kbd "<f12>")  'describe-key)
 (define-key global-map (kbd "C-h f")  'counsel-describe-function)
 (define-key global-map (kbd "C-h v")  'counsel-describe-variable)
 (define-key global-map (kbd "C-h o")  'counsel-describe-symbol)

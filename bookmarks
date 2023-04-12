@@ -1,4 +1,4 @@
-;;;; Emacs Bookmark Format Version 1 ;;;; -*- coding: utf-8-emacs -*-
+;;;; Emacs Bookmark Format Version 1;;;; -*- coding: utf-8-emacs; mode: lisp-data -*-
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
@@ -8,10 +8,10 @@
  (rear-context-string . "2022-08-25 Thu>\n")
  (position . 93))
 ("org-capture-last-stored"
- (filename . "~/notes/todos/inbox.org")
- (front-context-string . "** TODO L28 Patt")
- (rear-context-string . "2022-08-26 Fri>\n")
- (position . 2382))
+ (filename . "/mnt/webdav/org/inbox.org")
+ (front-context-string . "* TODO 开始全新的emac")
+ (rear-context-string . "2023-04-11 Tue>\n")
+ (position . 5566))
 ("org-refile-last-stored"
  (filename . "~/notes/todos/inbox.org")
  (front-context-string . "** TODO 现在完成时\nSC")
