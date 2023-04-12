@@ -38,7 +38,7 @@
 (require 'init-vc)
 (require 'init-scheme)
 ;; ----------------------------------------快捷键放最后
-(require 'init-key-maps)
+(require 'init-keymaps)
 
 
 (custom-set-variables
@@ -47,7 +47,7 @@
  ;; Your init file should contain only one such instance.
  ;; If there is more than one, they won't work right.
  '(package-selected-packages
-   '(appt youdao-dictionary window-numbering which-key use-package undo-tree smartparens smart-tabs-mode smart-tab smart-mode-line rime popwin org-pomodoro org neotree magit good-scroll exec-path-from-shell evil-surround evil-nerd-commenter evil-leader dashboard counsel-projectile company cnfonts cal-china-x avy amx)))
+   '(general appt youdao-dictionary window-numbering which-key use-package undo-tree smartparens smart-tabs-mode smart-tab smart-mode-line rime popwin org-pomodoro org neotree magit good-scroll exec-path-from-shell evil-surround evil-nerd-commenter evil-leader dashboard counsel-projectile company cnfonts cal-china-x avy amx)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
