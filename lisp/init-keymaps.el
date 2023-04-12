@@ -122,7 +122,7 @@
 (wusd/mode-leader-def org-agenda-mode-map "d"  '(:wk "date"))
 (wusd/mode-leader-def org-agenda-mode-map "ds"  'org-agenda-schedule)
 (wusd/mode-leader-def org-agenda-mode-map "dd"  'org-agenda-deadline)
-(wusd/mode-leader-def org-agenda-mode-map ","  'org-agenda-capture)
+(wusd/mode-leader-def org-agenda-mode-map "c"  'org-agenda-capture)
 
 (wusd/mode-leader-def org-capture-mode-map ","  'org-capture-finalize)
 (wusd/mode-leader-def org-capture-mode-map "c"  'org-capture-finalize)
