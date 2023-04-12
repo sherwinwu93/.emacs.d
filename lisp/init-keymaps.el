@@ -8,6 +8,8 @@
   :keymaps 'override
   ;; states && !general-non-normal-states
   :prefix "SPC"
+  ;; states && general-non-normal-states
+  ;; :non-normal-prefixa ""
   ;; satets
   :global-prefix "M-SPC"
 ) 
