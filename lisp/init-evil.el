@@ -5,7 +5,6 @@
   :config
   (evil-mode 1)
   )
-(add-hook 'dashboard-mode-hook (lambda() (evil-motion-state)))
 ;; 解决rime被--insert--遮挡的问题
 (setq evil-insert-state-message nil)
 

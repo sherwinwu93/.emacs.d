@@ -49,6 +49,7 @@
   (setq dashboard-center-content t)
   (setq dashboard-set-navigator t)
   (dashboard-setup-startup-hook))
+(add-hook 'dashboard-mode-hook (lambda() (evil-motion-state)))
 (use-package good-scroll
   :init (good-scroll-mode))
 
