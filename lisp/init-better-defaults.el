@@ -13,13 +13,8 @@
   :ensure t
   :init (amx-mode 1))
 ;; 移动到最后并执行代码
-(defun wusd/eval-last-sexp()
-  (interactive)
-  (execute-kbd-macro (kbd "<escape>"))
-  (execute-kbd-macro (kbd "A"))
-  (execute-kbd-macro (kbd "C-x C-e"))
-  (execute-kbd-macro (kbd "<escape>")))
-
+(fset 'wusd/eval-last-sexp
+   (kmacro-lambda-form [escape ?A ?\C-x ?\C-e escape] 0 "%d"))
 
 ;; ----------------------------------------Emacs画面
 ;; 设置Emacs默认全屏
@@ -51,6 +46,8 @@
 			  ;;(bookmarks . 10)
 			  ;; 显示多少个最近文件
 			  (recents  . 5)))
+  (setq dashboard-center-content t)
+  (setq dashboard-set-navigator t)
   (dashboard-setup-startup-hook))
 (use-package good-scroll
   :init (good-scroll-mode))
@@ -61,12 +58,27 @@
   :config
   (load-theme 'spacemacs-dark 1))
 
-;; ----------------------------------------fonts
-(when (display-graphic-p)
-  (dolist (charset '(kana han cjk-misc bopomofo))
-    (set-fontset-font (frame-parameter nil 'font) charset
-                      (font-spec :family "Microsoft YaHei Mono"
-                                 :size 15))))
+;; ----------------------------------------启动
+(defun launch-separate-emacs-in-terminal ()
+  (suspend-emacs "fg ; emacs -nw"))
+(defun launch-separate-emacs-under-x ()
+  (call-process "sh" nil nil nil "-c" "emacs &"))
+(defun restart-emacs ()
+  (interactive)
+  ;; We need the new emacs to be spawned after all kill-emacs-hooks
+  ;; have been processed and there is nothing interesting left
+  (let ((kill-emacs-hook (append kill-emacs-hook (list (if (display-graphic-p)
+                                                           #'launch-separate-emacs-under-x
+                                                         #'launch-separate-emacs-in-terminal)))))
+    (save-buffers-kill-emacs)))
+;; ----------------------------------------Display
+;; 光标
+(setq-default cursor-type 'bar)
+;; 高亮当前行
+(global-hl-line-mode 1)
+;; 显示相对行号
+(global-display-line-numbers-mode 1)
+(setq-default display-line-numbers-type 'relative)
 
 
 (provide 'init-better-defaults)

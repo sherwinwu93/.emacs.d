@@ -13,10 +13,6 @@
   (setq company-selection-wrap-around t)
   ;; 根据选择的频率进行排序
   (setq company-transformers '(company-sort-by-occurrence)))
-;; --------------------company-box
-;; (use-package company-box
-;;   :ensure t
-;;   :hook (company-mode . company-box-mode))
 
 ;; ----------------------------------------Formatting
 ;; --------------------indent
@@ -28,12 +24,12 @@
   (interactive)
   (save-excursion
     (if (region-active-p)
-	(progn
-	  (indent-region (region-beginning) (region-end))
-	  (message "Indent selected region."))
+	      (progn
+	        (indent-region (region-beginning) (region-end))
+	        (message "Indent selected region."))
       (progn
-	(indent-buffer)
-	(message "Indent buffer.")))))
+	      (indent-buffer)
+	      (message "Indent buffer.")))))
 ;; --------------------括号
 (use-package smartparens
   :config
@@ -43,9 +39,9 @@
   (define-advice show-paren-function (:around (fn) fix-show-paren-function)
     "Highlight enclosing parens."
     (cond ((looking-at-p "\\s(") (funcall fn))
-	  (t (save-excursion
-	       (ignore-errors (backward-up-list))
-	       (funcall fn)))))
+	        (t (save-excursion
+	             (ignore-errors (backward-up-list))
+	             (funcall fn)))))
   ;;设置hook,自动括号匹配
   (add-hook 'emacs-lisp-mode-hook 'show-paren-mode)
   )

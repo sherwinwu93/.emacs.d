@@ -30,7 +30,6 @@
 (require 'init-project)
 ;; ----------------------------------------
 (require 'init-code)
-(require 'init-kbd-macros)
 (require 'init-org)
 (require 'init-shell)
 ;; ----------------------------------------

@@ -5,13 +5,14 @@
   :config
   (evil-mode 1)
   )
+(add-hook 'dashboard-mode-hook (lambda() (evil-motion-state)))
 ;; 解决rime被--insert--遮挡的问题
 (setq evil-insert-state-message nil)
 
 (use-package general)
 
 (general-create-definer wusd/leader-def
-  :states '(normal insert visual emacs)
+  :states '(normal insert visual emacs motion)
   :keymaps 'override
   :prefix "SPC"
   :non-normal-prefix "M-SPC"
@@ -28,7 +29,7 @@
 (wusd/leader-def "p" '(:wk "project"))
 
 (general-create-definer wusd/mode-leader-def
-  :states '(normal insert visual emacs)
+  :states '(normal insert visual emacs motion)
   :keymaps 'override
   :prefix ","
   :non-normal-prefix "M-,")

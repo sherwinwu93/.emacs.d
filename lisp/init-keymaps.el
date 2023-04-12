@@ -17,21 +17,16 @@
 ;; 改键<menu>为modifier
 (define-key global-map (kbd "<menu>") nil)
 (define-key key-translation-map (kbd "<menu>") 'event-apply-super-modifier)
-;; --------------------Ctrl
-;; (define-key key-translation-map (kbd "<SPC> x") (kbd "C-x"))
-;; (define-key key-translation-map (kbd "<SPC> c") (kbd "C-c"))
-;; (define-key key-translation-map (kbd "<SPC> h") (kbd "C-h"))
 ;; ----------------------------------------navigation
 (define-key global-map (kbd "C-f") 'scroll-up-command)
 (define-key global-map (kbd "C-b") 'scroll-down-command)
-;; jump
-;; "j" 'avy-goto-char-2
-;; "k" 'avy-goto-line
-;; "l" 'recenter-top-bottom
+(wusd/leader-def "jj" 'avy-goto-line)
+(wusd/leader-def "jk" 'avy-goto-char-2)
 ;; ----------------------------------------Command
 (define-key global-map (kbd "s-e") 'wusd/eval-last-sexp)
 ;; ----------------------------------------emacs
 (wusd/leader-def "qq" 'save-buffers-kill-terminal)
+(wusd/leader-def "qr" 'restart-emacs)
 
 ;; ------------------------------------------------------------files
 ;; ----------------------------------------file
@@ -48,6 +43,7 @@
 ;; ----------------------------------------buffer
 (wusd/leader-def "bb" 'switch-to-buffer)
 (wusd/leader-def "bk" 'kill-buffer)
+(wusd/leader-def "bh" 'dashboard-open)
 ;; ----------------------------------------window
 (wusd/leader-def "wo" 'other-window)
 (wusd/leader-def "wd" 'delete-window)
@@ -90,6 +86,7 @@
 ;; ------------------------------------------------------------code
 (define-key global-map (kbd "C-M-l") 'indent-region-or-buffer)
 (wusd/leader-def ";" 'evilnc-comment-or-uncomment-lines)
+(wusd/mode-leader-def with-editor-mode-map ","  'with-editor-finish)
 ;; ------------------------------------------------------------macros
 (define-key global-map (kbd "<f5>")  'name-last-kbd-macro)
 (define-key global-map (kbd "<f6>")  'insert-kbd-macro)

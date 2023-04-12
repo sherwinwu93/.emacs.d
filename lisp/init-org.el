@@ -1,41 +1,11 @@
 ;; GTD实践方法的配置
 ;; ----------------------------------------org package
 (use-package org
-  :config (add-hook 'org-mode-hook (lambda() (org-indent-mode t)
-				     (flyspell-mode)
-				     (define-key evil-normal-state-map (kbd "<tab>") 'org-cycle)))
+  :config
+  (add-hook 'org-mode-hook (lambda() (org-indent-mode -1)
+			     (flyspell-mode)
+			     (define-key evil-normal-state-map (kbd "<tab>") 'org-cycle)))
   )
-
-;; ----------------------------------------diary
-;; 设置生日
-;; In order to include entries from the Emacs diary into Org mode's agenda
-;;(setq org-agenda-include-diary t
-;;      diary-file (locate-user-emacs-file "/mnt/webdav/org/diary.org")
-;;      org-agenda-diary-file 'diary-file)
-;;
-;;;; diary for chinese birthday
-;;;; https://emacs-china.org/t/topic/2119/14
-;;(defun my--diary-chinese-anniversary (lunar-month lunar-day &optional year mark)
-;;  (if year
-;;      (let* ((d-date (diary-make-date lunar-month lunar-day year))
-;;	     (a-date (calendar-absolute-from-gregorian d-date))
-;;	     (c-date (calendar-chinese-from-absolute a-date))
-;;	     (cycle (car c-date))
-;;	     (yy (cadr c-date))
-;;	     (y (+ (* 100 cycle) yy)))
-;;        (diary-chinese-anniversary lunar-month lunar-day y mark))
-;;    (diary-chinese-anniversary lunar-month lunar-day year mark)))
-;;
-;;;; 中国节假日
-;;(use-package cal-china-x)
-;;;; (require 'cal-china-x)
-;;(setq mark-holidays-in-calendar t)
-;;(setq cal-china-x-important-holidays cal-china-x-chinese-holidays)
-;;(setq cal-china-x-general-holidays '((holiday-lunar 1 15 "元宵节")))
-;;(setq calendar-holidays
-;;      (append cal-china-x-important-holidays
-;;	      cal-china-x-general-holidays
-;;	      ))
 
 ;; ----------------------------------------agenda
 
