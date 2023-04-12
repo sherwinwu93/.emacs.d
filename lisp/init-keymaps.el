@@ -134,8 +134,8 @@
 (define-key global-map (kbd "<f8>")  'youdao-dictionary-search-at-point+)
 ;; ------------------------------------------------------------vc
 (wusd/leader-def "gs" 'magit)
-(general-def 'emacs magit-mode-map "j" 'magit-section-forward)
-(general-def 'emacs magit-mode-map "k" 'magit-section-backward)
+(general-def 'emacs magit-mode-map "j" 'evil-next-line)
+(general-def 'emacs magit-mode-map "k" 'evil-previous-line)
 ;; ------------------------------------------------------------scheme
 ;; ------------------------------------------------------------help
 (define-key global-map (kbd "<f11>")  'describe-mode)
