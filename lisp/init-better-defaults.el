@@ -24,6 +24,9 @@
 ;; ----------------------------------------Emacs画面
 ;; 设置Emacs默认全屏
 (setq initial-frame-alist '((fullscreen . maximized)))
+;;(set-frame-position (selected-frame) 800 100)
+;;(set-frame-width (selected-frame) 110)
+;;(set-frame-height (selected-frame) 50)
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)
 ;; 关闭工具栏
@@ -32,9 +35,6 @@
 (menu-bar-mode -1)
 ;; 关闭文件滑动控件
 (scroll-bar-mode -1)
-(set-frame-position (selected-frame) 800 100)
-(set-frame-width (selected-frame) 110)
-(set-frame-height (selected-frame) 50)
 (use-package dashboard
   :ensure t
   :config
@@ -45,13 +45,12 @@
   ;; 也可以自定义图片
   (setq dashboard-startup-banner 'official)
   (setq dashboard-items '(
+			  ;; 显示多少个最近项目
 			  (projects . 5)
 			  ;; 显示多少个最近书签
 			  ;;(bookmarks . 10)
 			  ;; 显示多少个最近文件
-			  (recents  . 5)
-			  ;; 显示多少个最近项目
-			  ))
+			  (recents  . 5)))
   (dashboard-setup-startup-hook))
 (use-package good-scroll
   :init (good-scroll-mode))
