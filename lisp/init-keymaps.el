@@ -19,7 +19,7 @@
 (wusd/leader-def "p" '(:wk "project"))
 
 (general-create-definer wusd/mode-leader-def
-  :states '(normal motion)
+  :states '(normal motion emacs)
   :prefix ",")
 
 
@@ -38,6 +38,7 @@
 ;; 改键<menu>为modifier
 (define-key global-map (kbd "<menu>") nil)
 (define-key key-translation-map (kbd "<menu>") 'event-apply-super-modifier)
+(general-define-key "<escape>" 'minibuffer-keyboard-quit)
 ;; ----------------------------------------navigation
 (define-key my-mode-map (kbd "C-f") 'scroll-up-command)
 (define-key my-mode-map (kbd "C-b") 'scroll-down-command)
@@ -107,7 +108,7 @@
 ;; ------------------------------------------------------------code
 (define-key global-map (kbd "C-M-l") 'indent-region-or-buffer)
 (wusd/leader-def ";" 'evilnc-comment-or-uncomment-lines)
-(wusd/mode-leader-def with-editor-mode-map ","  'with-editor-finish)
+(wusd/mode-leader-def  with-editor-mode-map ","  'with-editor-finish)
 ;; ------------------------------------------------------------macros
 (define-key global-map (kbd "<f5>")  'name-last-kbd-macro)
 (define-key global-map (kbd "<f6>")  'insert-kbd-macro)
@@ -116,17 +117,16 @@
 (define-key global-map (kbd "<f10>")  'wusd/org-capture)
 (wusd/mode-leader-def :keymaps 'org-mode-map "c" 'org-capture)
 ;; ----------------------------------------org-agenda
-(add-hook 'org-agenda-mode-hook
-          (lambda()
-            (wusd/mode-leader-def :keymaps 'org-agenda-mode-map "ds"  'org-agenda-schedule)
-            (wusd/mode-leader-def :keymaps 'org-agenda-mode-map "dd"  'org-agenda-deadline)
-            (wusd/mode-leader-def :keymaps 'org-agenda-mode-map ","  'org-agenda-capture)))
+(general-def 'emacs org-agenda-mode-map "j" 'org-agenda-next-line)
+(general-def 'emacs org-agenda-mode-map "k" 'org-agenda-previous-line)
+(wusd/mode-leader-def org-agenda-mode-map "d"  '(:wk "date"))
+(wusd/mode-leader-def org-agenda-mode-map "ds"  'org-agenda-schedule)
+(wusd/mode-leader-def org-agenda-mode-map "dd"  'org-agenda-deadline)
+(wusd/mode-leader-def org-agenda-mode-map ","  'org-agenda-capture)
 
-(add-hook 'org-capture-mode-hook
-          (lambda()
-            (wusd/mode-leader-def :keymaps 'org-capture-mode-map ","  'org-capture-finalize)
-            (wusd/mode-leader-def :keymaps 'org-capture-mode-map "c"  'org-capture-finalize)
-            (wusd/mode-leader-def :keymaps 'org-capture-mode-map "k"  'org-capture-kill)))
+(wusd/mode-leader-def org-capture-mode-map ","  'org-capture-finalize)
+(wusd/mode-leader-def org-capture-mode-map "c"  'org-capture-finalize)
+(wusd/mode-leader-def org-capture-mode-map "k"  'org-capture-kill)
 
 ;; ------------------------------------------------------------shell
 ;; ------------------------------------------------------------translate

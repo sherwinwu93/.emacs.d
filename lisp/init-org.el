@@ -70,11 +70,11 @@
 (setq org-agenda-custom-commands
       ;; --------------------
       '(("o" "Wusd Personal Agenda"
-         ((agenda "" ((org-agenda-span 1)
+         ((tags-todo "+PRIORITY=\"A\"")
+          (agenda "" ((org-agenda-span 1)
                       ;; 按优先级排序
                       ;; (org-agenda-sorting-strategy '(priority-down time-up))
                       (org-deadline-warning-days 2)))
-          (tags-todo "+PRIORITY=\"A\"")
           (agenda "" ((org-agenda-span 7)
                       (org-deadline-warning-days 0))))
          )))
