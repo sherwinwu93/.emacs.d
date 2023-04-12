@@ -31,7 +31,7 @@
   (dolist (charset '(kana han cjk-misc bopomofo))
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family "Microsoft YaHei Mono"
-                                 :size 15))))
+                                 :size 16))))
 ;; 字体行间距
 (setq-default line-spacing 0.2)
 ;; --------------------CUDA

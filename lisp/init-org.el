@@ -6,9 +6,9 @@
                            ;; (toc-org-mode 1)
                            ))
 ;; ----------------------------------------agenda
-(add-hook 'org-agenda-mode-hook (lambda()
-                                  (turn-on-evil-mode)
-                                  (evil-motion-state)))
+;; (add-hook 'org-agenda-mode-hook (lambda()
+;;                                   (turn-on-evil-mode)
+;;                                   (evil-motion-state)))
 ;; 定义 agenda 文件的位置
 (setq org-agenda-files '("/mnt/webdav/org/inbox.org"))
 (setq org-agenda-window-setup 'only-window)
