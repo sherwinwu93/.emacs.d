@@ -118,11 +118,15 @@
 (define-key global-map (kbd "<f10>")  'wusd/org-capture)
 (wusd/mode-leader-def :keymaps 'org-mode-map "c" 'org-capture)
 ;; ----------------------------------------org-agenda
-;; (add-hook 'org-agenda-mode-hook
-;;           (lambda()
+;; (add-hook 'org-agenda-mode-hook (lambda()
 ;;             (wusd/mode-leader-def :keymaps org-agenda-mode-map "ds"  'org-agenda-schedule)
 ;;             (wusd/mode-leader-def :keymaps org-agenda-mode-map "dd"  'org-agenda-deadline)
 ;;             (wusd/mode-leader-def :keymaps org-agenda-mode-map "c"  'org-agenda-capture)))
+;; (with-eval-after-load 'org-agenda
+;;   (interactive)
+;;             (wusd/mode-leader-def :keymaps org-agenda-mode-map "ds"  'org-agenda-schedule)
+;;             (wusd/mode-leader-def :keymaps org-agenda-mode-map "dd"  'org-agenda-deadline)
+;;             (wusd/mode-leader-def :keymaps org-agenda-mode-map "c"  'org-agenda-capture))
 
 ;; (add-hook 'org-capture-mode-hook
 ;;           (lambda()
