@@ -63,8 +63,7 @@
 (wusd/leader-def "d" 'dired-jump)
 ;; --------------------dotfile
 (wusd/leader-def "fed" 'init-file)
-(wusd/leader-def "fee" 'init-evil-file)
-(wusd/leader-def "fek" 'init-keymaps-file)
+(wusd/leader-def "fee" 'init-keymaps-file)
 (wusd/leader-def "fer" 'load-init-file)
 ;; ----------------------------------------buffer
 (wusd/leader-def "bb" 'switch-to-buffer)
