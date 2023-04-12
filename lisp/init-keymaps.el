@@ -9,7 +9,7 @@
   ;; states && !general-non-normal-states
   :prefix "SPC"
   ;; states && general-non-normal-states
-  ;; :non-normal-prefixa ""
+  ;; :non-normal-prefix ""
   ;; satets
   :global-prefix "M-SPC"
 ) 
@@ -52,7 +52,7 @@
 ;; ----------------------------------------Command
 (define-key global-map (kbd "s-e") 'wusd/eval-last-sexp)
 ;; ----------------------------------------emacs
-(wusd/leader-def "qq" 'save-buffers-kill-terminal)
+(wusd/leader-def "qQ" 'save-buffers-kill-terminal)
 (wusd/leader-def "qr" 'restart-emacs)
 
 ;; ------------------------------------------------------------files
