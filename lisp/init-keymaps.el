@@ -1,13 +1,16 @@
 (defun init-keymaps-file()
   (interactive)
   (find-file "~/.emacs.d/lisp/init-keymaps.el"))
+(setq-default general-non-normal-states '(insert replace hybrid iedit-insert))
 (general-create-definer wusd/leader-def
+  ;; 表示生效的state
   :states '(normal insert visual emacs motion)
   :keymaps 'override
+  ;; states && !general-non-normal-states
   :prefix "SPC"
+  ;; satets
   :global-prefix "M-SPC"
-  :prefix-command 'tyrant-prefix-command
-  :prefix-map 'tyrant-prefix-map)
+) 
 (wusd/leader-def "q" '(:wk "quit"))
 
 (wusd/leader-def "f" '(:wk "file"))
@@ -69,7 +72,6 @@
 (wusd/leader-def "wo" 'other-window)
 (wusd/leader-def "<tab>" 'other-window)
 (define-key global-map (kbd "s-d") 'delete-window)
-(wusd/leader-def "wd" 'delete-window)
 (wusd/leader-def "wm" 'delete-other-windows)
 (wusd/leader-def "we" 'split-window-right-and-focus)
 (wusd/leader-def "ws" 'split-window-below-and-focus)
@@ -145,5 +147,33 @@
 (define-key global-map (kbd "C-h v")  'counsel-describe-variable)
 (define-key global-map (kbd "C-h o")  'counsel-describe-symbol)
 (define-key global-map (kbd "C-h l")  'counsel-find-library)
+
+;; state: 'emacs (evil-state)
+;; keymaps: 'override(global mode?) or 'org-mode-map (local mode)
+;; prefix: "SPC"
+;; global-prefix: "M-SPC"
+;; (general-create-definer my-leader-def
+;;   ;; :prefix my-leader
+;;   :states '(emacs insert normal motion)
+;;   :prefix "SPC"
+;;   ;; :global-prefix "M-SPC"
+;;   ;; :non-normal-prefix "M-SPC"
+;;   ;; :non-normal-prefix "M-SPC"
+;;   :keymaps 'override
+;;   )
+;; (my-leader-def "a" 'org-agenda)
+
+;; (general-create-definer my-local-leader-def
+;;   ;; :prefix my-local-leader
+;;   :prefix "SPC m")
+
+
+;; (my-local-leader-def
+;;   :states 'normal
+;;   :keymaps 'org-mode-map
+;;   "y" 'org-store-link
+;;   "p" 'org-insert-link
+;;   ;; ...
+;;   )
 
 (provide 'init-keymaps)
