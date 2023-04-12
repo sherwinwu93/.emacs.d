@@ -5,7 +5,7 @@
   :states '(normal insert visual emacs motion)
   :keymaps 'override
   :prefix "SPC"
-  :global-prefix "M-m"
+  :global-prefix "M-SPC"
   :prefix-command 'tyrant-prefix-command
   :prefix-map 'tyrant-prefix-map)
 (wusd/leader-def "q" '(:wk "quit"))
@@ -19,10 +19,8 @@
 (wusd/leader-def "p" '(:wk "project"))
 
 (general-create-definer wusd/mode-leader-def
-  :states '(normal insert visual emacs motion)
-  :keymaps 'override
-  :prefix ","
-  :global-prefix "M-,")
+  :states '(normal motion)
+  :prefix ",")
 
 
 ;;; 所有快捷键
@@ -122,7 +120,7 @@
           (lambda()
             (wusd/mode-leader-def :keymaps 'org-agenda-mode-map "ds"  'org-agenda-schedule)
             (wusd/mode-leader-def :keymaps 'org-agenda-mode-map "dd"  'org-agenda-deadline)
-            (wusd/mode-leader-def :keymaps 'org-agenda-mode-map "c"  'org-agenda-capture)))
+            (wusd/mode-leader-def :keymaps 'org-agenda-mode-map ","  'org-agenda-capture)))
 
 (add-hook 'org-capture-mode-hook
           (lambda()
