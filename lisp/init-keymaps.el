@@ -45,7 +45,7 @@
 (general-def 'override "C-." 'evil-repeat)
 ;; ----------------------------------------emacs
 (wusd/leader-def "q" '(:wk "quit"))
-(wusd/leader-def "qQ" 'save-buffers-kill-terminal)
+(wusd/leader-def "qq" 'save-buffers-kill-terminal)
 (wusd/leader-def "qr" 'restart-emacs)
 
 ;; ------------------------------------------------------------files
@@ -57,8 +57,8 @@
 (wusd/leader-def "d" 'dired-jump)
 ;; --------------------dotfile
 (wusd/leader-def "fe" '(:wk "dotfile"))
-(wusd/leader-def "fed" 'init-file)
-(wusd/leader-def "fee" 'init-keymaps-file)
+(wusd/leader-def "fed" 'init-keymaps-file)
+(wusd/leader-def "fee" 'init-file)
 (wusd/leader-def "fer" 'load-init-file)
 ;; ----------------------------------------buffer
 (wusd/leader-def "b" '(:wk "buffer"))
