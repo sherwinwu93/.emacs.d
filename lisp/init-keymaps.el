@@ -14,7 +14,7 @@
   :global-prefix "M-SPC"
 ) 
 
-(general-create-definer wusd-local-leader-def
+(general-create-definer wusd/local-leader-def
   :states '(normal motion emacs)
   :prefix ",")
 
@@ -110,33 +110,32 @@
 ;; ------------------------------------------------------------code
 (define-key global-map (kbd "C-M-l") 'indent-region-or-buffer)
 (wusd/leader-def ";" 'evilnc-comment-or-uncomment-lines)
-(wusd-local-leader-def  with-editor-mode-map ","  'with-editor-finish)
+(wusd/local-leader-def  with-editor-mode-map ","  'with-editor-finish)
 ;; ------------------------------------------------------------macros
 (define-key global-map (kbd "<f5>")  'name-last-kbd-macro)
 (define-key global-map (kbd "<f6>")  'insert-kbd-macro)
 ;; ------------------------------------------------------------org
 (define-key global-map (kbd "<f9>")  'wusd/org-agenda)
 (define-key global-map (kbd "<f10>")  'wusd/org-capture)
-(wusd-local-leader-def :keymaps 'org-mode-map "c" 'org-capture)
+(wusd/local-leader-def :keymaps 'org-mode-map "c" 'org-capture)
 ;; ----------------------------------------org-agenda
 (general-def 'emacs org-agenda-mode-map "j" 'org-agenda-next-line)
 (general-def 'emacs org-agenda-mode-map "k" 'org-agenda-previous-line)
-(wusd-local-leader-def org-agenda-mode-map "d"  '(:wk "date"))
-(wusd-local-leader-def org-agenda-mode-map "ds"  'org-agenda-schedule)
-(wusd-local-leader-def org-agenda-mode-map "dd"  'org-agenda-deadline)
-(wusd-local-leader-def org-agenda-mode-map "c"  'org-agenda-capture)
+(wusd/local-leader-def org-agenda-mode-map "d"  '(:wk "date"))
+(wusd/local-leader-def org-agenda-mode-map "ds"  'org-agenda-schedule)
+(wusd/local-leader-def org-agenda-mode-map "dd"  'org-agenda-deadline)
+(wusd/local-leader-def org-agenda-mode-map "c"  'org-agenda-capture)
 
-(wusd-local-leader-def org-capture-mode-map ","  'org-capture-finalize)
-(wusd-local-leader-def org-capture-mode-map "c"  'org-capture-finalize)
-(wusd-local-leader-def org-capture-mode-map "k"  'org-capture-kill)
+(wusd/local-leader-def org-capture-mode-map ","  'org-capture-finalize)
+(wusd/local-leader-def org-capture-mode-map "c"  'org-capture-finalize)
+(wusd/local-leader-def org-capture-mode-map "k"  'org-capture-kill)
 
 ;; ------------------------------------------------------------shell
 ;; ------------------------------------------------------------translate
 (define-key global-map (kbd "<f7>")  'youdao-dictionary-search-at-point)
 (define-key global-map (kbd "<f8>")  'youdao-dictionary-search-at-point+)
 ;; ------------------------------------------------------------vc
-(wusd/leader-def "g" '(:wk "git"))
-(wusd/leader-def "gs" 'magit)
+(wusd/leader-def "g" 'magit)
 (general-def 'emacs magit-mode-map "C-k" 'magit-delete-thing)
 (general-def 'emacs magit-mode-map "j" 'evil-next-line)
 (general-def 'emacs magit-mode-map "k" 'evil-previous-line)
