@@ -6,9 +6,9 @@
                            ;; (toc-org-mode 1)
                            ))
 ;; ----------------------------------------agenda
-(add-hook 'org-agenda-mode-hook (lambda()
-                                  (turn-on-evil-mode)
-                                  (evil-motion-state)))
+;;(add-hook 'org-agenda-mode-hook (lambda()
+;;                                  (turn-on-evil-mode)
+;;                                  (evil-motion-state)))
 ;; 定义 agenda 文件的位置
 (setq org-agenda-files '("/mnt/webdav/org/inbox.org"))
 (setq org-agenda-window-setup 'only-window)
@@ -19,19 +19,20 @@
 ;; @ : 切换到该状态时要求输入文字说明
 ;; 如果同时设定@和!,使用@/!
 (setq org-todo-keywords '((sequence "TODO(t)" "DOING(g)" "|" "DONE(d)")
-                          (sequence  "WAITING(w@)"  "|" "CANCELED(c@)")))
+                          (sequence  "WAITING(w@)" "PROJECT(p)"  "|" "CANCELED(c@)")))
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "yellow" :weight bold)
               ("DOING" :foreground "orange" :weight bold)
 	            ("WAITING" :foreground "green" :weight bold)
 	            ("DONE" :foreground "forest green" :weight bold)
+              ("PROJECT" :foreground "grey" :weight bold)
 	            ("CANCELED" :foreground "grey" :weight bold))))
 ;; --------------------summary
 ;; 大项目state的hook
 (defun org-summary-todo (n-done n-not-done)
   "Switch entry to DONE when all subentries are done, to TODO otherwise."
   (let (org-log-done org-log-states)   ; turn off logging
-    (org-todo (if (= n-not-done 0) "DONE" "TODO"))))
+    (org-todo (if (= n-not-done 0) "DONE" "PROJECT"))))
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 ;; --------------------tags
 (setq org-tag-alist '(("@task" . ?t)
