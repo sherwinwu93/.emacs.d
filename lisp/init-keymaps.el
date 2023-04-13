@@ -115,9 +115,11 @@
 (define-key global-map (kbd "<f5>")  'name-last-kbd-macro)
 (define-key global-map (kbd "<f6>")  'insert-kbd-macro)
 ;; ------------------------------------------------------------org
+(wusd/leader-def "o" 'wusd/org-agenda)
 (define-key global-map (kbd "<f9>")  'wusd/org-agenda)
 (define-key global-map (kbd "<f10>")  'wusd/org-capture)
 (wusd/local-leader-def :keymaps 'org-mode-map "c" 'org-capture)
+(wusd/local-leader-def :keymaps 'org-mode-map "," 'org-ctrl-c-ctrl-c)
 ;; ----------------------------------------org-agenda
 (general-def 'emacs org-agenda-mode-map "j" 'org-agenda-next-line)
 (general-def 'emacs org-agenda-mode-map "k" 'org-agenda-previous-line)
@@ -134,6 +136,8 @@
 ;; ------------------------------------------------------------translate
 (define-key global-map (kbd "<f7>")  'youdao-dictionary-search-at-point)
 (define-key global-map (kbd "<f8>")  'youdao-dictionary-search-at-point+)
+(general-def 'override "s-e" 'wusd/add-pronunciation)
+
 ;; ------------------------------------------------------------vc
 (wusd/leader-def "g" 'magit)
 (general-def 'emacs magit-mode-map "C-k" 'magit-delete-thing)
