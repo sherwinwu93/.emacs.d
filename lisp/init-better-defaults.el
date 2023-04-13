@@ -80,6 +80,24 @@
 ;; 显示相对行号
 (global-display-line-numbers-mode 1)
 (setq-default display-line-numbers-type 'relative)
+;; 全部显示图标
+(use-package all-the-icons
+  :if (display-graphic-p))
+;; --------------------modeline
+(use-package smart-mode-line
+  :ensure t
+  :init
+  ; (setq sml/no-confirm-load-theme t)  ; avoid asking when startup
+  (sml/setup)
+  :config
+  (setq rm-blacklist
+    (format "^ \\(%s\\)$"
+      (mapconcat #'identity
+        '("Projectile.*" "company.*" "Google"
+      	  "Undo-Tree" "counsel" "ivy" "yas" "WK" "Abbrev")
+          "\\|"))))
+;; (use-package spaceline-config
+;;   :load-path "~/.emacs.d/lisp/extensions/")
 
 
 (provide 'init-better-defaults)

@@ -35,6 +35,7 @@
 ;;     (set-fontset-font (frame-parameter nil 'font) charset
 ;;                       (font-spec :family "Source Han Sans"
 ;;                                  :size 20))))
+;; 注意用HW字体,等宽字体
 (custom-set-faces
  '(default ((t (:family "Source Han Sans" :foundry "outline" :slant normal
                         :weight normal :height 110 :width normal)))))

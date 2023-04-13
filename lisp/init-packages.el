@@ -13,11 +13,6 @@
 (setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
                          ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
                          ("nongnu" . "http://mirrors.ustc.edu.cn/elpa/nongnu/")))			 
-;;(setq package-archives '(("melpa"        . "https://melpa.org/packages/")
-;;                         ("melpa-stable" . "https://stable.melpa.org/packages/")
-;;                         ("org"          . "https://orgmode.org/elpa/")
-;;                         ("gnu"          . "https://elpa.gnu.org/packages/")
-;;                         ("nongnu"       . "https://elpa.nongnu.org/nongnu/")))			 
 	 
 			 
 ;;; 这个配置一定要配置在 use-package 的初始化之前，否则无法正常安装
@@ -25,7 +20,6 @@
 (assq-delete-all 'org package--builtin-versions)
 
 ;; ----------------------------------------use-package
-
 ;; 如果 use-package 没安装
 (unless (package-installed-p 'use-package)
   ;; 更新本地缓存
@@ -38,8 +32,9 @@
 ;;   :init
 ;;   ;; 加载后执行
 ;;   :config
-;;   ;; 也可以认为是执行后
+;;   ;; 也可以认为是执行后,统一在keymaps里面配置
 ;;   :bind
+;;   :hook
 ;;   )
 (require 'use-package-ensure)
 ;; 让 use-package 永远按需安装软件包
