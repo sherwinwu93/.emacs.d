@@ -88,7 +88,7 @@
 (use-package smart-mode-line
   :ensure t
   :init
-  ; (setq sml/no-confirm-load-theme t)  ; avoid asking when startup
+  (setq sml/no-confirm-load-theme t)  ; avoid asking when startup
   (sml/setup)
   :config
   (setq rm-blacklist
