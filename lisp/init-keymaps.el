@@ -136,7 +136,7 @@
 ;; ------------------------------------------------------------translate
 (define-key global-map (kbd "<f7>")  'youdao-dictionary-search-at-point)
 (define-key global-map (kbd "<f8>")  'youdao-dictionary-search-at-point+)
-(general-def 'override "s-e" 'wusd/add-pronunciation)
+(general-def 'override "s-t" 'wusd/add-pronunciation)
 
 ;; ------------------------------------------------------------vc
 (wusd/leader-def "g" 'magit)
