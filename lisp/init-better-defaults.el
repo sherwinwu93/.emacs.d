@@ -75,6 +75,7 @@
 ;; ----------------------------------------Display
 ;; 光标
 (setq-default cursor-type 'bar)
+(blink-cursor-mode 1)
 ;; 高亮当前行
 (global-hl-line-mode 1)
 ;; 显示相对行号
