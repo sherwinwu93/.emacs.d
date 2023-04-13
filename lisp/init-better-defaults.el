@@ -97,8 +97,5 @@
         '("Projectile.*" "company.*" "Google"
       	  "Undo-Tree" "counsel" "ivy" "yas" "WK" "Abbrev")
           "\\|"))))
-;; (use-package spaceline-config
-;;   :load-path "~/.emacs.d/lisp/extensions/")
-
 
 (provide 'init-better-defaults)

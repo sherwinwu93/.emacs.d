@@ -10,9 +10,9 @@
 ;;			 ("nongnu" . "http://mirrors.tuna.tsinghua.edu.cn/elpa/nongnu/")
 ;;			 ;;("nongnu" . "http://elpa.zilongshanren.com/nongnu/")
 ;;			 ))
-(setq package-archives '(("gnu" . "http://mirrors.ustc.edu.cn/elpa/gnu/")
-                         ("melpa" . "http://mirrors.ustc.edu.cn/elpa/melpa/")
-                         ("nongnu" . "http://mirrors.ustc.edu.cn/elpa/nongnu/")))			 
+(setq package-archives '(("gnu" . "https://mirrors.ustc.edu.cn/elpa/gnu/")
+                         ("melpa" . "https://mirrors.ustc.edu.cn/elpa/melpa/")
+                         ("nongnu" . "https://mirrors.ustc.edu.cn/elpa/nongnu/")))
 	 
 			 
 ;;; 这个配置一定要配置在 use-package 的初始化之前，否则无法正常安装
