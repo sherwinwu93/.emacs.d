@@ -71,7 +71,7 @@
 (wusd/leader-def "<tab>" 'other-window)
 (define-key global-map (kbd "s-d") 'delete-window)
 (wusd/leader-def "wd" 'delete-window)
-(wusd/leader-def "wm" 'delete-other-windows)
+(wusd/leader-def "wm" 'toggle-windows-split)
 (wusd/leader-def "we" 'split-window-right-and-focus)
 (wusd/leader-def "ws" 'split-window-below-and-focus)
 ;; 配合evil-repeat重复做使用
