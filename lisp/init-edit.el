@@ -39,6 +39,9 @@
 (custom-set-faces
  '(default ((t (:family "Source Han Sans" :foundry "outline" :slant normal
                         :weight normal :height 110 :width normal)))))
+;; (custom-set-faces
+;;  '(default ((t (:family "Sarasa Mono Sc" :foundry "outline" :slant normal
+;;                         :weight normal :height 110 :width normal)))))
 ;; 字体行间距
 (setq-default line-spacing 0.3)
 ;; --------------------CUDA
