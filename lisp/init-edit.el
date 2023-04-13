@@ -27,14 +27,17 @@
   (set-selection-coding-system 'utf-8))
 (setq default-buffer-file-coding-system 'utf-8-unix)
 ;; --------------------fonts
-(when (display-graphic-p)
-  ;; (custom-set-faces
-  ;;  '(default ((t (:family "Microsoft YaHei Mono" :foundry "outline" :slant normal
-  ;;                         :weight normal :height 118 :width normal)))))
-  (dolist (charset '(kana han cjk-misc bopomofo symbol))
-    (set-fontset-font (frame-parameter nil 'font) charset
-                      (font-spec :family "Microsoft YaHei Mono"
-                                 :size 16))))
+;; (when (display-graphic-p)
+;;   (custom-set-faces
+;;    '(default ((t (:family "Source Han Sans" :foundry "outline" :slant normal
+;;                           :weight normal :height 118 :width normal)))))
+;;   (dolist (charset '(kana han cjk-misc bopomofo symbol))
+;;     (set-fontset-font (frame-parameter nil 'font) charset
+;;                       (font-spec :family "Source Han Sans"
+;;                                  :size 20))))
+(custom-set-faces
+ '(default ((t (:family "Source Han Sans" :foundry "outline" :slant normal
+                        :weight normal :height 110 :width normal)))))
 ;; 字体行间距
 (setq-default line-spacing 0.3)
 ;; --------------------CUDA

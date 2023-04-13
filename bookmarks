@@ -9,9 +9,9 @@
  (position . 93))
 ("org-capture-last-stored"
  (filename . "/mnt/webdav/org/inbox.org")
- (front-context-string . "* TODO emacs字体设置")
+ (front-context-string . "* TODO 职业分类图标上传\n")
  (rear-context-string . "2023-04-13 Thu>\n")
- (position . 6986))
+ (position . 7063))
 ("org-refile-last-stored"
  (filename . "~/notes/todos/inbox.org")
  (front-context-string . "** TODO 现在完成时\nSC")
