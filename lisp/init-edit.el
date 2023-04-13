@@ -28,12 +28,15 @@
 (setq default-buffer-file-coding-system 'utf-8-unix)
 ;; --------------------fonts
 (when (display-graphic-p)
-  (dolist (charset '(kana han cjk-misc bopomofo))
+  ;; (custom-set-faces
+  ;;  '(default ((t (:family "Microsoft YaHei Mono" :foundry "outline" :slant normal
+  ;;                         :weight normal :height 118 :width normal)))))
+  (dolist (charset '(kana han cjk-misc bopomofo symbol))
     (set-fontset-font (frame-parameter nil 'font) charset
                       (font-spec :family "Microsoft YaHei Mono"
                                  :size 16))))
 ;; 字体行间距
-(setq-default line-spacing 0.2)
+(setq-default line-spacing 0.3)
 ;; --------------------CUDA
 ;; undo
 (use-package undo-tree

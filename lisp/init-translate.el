@@ -1,4 +1,5 @@
 (use-package youdao-dictionary
+  :load-path "~/.emacs.d/lisp/extensions"
   :init
   (setq url-automatic-caching t)
   )
