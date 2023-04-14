@@ -64,7 +64,10 @@
 (wusd/leader-def "b" '(:wk "buffer"))
 (wusd/leader-def "bb" 'switch-to-buffer)
 (wusd/leader-def "bk" 'kill-buffer)
-(wusd/leader-def "bh" 'dashboard-open)
+(wusd/leader-def "bh" (lambda()
+                        (interactive)
+                        (dashboard-open)
+                        (evil-emacs-state)))
 ;; ----------------------------------------window
 (wusd/leader-def "w" '(:wk "window"))
 (wusd/leader-def "wo" 'other-window)
@@ -145,6 +148,7 @@
 (general-def 'emacs magit-mode-map "k" 'evil-previous-line)
 ;; ------------------------------------------------------------scheme
 ;; ------------------------------------------------------------help
+(define-key key-translation-map (kbd "<SPC>h") (kbd "C-h"))
 (define-key global-map (kbd "<f11>")  'describe-mode)
 (define-key global-map (kbd "<f12>")  'describe-key)
 (define-key global-map (kbd "C-h f")  'counsel-describe-function)

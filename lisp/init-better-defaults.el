@@ -47,6 +47,7 @@
 			  ;; 显示多少个最近文件
 			  (recents  . 5)))
   (setq dashboard-center-content t)
+  (setq dashboard-show-shortcuts t)
   (setq dashboard-set-navigator t)
   (dashboard-setup-startup-hook))
 (add-hook 'dashboard-mode-hook (lambda() (evil-emacs-state)))
