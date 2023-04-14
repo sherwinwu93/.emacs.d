@@ -24,6 +24,7 @@
 ;;(set-frame-height (selected-frame) 50)
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)
+(setq initial-scratch-message nil)
 ;; 关闭工具栏
 (tool-bar-mode -1)
 ;; 关闭菜单栏
@@ -47,8 +48,10 @@
 			  ;; 显示多少个最近文件
 			  (recents  . 5)))
   (setq dashboard-center-content t)
+  (setq dashboard-show-shortcuts t)
   (setq dashboard-set-navigator t)
-  (dashboard-setup-startup-hook))
+  (dashboard-setup-startup-hook)
+  )
 (add-hook 'dashboard-mode-hook (lambda() (evil-emacs-state)))
 (use-package good-scroll
   :init (good-scroll-mode))

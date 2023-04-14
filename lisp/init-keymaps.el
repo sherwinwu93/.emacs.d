@@ -10,7 +10,7 @@
   :prefix "SPC"
   ;; states && general-non-normal-states
   ;; :non-normal-prefix ""
-  ;; satets
+  ;; states
   :global-prefix "M-SPC"
 ) 
 
@@ -64,7 +64,6 @@
 (wusd/leader-def "b" '(:wk "buffer"))
 (wusd/leader-def "bb" 'switch-to-buffer)
 (wusd/leader-def "bk" 'kill-buffer)
-(wusd/leader-def "bh" 'dashboard-open)
 (wusd/leader-def "bh" (lambda()
                         (interactive)
                         (dashboard-open)
@@ -149,6 +148,7 @@
 (general-def 'emacs magit-mode-map "k" 'evil-previous-line)
 ;; ------------------------------------------------------------scheme
 ;; ------------------------------------------------------------help
+(define-key key-translation-map (kbd "<SPC>h") (kbd "C-h"))
 (define-key global-map (kbd "<f11>")  'describe-mode)
 (define-key global-map (kbd "<f12>")  'describe-key)
 (define-key global-map (kbd "C-h f")  'counsel-describe-function)
