@@ -69,24 +69,26 @@
                         (dashboard-open)
                         (evil-emacs-state)))
 ;; ----------------------------------------window
-(wusd/leader-def "w" '(:wk "window"))
-(wusd/leader-def "wo" 'other-window)
-(wusd/leader-def "<tab>" 'other-window)
 (define-key global-map (kbd "s-d") 'delete-window)
-(wusd/leader-def "wd" 'delete-window)
-(wusd/leader-def "wm" 'toggle-windows-split)
-(wusd/leader-def "we" 'split-window-right-and-focus)
-(wusd/leader-def "ws" 'split-window-below-and-focus)
-;; 配合evil-repeat重复做使用
-(wusd/leader-def "-" 'shrink-window)
-(wusd/leader-def "=" 'enlarge-window)
-(wusd/leader-def "[" 'shrink-window-horizontally)
-(wusd/leader-def "]" 'enlarge-window-horizontally)
-(wusd/leader-def "1" 'select-window-1)
-(wusd/leader-def "2" 'select-window-2)
-(wusd/leader-def "3" 'select-window-3)
-(wusd/leader-def "4" 'select-window-4)
-(wusd/leader-def "5" 'select-window-5)
+(wusd/leader-def
+  "w" '(:wk "window")
+  "wo" 'other-window
+  "<tab>" 'other-window
+  "wd" 'delete-window
+  "wm" 'toggle-windows-split
+  "we" 'split-window-right-and-focus
+  "ws" 'split-window-below-and-focus
+  ;; 配合evil-repeat重复做使用
+  "-" 'shrink-window
+  "=" 'enlarge-window
+  "[" 'shrink-window-horizontally
+  "]" 'enlarge-window-horizontally
+  "1" 'select-window-1
+  "2" 'select-window-2
+  "3" 'select-window-3
+  "4" 'select-window-4
+  "5" 'select-window-5
+  )
 
 ;; ------------------------------------------------------------edit
 ;; ----------------------------------------query and replace
@@ -106,9 +108,8 @@
 ;;对应Windows上面的Ctrol-x 剪切
 (define-key global-map (kbd "s-x") 'kill-region)
 ;; ------------------------------------------------------------project
-(wusd/leader-def "p" '(:wk "project"))
 (wusd/leader-def
-  "p" 'projectile-command-map
+  "p" '(projectile-command-map :wk "project")
   "ps" 'projectile-grep)
 ;; ------------------------------------------------------------code
 (define-key global-map (kbd "C-M-l") 'indent-region-or-buffer)
@@ -120,11 +121,12 @@
 (define-key global-map (kbd "<f5>")  'name-last-kbd-macro)
 (define-key global-map (kbd "<f6>")  'insert-kbd-macro)
 ;; ------------------------------------------------------------org
-(wusd/leader-def "o" 'wusd/org-agenda)
 (define-key global-map (kbd "<f9>")  'wusd/org-agenda)
 (define-key global-map (kbd "<f10>")  'wusd/org-capture)
-(wusd/local-leader-def :keymaps 'org-mode-map "c" 'org-capture)
-(wusd/local-leader-def :keymaps 'org-mode-map "," 'org-ctrl-c-ctrl-c)
+(wusd/leader-def "o" 'wusd/org-agenda)
+(wusd/local-leader-def :keymaps 'org-mode-map
+  "c" 'org-capture
+  "," 'org-ctrl-c-ctrl-c)
 ;; ----------------------------------------org-agenda
 (general-def :states 'emacs :keymaps 'org-agenda-mode-map
   "j" 'org-agenda-next-line
@@ -148,9 +150,10 @@
 
 ;; ------------------------------------------------------------vc
 (wusd/leader-def "g" 'magit)
-(general-def 'emacs magit-mode-map "C-k" 'magit-delete-thing)
-(general-def 'emacs magit-mode-map "j" 'evil-next-line)
-(general-def 'emacs magit-mode-map "k" 'evil-previous-line)
+(general-def 'emacs magit-mode-map
+  "C-k" 'magit-delete-thing
+  "j" 'evil-next-line
+  "k" 'evil-previous-line)
 ;; ------------------------------------------------------------scheme
 ;; ------------------------------------------------------------help
 (define-key key-translation-map (kbd "<SPC>h") (kbd "C-h"))
