@@ -12,7 +12,7 @@
   ;; :non-normal-prefix ""
   ;; states
   :global-prefix "M-SPC"
-) 
+  ) 
 
 (general-create-definer wusd/local-leader-def
   :states '(normal motion emacs)
@@ -113,8 +113,9 @@
 ;; ------------------------------------------------------------code
 (define-key global-map (kbd "C-M-l") 'indent-region-or-buffer)
 (wusd/leader-def ";" 'evilnc-comment-or-uncomment-lines)
-(wusd/local-leader-def  with-editor-mode-map ","  'with-editor-finish)
-(wusd/local-leader-def  with-editor-mode-map "k"  'with-editor-cancel)
+(wusd/local-leader-def  with-editor-mode-map
+  ","  'with-editor-finish
+  "k"  'with-editor-cancel)
 ;; ------------------------------------------------------------macros
 (define-key global-map (kbd "<f5>")  'name-last-kbd-macro)
 (define-key global-map (kbd "<f6>")  'insert-kbd-macro)
@@ -125,16 +126,19 @@
 (wusd/local-leader-def :keymaps 'org-mode-map "c" 'org-capture)
 (wusd/local-leader-def :keymaps 'org-mode-map "," 'org-ctrl-c-ctrl-c)
 ;; ----------------------------------------org-agenda
-(general-def 'emacs org-agenda-mode-map "j" 'org-agenda-next-line)
-(general-def 'emacs org-agenda-mode-map "k" 'org-agenda-previous-line)
-(wusd/local-leader-def org-agenda-mode-map "d"  '(:wk "date"))
-(wusd/local-leader-def org-agenda-mode-map "ds"  'org-agenda-schedule)
-(wusd/local-leader-def org-agenda-mode-map "dd"  'org-agenda-deadline)
-(wusd/local-leader-def org-agenda-mode-map "c"  'org-agenda-capture)
+(general-def :states 'emacs :keymaps 'org-agenda-mode-map
+  "j" 'org-agenda-next-line
+  "k" 'org-agenda-previous-line)
+(wusd/local-leader-def :keymaps 'org-agenda-mode-map
+  "d"  '(:wk "date")
+  "ds"  'org-agenda-schedule
+  "dd"  'org-agenda-deadline
+  "c"  'org-agenda-capture)
 
-(wusd/local-leader-def org-capture-mode-map ","  'org-capture-finalize)
-(wusd/local-leader-def org-capture-mode-map "c"  'org-capture-finalize)
-(wusd/local-leader-def org-capture-mode-map "k"  'org-capture-kill)
+;; ----------------------------------------org-capture
+(wusd/local-leader-def :keymaps 'org-capture-mode-map
+  ","  'org-capture-finalize
+  "k"  'org-capture-kill)
 
 ;; ------------------------------------------------------------shell
 ;; ------------------------------------------------------------translate
