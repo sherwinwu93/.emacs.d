@@ -114,6 +114,7 @@
 (define-key global-map (kbd "C-M-l") 'indent-region-or-buffer)
 (wusd/leader-def ";" 'evilnc-comment-or-uncomment-lines)
 (wusd/local-leader-def  with-editor-mode-map ","  'with-editor-finish)
+(wusd/local-leader-def  with-editor-mode-map "k"  'with-editor-cancel)
 ;; ------------------------------------------------------------macros
 (define-key global-map (kbd "<f5>")  'name-last-kbd-macro)
 (define-key global-map (kbd "<f6>")  'insert-kbd-macro)
