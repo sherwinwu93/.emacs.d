@@ -65,6 +65,10 @@
 (wusd/leader-def "bb" 'switch-to-buffer)
 (wusd/leader-def "bk" 'kill-buffer)
 (wusd/leader-def "bh" 'dashboard-open)
+(wusd/leader-def "bh" (lambda()
+                        (interactive)
+                        (dashboard-open)
+                        (evil-emacs-state)))
 ;; ----------------------------------------window
 (wusd/leader-def "w" '(:wk "window"))
 (wusd/leader-def "wo" 'other-window)
