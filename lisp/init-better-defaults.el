@@ -97,6 +97,7 @@
       	                     "Undo-Tree" "counsel" "ivy" "yas" "WK" "Abbrev")
                            "\\|"))))
 
+;;开启emacs session的保存 
 (desktop-save-mode 1)
 
 
