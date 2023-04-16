@@ -12,9 +12,9 @@
  (position . 93))
 ("org-capture-last-stored"
  (filename . "/mnt/webdav/org/inbox.org")
- (front-context-string . "* TODO 职业分类图标上传\n")
- (rear-context-string . "2023-04-13 Thu>\n")
- (position . 7063))
+ (front-context-string . "* TODO wusd\n SCH")
+ (rear-context-string . "2023-04-16 Sun>\n")
+ (position . 7375))
 ("org-refile-last-stored"
  (filename . "~/notes/todos/inbox.org")
  (front-context-string . "** TODO 现在完成时\nSC")

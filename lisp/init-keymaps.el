@@ -109,7 +109,7 @@
   "s-v" 'yank
   "s-y" 'yank-pop
   "s-z" 'undo
-  "s-x" 'kill-region)
+  "s-x" 'kill-region)
 ;; ------------------------------------------------------------project
 (wusd/leader-def
   "p" '(projectile-command-map :wk "project")
@@ -125,28 +125,25 @@
   "<f5>"  'name-last-kbd-macro
   "<f6>"  'insert-kbd-macro)
 ;; ------------------------------------------------------------org
+;; ----------------------------------------org
 (general-def
   "<f9>"  'wusd/org-agenda
-  "<f10>"  'wusd/org-agenda-capture)
+  "<f10>"  'wusd/org-capture)
 (wusd/leader-def "o" 'wusd/org-agenda)
-(wusd/local-leader-def :keymaps 'org-mode-map
-  "c" 'org-capture
+(wusd/local-leader-def :keymaps 'org-mode
   "," 'org-ctrl-c-ctrl-c)
 ;; ----------------------------------------org-agenda
 (general-def :states 'emacs :keymaps 'org-agenda-mode-map
   "j" 'org-agenda-next-line
-  "k" 'org-agenda-previous-line)
+  "k" 'org-agenda-previous-line
+  "gr" 'org-agenda-redo-all
+  "gg" 'evil-goto-first-line
+  "G" 'evil-goto-line)
 (wusd/local-leader-def :keymaps 'org-agenda-mode-map
   "d"  '(:wk "date")
   "ds"  'org-agenda-schedule
   "dd"  'org-agenda-deadline
   "c"  'org-agenda-capture)
-
-;; ----------------------------------------org-capture
-(wusd/local-leader-def :keymaps 'org-capture-mode-map
-  ","  'org-capture-finalize
-  "c"  'org-capture-finalize
-  "k"  'org-capture-kill)
 
 ;; ------------------------------------------------------------shell
 ;; ------------------------------------------------------------translate
