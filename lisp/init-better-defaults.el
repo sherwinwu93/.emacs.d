@@ -14,7 +14,7 @@
   :init (amx-mode 1))
 ;; 移动到最后并执行代码
 (fset 'wusd/eval-last-sexp
-   (kmacro-lambda-form [escape ?A ?\C-x ?\C-e escape] 0 "%d"))
+      (kmacro-lambda-form [escape ?A ?\C-x ?\C-e escape] 0 "%d"))
 
 ;; ----------------------------------------Emacs画面
 ;; 设置Emacs默认全屏
@@ -40,13 +40,9 @@
   (setq dashboard-projects-backend 'projectile)
   ;; 也可以自定义图片
   (setq dashboard-startup-banner 'official)
-  (setq dashboard-items '(
-			  ;; 显示多少个最近项目
-			  (projects . 5)
-			  ;; 显示多少个最近书签
-			  ;;(bookmarks . 10)
-			  ;; 显示多少个最近文件
-			  (recents  . 5)))
+  (setq dashboard-items '((recents  . 5)
+			                    (projects . 5)
+			                    (bookmarks . 10)))
   (setq dashboard-center-content t)
   (setq dashboard-show-shortcuts t)
   (setq dashboard-set-navigator t)
@@ -95,10 +91,13 @@
   (sml/setup)
   :config
   (setq rm-blacklist
-    (format "^ \\(%s\\)$"
-      (mapconcat #'identity
-        '("Projectile.*" "company.*" "Google"
-      	  "Undo-Tree" "counsel" "ivy" "yas" "WK" "Abbrev")
-          "\\|"))))
+        (format "^ \\(%s\\)$"
+                (mapconcat #'identity
+                           '("Projectile.*" "company.*" "Google"
+      	                     "Undo-Tree" "counsel" "ivy" "yas" "WK" "Abbrev")
+                           "\\|"))))
+
+(desktop-save-mode 1)
+
 
 (provide 'init-better-defaults)
