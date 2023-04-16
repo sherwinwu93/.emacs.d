@@ -109,7 +109,7 @@
   "s-v" 'yank
   "s-y" 'yank-pop
   "s-z" 'undo
-  "s-x" 'kill-region)
+  "s-x" 'kill-region)
 ;; ------------------------------------------------------------project
 (wusd/leader-def
   "p" '(projectile-command-map :wk "project")
