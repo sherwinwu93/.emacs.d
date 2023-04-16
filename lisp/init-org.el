@@ -87,7 +87,6 @@
 (fset 'wusd/org-capture
    (kmacro-lambda-form [?\M-x ?o ?r ?g ?- ?c ?a ?p ?t ?u ?r ?e return ?c] 0 "%d"))
 
-
 (defun inbox-file()
   (interactive)
   (find-file "/mnt/webdav/org/inbox.org"))
