@@ -59,6 +59,8 @@
   (load-theme 'spacemacs-dark 1))
 
 ;; ----------------------------------------启动
+;;开启emacs session的保存 
+(desktop-save-mode 1)
 (defun launch-separate-emacs-in-terminal ()
   (suspend-emacs "fg ; emacs -nw"))
 (defun launch-separate-emacs-under-x ()
@@ -97,8 +99,6 @@
       	                     "Undo-Tree" "counsel" "ivy" "yas" "WK" "Abbrev")
                            "\\|"))))
 
-;;开启emacs session的保存 
-(desktop-save-mode 1)
 
 
 (provide 'init-better-defaults)
