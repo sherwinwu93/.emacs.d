@@ -128,7 +128,7 @@
 ;; ------------------------------------------------------------org
 (general-def
   "<f9>"  'wusd/org-agenda
-  "<f10>"  'wusd/org-capture)
+  "<f10>"  'wusd/org-agenda-capture)
 (wusd/leader-def "o" 'wusd/org-agenda)
 (wusd/local-leader-def :keymaps 'org-mode-map
   "c" 'org-capture
@@ -146,6 +146,7 @@
 ;; ----------------------------------------org-capture
 (wusd/local-leader-def :keymaps 'org-capture-mode-map
   ","  'org-capture-finalize
+  "c"  'org-capture-finalize
   "k"  'org-capture-kill)
 
 ;; ------------------------------------------------------------shell
