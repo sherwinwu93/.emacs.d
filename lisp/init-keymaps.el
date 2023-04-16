@@ -131,7 +131,8 @@
   "<f10>"  'wusd/org-capture)
 (wusd/leader-def "o" 'wusd/org-agenda)
 (wusd/local-leader-def :keymaps 'org-mode-map
-  "," 'org-ctrl-c-ctrl-c)
+  "," 'org-ctrl-c-ctrl-c
+  "TT" 'org-todo)
 
 ;; ----------------------------------------org-agenda
 (general-def :states 'emacs :keymaps 'org-agenda-mode-map
