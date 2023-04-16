@@ -33,22 +33,22 @@
 ;; ----------------------------------------系统级按键
 ;; C-g键改为CapsLock 由autohotkey实现
 ;; 改键<menu>为modifier
-(general-def "C-v" 'amx)
-(general-def "<menu>" nil)
 (define-key key-translation-map (kbd "<menu>") 'event-apply-super-modifier)
 (general-def "<escape>" 'minibuffer-keyboard-quit)
 ;; ----------------------------------------navigation
 (general-def :keymaps 'override  "C-f" 'scroll-up-command)
 (general-def :keymaps 'override  "C-b" 'scroll-down-command)
-(wusd/leader-def "jj" 'avy-goto-line)
-(wusd/leader-def "jk" 'avy-goto-char-timer)
+(wusd/leader-def
+  "jj" 'avy-goto-line
+  "jk" 'avy-goto-char-timer)
 ;; ----------------------------------------Command
 (general-def "s-e" 'wusd/eval-last-sexp)
 (general-def :keymaps 'override "C-." 'evil-repeat)
 ;; ----------------------------------------emacs
-(wusd/leader-def "q" '(:wk "quit"))
-(wusd/leader-def "qq" 'save-buffers-kill-terminal)
-(wusd/leader-def "qr" 'restart-emacs)
+(wusd/leader-def
+  "q" '(:wk "quit")
+  "qq" 'save-buffers-kill-terminal
+  "qr" 'restart-emacs)
 
 ;; ------------------------------------------------------------files
 ;; ----------------------------------------file
