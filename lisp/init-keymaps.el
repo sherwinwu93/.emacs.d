@@ -11,12 +11,12 @@
   ;; states && general-non-normal-states
   ;; :non-normal-prefix ""
   ;; states
-  :global-prefix "M-SPC"
-  ) 
+  :global-prefix "M-SPC") 
 
 (general-create-definer wusd/local-leader-def
-  :states '(normal motion emacs)
-  :prefix ",")
+  :states '(normal insert visual emacs motion)
+  :prefix ","
+  :global-prefix "M-,")
 
 
 ;;; 所有快捷键
@@ -36,8 +36,9 @@
 (define-key key-translation-map (kbd "<menu>") 'event-apply-super-modifier)
 (general-def "<escape>" 'minibuffer-keyboard-quit)
 ;; ----------------------------------------navigation
-(general-def :keymaps 'override  "C-f" 'scroll-up-command)
-(general-def :keymaps 'override  "C-b" 'scroll-down-command)
+(general-def :keymaps 'override
+  "C-f" 'scroll-up-command
+  "C-b" 'scroll-down-command)
 (wusd/leader-def
   "jj" 'avy-goto-line
   "jk" 'avy-goto-char-timer)
@@ -74,7 +75,6 @@
          (dashboard-open)
          (evil-emacs-state)))
 ;; ----------------------------------------window
-(general-def "s-d" 'delete-window)
 (wusd/leader-def
   "w" '(:wk "window")
   "wo" 'other-window
@@ -92,8 +92,7 @@
   "2" 'select-window-2
   "3" 'select-window-3
   "4" 'select-window-4
-  "5" 'select-window-5
-  )
+  "5" 'select-window-5)
 
 ;; ------------------------------------------------------------edit
 ;; ----------------------------------------query and replace
