@@ -115,11 +115,10 @@
   "p" '(projectile-command-map :wk "project")
   "ps" 'projectile-grep)
 ;; ------------------------------------------------------------code
-(general-def "C-M-l" 'indent-region-or-buffer)
+(general-def :keymaps 'override
+  "C-M-l" 'indent-region-or-buffer
+  "C-/"  'evilnc-comment-or-uncomment-lines)
 (wusd/leader-def ";" 'evilnc-comment-or-uncomment-lines)
-(wusd/local-leader-def :keymaps 'with-editor-mode-map
-  ","  'with-editor-finish
-  "k"  'with-editor-cancel)
 ;; ------------------------------------------------------------macros
 (general-def
   "<f5>"  'name-last-kbd-macro
@@ -134,9 +133,7 @@
   "<f10>" 'sync-inbox)
 (wusd/local-leader-def :keymaps 'org-mode-map
   "TT" 'org-todo
-  "," 'org-capture-finalize
-  "c" 'org-ctrl-c-ctrl-c
-  "k" 'org-capture-kill)
+  "," 'org-ctrl-c-ctrl-c)
 
 ;; ----------------------------------------org-agenda
 (general-def :states 'emacs :keymaps 'org-agenda-mode-map
