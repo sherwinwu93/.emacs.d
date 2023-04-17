@@ -133,9 +133,9 @@
   "o" 'wusd/org-agenda
   "<f10>" 'sync-inbox)
 (wusd/local-leader-def :keymaps 'org-mode-map
-  "c" 'org-ctrl-c-ctrl-c
   "TT" 'org-todo
-  "," 'org-capture-finalize
+  "," 'org-ctrl-c-ctrl-c
+  "c" 'org-capture-finalize
   "k" 'org-capture-kill)
 
 ;; ----------------------------------------org-agenda
