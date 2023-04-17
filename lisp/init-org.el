@@ -77,7 +77,8 @@
                       (org-deadline-warning-days 2)))
           (tags-todo "+PRIORITY=\"A\"")
           (agenda "" ((org-agenda-span 7)
-                      (org-deadline-warning-days 0))))
+                      (org-deadline-warning-days 0)))
+          (todo "TODO") )
          )))
 
 (fset 'sync-inbox
@@ -85,7 +86,7 @@
 (fset 'wusd/org-agenda
       (kmacro-lambda-form [?\M-x ?o ?r ?g ?- ?a ?g ?e ?n ?d ?a return ?o] 0 "%d"))
 (fset 'wusd/org-capture
-   (kmacro-lambda-form [?\M-x ?o ?r ?g ?- ?c ?a ?p ?t ?u ?r ?e return ?c] 0 "%d"))
+      (kmacro-lambda-form [?\M-x ?o ?r ?g ?- ?c ?a ?p ?t ?u ?r ?e return ?c] 0 "%d"))
 
 (defun inbox-file()
   (interactive)
