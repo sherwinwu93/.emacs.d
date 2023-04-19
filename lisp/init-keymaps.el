@@ -163,6 +163,8 @@
   "C-k" 'magit-delete-thing
   "j" 'evil-next-line
   "k" 'evil-previous-line)
+(wusd/local-leader-def :keymaps 'with-editor-mode-map
+  "," ')
 ;; ------------------------------------------------------------scheme
 ;; ------------------------------------------------------------help
 (define-key key-translation-map (kbd "<SPC>h") (kbd "C-h"))
