@@ -58,6 +58,9 @@
   "ff" 'counsel-find-file
   "fs" 'save-buffer
   "fr" 'recentf-open-files
+  "fd" (lambda()
+         (interactive)
+         (find-file "~/notes"))
   "d" 'dired-jump)
 ;; --------------------dotfile
 (wusd/leader-def
