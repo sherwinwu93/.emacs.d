@@ -164,7 +164,8 @@
   "j" 'evil-next-line
   "k" 'evil-previous-line)
 (wusd/local-leader-def :keymaps 'with-editor-mode-map
-  "," ')
+  "," 'with-editor-finish
+  "k" 'with-editor-cancel)
 ;; ------------------------------------------------------------scheme
 ;; ------------------------------------------------------------help
 (define-key key-translation-map (kbd "<SPC>h") (kbd "C-h"))
