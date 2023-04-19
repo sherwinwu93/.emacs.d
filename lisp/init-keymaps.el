@@ -132,8 +132,10 @@
   "o" 'wusd/org-agenda
   "<f10>" 'sync-inbox)
 (wusd/local-leader-def :keymaps 'org-mode-map
-  "TT" 'org-todo
-  "," 'org-ctrl-c-ctrl-c)
+            "TT" 'org-todo
+            "c" 'org-ctrl-c-ctrl-c
+            "," 'org-capture-finalize
+            "k" 'org-capture-kill)
 
 ;; ----------------------------------------org-agenda
 (general-def :states 'emacs :keymaps 'org-agenda-mode-map
