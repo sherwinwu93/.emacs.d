@@ -165,7 +165,10 @@
 (general-def :states 'emacs :keymaps 'magit-mode-map
   "C-k" 'magit-delete-thing
   "j" 'evil-next-line
-  "k" 'evil-previous-line)
+  "k" 'evil-previous-line
+  "gr" 'magit-refresh
+  "gg" 'evil-goto-first-line
+  "G" 'evil-goto-line)
 (wusd/local-leader-def :keymaps 'with-editor-mode-map
   "," 'with-editor-finish
   "k" 'with-editor-cancel)
