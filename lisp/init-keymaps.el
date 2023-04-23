@@ -41,7 +41,8 @@
   "C-b" 'scroll-down-command)
 (wusd/leader-def
   "jj" 'avy-goto-line
-  "jk" 'avy-goto-char-timer)
+  "jk" 'avy-goto-char-timer
+  "bm" 'bookmark-jump)
 ;; ----------------------------------------Command
 (general-def "s-e" 'wusd/eval-last-sexp)
 (general-def :keymaps 'override "C-." 'evil-repeat)
