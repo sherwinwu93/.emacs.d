@@ -42,7 +42,9 @@
 (wusd/leader-def
   "jj" 'avy-goto-line
   "jk" 'avy-goto-char-timer
-  "bm" 'bookmark-jump)
+  )
+(wusd/leader-def
+  "m" 'bookmark-jump)
 ;; ----------------------------------------Command
 (general-def "s-e" 'wusd/eval-last-sexp)
 (general-def :keymaps 'override "C-." 'evil-repeat)
@@ -131,15 +133,17 @@
 ;; ----------------------------------------org
 (general-def
   "<f9>"  'wusd/org-agenda
-  "<f10>"  'wusd/org-capture)
+  "<f10>"  'wusd/org-capture
+  )
 (wusd/leader-def
   "o" 'wusd/org-agenda
   "<f10>" 'sync-inbox)
+
 (wusd/local-leader-def :keymaps 'org-mode-map
-            "TT" 'org-todo
-            "c" 'org-ctrl-c-ctrl-c
-            "," 'org-capture-finalize
-            "k" 'org-capture-kill)
+  "TT" 'org-todo
+  "," 'org-ctrl-c-ctrl-c
+  "ds"  'org-schedule
+  "dd"  'org-deadline)
 
 ;; ----------------------------------------org-agenda
 (general-def :states 'emacs :keymaps 'org-agenda-mode-map
