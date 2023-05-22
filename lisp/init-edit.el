@@ -50,8 +50,8 @@
   :ensure t
   :init (global-undo-tree-mode 1)
   :config
-  (define-key evil-normal-state-map
-    "u" 'undo-tree-undo)
+  ;; (define-key evil-normal-state-map
+  ;;   "u" 'undo-tree-undo)
   )
 ;; --------------------indent
 ;; 用制表符代替空格

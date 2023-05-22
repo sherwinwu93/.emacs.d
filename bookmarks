@@ -17,9 +17,9 @@
  (position . 93))
 ("org-capture-last-stored"
  (filename . "/mnt/webdav/org/inbox.org")
- (front-context-string . "* TODO L34-0\n SC")
- (rear-context-string . "2023-04-26 Wed>\n")
- (position . 10958))
+ (front-context-string . "* TODO 培训课程显示没有开")
+ (rear-context-string . "2023-05-17 Wed>\n")
+ (position . 14366))
 ("org-refile-last-stored"
  (filename . "~/notes/todos/inbox.org")
  (front-context-string . "** TODO 现在完成时\nSC")
