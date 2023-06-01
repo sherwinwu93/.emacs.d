@@ -1,3 +1,4 @@
+;; 以项目为一级标题(没有项目则弄到未分类),以tag作为性质的归类
 ;; ----------------------------------------org-mode
 (use-package toc-org :ensure t)
 (add-hook 'org-mode-hook (lambda()
@@ -37,9 +38,11 @@
     (org-todo (if (= n-not-done 0) "DONE" "PROJECT"))))
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 ;; --------------------tags
-(setq org-tag-alist '(("@zhongxiao" . ?z)
-		                  ("@xfjyg" . ?x)
-		                  ("@english" . ?e)
+(setq org-tag-alist '(("@learn" . ?l)
+		                  ("@work" . ?w)
+		                  ("@life" . ?f)
+		                  ("@idea" . ?i)
+		                  ("@other" . ?o)
                       ("TOC" . ?c)))
 ;; --------------------properties
 (setq   org-highest-priority ?A
@@ -61,9 +64,50 @@
 			                     ))
 ;; ----------------------------------------capture
 (setq org-capture-templates
-      '(("c" "TODO"
-         entry (file "/mnt/webdav/org/inbox.org")
-         "* TODO %i%?\n SCHEDULED: %t" :empty-lines 0)))
+      '(
+        ("y"
+         "营房"
+         entry
+         (file+headline "/mnt/webdav/org/inbox.org" "营房")
+         "* TODO [#B] %i%?\n SCHEDULED: %t"
+         :empty-lines 0)
+        ("z"
+         "中消科捷"
+         entry
+         (file+headline "/mnt/webdav/org/inbox.org" "中消科捷")
+         "* TODO [#B] %i%?\n SCHEDULED: %t"
+         :empty-lines 0)
+        ("x"
+         "消防教育馆"
+         entry
+         (file+headline "/mnt/webdav/org/inbox.org" "消防教育馆")
+         "* TODO [#B] %i%?\n SCHEDULED: %t"
+         :empty-lines 0)
+        ("s"
+         "数字化训练"
+         entry
+         (file+headline "/mnt/webdav/org/inbox.org" "数字化训练")
+         "* TODO [#B] %i%?\n SCHEDULED: %t"
+         :empty-lines 0)
+        ("c"
+         "未归类"
+         entry
+         (file+headline "/mnt/webdav/org/inbox.org" "未归类")
+         "* TODO [#B] %i%?\n SCHEDULED: %t"
+         :empty-lines 0)
+        ("m"
+         "NCE2"
+         entry
+         (file+headline "/mnt/webdav/org/inbox.org" "NCE2")
+         "* TODO [#B] %i%?\n SCHEDULED: %t"
+         :empty-lines 0)
+        ("n"
+         "NCE3"
+         entry
+         (file+headline "/mnt/webdav/org/inbox.org" "NCE3")
+         "* TODO [#B] %i%?\n SCHEDULED: %t"
+         :empty-lines 0)
+        ))
 
 ;; ----------------------------------------org-agenda-custom-commands
 (setq org-agenda-custom-commands

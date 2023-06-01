@@ -17,14 +17,14 @@
  (position . 93))
 ("org-capture-last-stored"
  (filename . "/mnt/webdav/org/inbox.org")
- (front-context-string . "* TODO 会员导入功能\n S")
- (rear-context-string . "2023-06-01 Thu>\n")
- (position . 15194))
+ (front-context-string . "** TODO [#B] tes")
+ (rear-context-string . ">\n** TODO 进化心理学\n")
+ (position . 2117))
 ("org-refile-last-stored"
- (filename . "~/notes/todos/inbox.org")
- (front-context-string . "** TODO 现在完成时\nSC")
- (rear-context-string . "2022-08-28 Sun>\n")
- (position . 2391))
+ (filename . "/mnt/webdav/finish.org")
+ (front-context-string . "** DONE 职业分类图标上传")
+ (rear-context-string . "22-09-01 Thu>\n\n\n")
+ (position . 390))
 ("nce2"
  (filename . "~/notes/nce2/")
  (front-context-string . "0.NCE2.md\n  -rwx")

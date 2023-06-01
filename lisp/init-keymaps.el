@@ -119,7 +119,7 @@
 ;; ------------------------------------------------------------project
 (wusd/leader-def
   "p" '(projectile-command-map :wk "project")
-  "ps" 'projectile-grep)
+  "ps" 'projectile-rep)
 ;; ------------------------------------------------------------code
 (general-def :keymaps 'override
   "C-M-l" 'indent-region-or-buffer
@@ -135,14 +135,18 @@
   "<f9>"  'wusd/org-agenda
   "<f10>"  'wusd/org-capture
   )
+(general-def :states 'normal  :keymaps 'org-mode-map
+  "<tab>" 'org-cycle)
 (wusd/leader-def
   "o" 'wusd/org-agenda
+  "i" 'org-capture
   "<f10>" 'sync-inbox)
 
 (wusd/local-leader-def :keymaps 'org-mode-map
   "TT" 'org-todo
-  ;; "," 'org-ctrl-c-ctrl-c
-  "," (kbd "C-c C-c") 
+  "," 'org-ctrl-c-ctrl-c
+  "o" 'org-overview
+  "w" 'org-refile
   "ds"  'org-schedule
   "dd"  'org-deadline)
 
