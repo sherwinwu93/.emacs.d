@@ -141,9 +141,11 @@
 
 (wusd/local-leader-def :keymaps 'org-mode-map
   "TT" 'org-todo
-  "," 'org-ctrl-c-ctrl-c
+  ;; "," 'org-ctrl-c-ctrl-c
+  "," (kbd "C-c C-c") 
   "ds"  'org-schedule
   "dd"  'org-deadline)
+
 
 ;; ----------------------------------------org-agenda
 (general-def :states 'emacs :keymaps 'org-agenda-mode-map

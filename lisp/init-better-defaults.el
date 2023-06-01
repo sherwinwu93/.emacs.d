@@ -15,6 +15,11 @@
 ;; 移动到最后并执行代码
 (fset 'wusd/eval-last-sexp
       (kmacro-lambda-form [escape ?A ?\C-x ?\C-e escape] 0 "%d"))
+(fset 'wusd/ctrl-c-ctrl-c
+      (kmacro-lambda-form [?\C-c ?\C-c] 0 "%d"))
+;; (defun wusd/ctrl-c-ctrl-c()
+;;   (interactive)
+;;   (execute-kbd-macro (kbd "C-c C-c")))
 
 ;; ----------------------------------------Emacs画面
 ;; 设置Emacs默认全屏

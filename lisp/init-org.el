@@ -1,4 +1,5 @@
 ;; ----------------------------------------org-mode
+(use-package toc-org :ensure t)
 (add-hook 'org-mode-hook (lambda()
                            ;; (org-indent-mode 1)
                            ;; (hungry-delete-mode 1)
@@ -36,12 +37,9 @@
     (org-todo (if (= n-not-done 0) "DONE" "PROJECT"))))
 (add-hook 'org-after-todo-statistics-hook 'org-summary-todo)
 ;; --------------------tags
-(setq org-tag-alist '(("@task" . ?t)
-		                  ("@work" . ?w)
-		                  ("@idea" . ?i)
-		                  ("@info" . ?f)
-		                  ("@learn" . ?l)
-		                  ("@prepare" . ?p)
+(setq org-tag-alist '(("@zhongxiao" . ?z)
+		                  ("@xfjyg" . ?x)
+		                  ("@english" . ?e)
                       ("TOC" . ?c)))
 ;; --------------------properties
 (setq   org-highest-priority ?A
