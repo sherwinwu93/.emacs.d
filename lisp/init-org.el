@@ -70,13 +70,13 @@
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "营房")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
-         :empty-lines 0)
+         :empty-lines 1)
         ("z"
          "中消科捷"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "中消科捷")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
-         :empty-lines 0)
+         :empty-lines 1)
         ("x"
          "消防教育馆"
          entry
@@ -88,25 +88,25 @@
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "数字化训练")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
-         :empty-lines 0)
+         :empty-lines 1)
         ("c"
          "未归类"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "未归类")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
-         :empty-lines 0)
+         :empty-lines 1)
         ("m"
          "NCE2"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "NCE2")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
-         :empty-lines 0)
+         :empty-lines 1)
         ("n"
          "NCE3"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "NCE3")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
-         :empty-lines 0)
+         :empty-lines 1)
         ))
 
 ;; ----------------------------------------org-agenda-custom-commands
