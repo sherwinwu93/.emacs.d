@@ -119,7 +119,7 @@
 ;; ------------------------------------------------------------project
 (wusd/leader-def
   "p" '(projectile-command-map :wk "project")
-  "ps" 'projectile-rep)
+  "ps" 'projectile-grep)
 ;; ------------------------------------------------------------code
 (general-def :keymaps 'override
   "C-M-l" 'indent-region-or-buffer
