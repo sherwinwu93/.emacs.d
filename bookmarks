@@ -17,9 +17,9 @@
  (position . 93))
 ("org-capture-last-stored"
  (filename . "/mnt/webdav/org/inbox.org")
- (front-context-string . "** TODO [#B] tes")
- (rear-context-string . ">\n** TODO 进化心理学\n")
- (position . 2117))
+ (front-context-string . "** TODO [#B] git")
+ (rear-context-string . "023-06-01 Thu>\n\n")
+ (position . 2299))
 ("org-refile-last-stored"
  (filename . "/mnt/webdav/finish.org")
  (front-context-string . "** DONE 职业分类图标上传")

@@ -65,46 +65,46 @@
 ;; ----------------------------------------capture
 (setq org-capture-templates
       '(
-        ("y"
-         "营房"
-         entry
-         (file+headline "/mnt/webdav/org/inbox.org" "营房")
-         "* TODO [#B] %i%?\n SCHEDULED: %t"
-         :empty-lines 1)
-        ("z"
+        ("a"
          "中消科捷"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "中消科捷")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
          :empty-lines 1)
-        ("x"
+        ("s"
          "消防教育馆"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "消防教育馆")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
          :empty-lines 0)
-        ("s"
+        ("d"
+         "营房"
+         entry
+         (file+headline "/mnt/webdav/org/inbox.org" "营房")
+         "* TODO [#B] %i%?\n SCHEDULED: %t"
+         :empty-lines 1)
+        ("f"
          "数字化训练"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "数字化训练")
+         "* TODO [#B] %i%?\n SCHEDULED: %t"
+         :empty-lines 1)
+        ("z"
+         "NCE2"
+         entry
+         (file+headline "/mnt/webdav/org/inbox.org" "NCE2")
+         "* TODO [#B] %i%?\n SCHEDULED: %t"
+         :empty-lines 1)
+        ("x"
+         "NCE3"
+         entry
+         (file+headline "/mnt/webdav/org/inbox.org" "NCE3")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
          :empty-lines 1)
         ("c"
          "未归类"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "未归类")
-         "* TODO [#B] %i%?\n SCHEDULED: %t"
-         :empty-lines 1)
-        ("m"
-         "NCE2"
-         entry
-         (file+headline "/mnt/webdav/org/inbox.org" "NCE2")
-         "* TODO [#B] %i%?\n SCHEDULED: %t"
-         :empty-lines 1)
-        ("n"
-         "NCE3"
-         entry
-         (file+headline "/mnt/webdav/org/inbox.org" "NCE3")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
          :empty-lines 1)
         ))
