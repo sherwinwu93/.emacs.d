@@ -2,7 +2,12 @@
 ;;; This format is meant to be slightly human-readable;
 ;;; nevertheless, you probably don't want to edit it.
 ;;; -*- End Of Bookmark File Format Version Stamp -*-
-(("nce3"
+(("philosophy"
+ (filename . "~/notes/")
+ (front-context-string . "philosophy\n  drw")
+ (rear-context-string . "96 Jun 20 16:04 ")
+ (position . 863))
+("nce3"
  (filename . "~/notes/nce3/")
  (front-context-string . "Z-index.org\n  -r")
  (rear-context-string . " 3 Mar 17 09:14 ")
@@ -17,14 +22,14 @@
  (position . 93))
 ("org-capture-last-stored"
  (filename . "/mnt/webdav/org/inbox.org")
- (front-context-string . "** TODO [#B] git")
- (rear-context-string . "023-06-01 Thu>\n\n")
- (position . 2299))
+ (front-context-string . "** TODO [#B] 处理下")
+ (rear-context-string . "023-07-13 Thu>\n\n")
+ (position . 8297))
 ("org-refile-last-stored"
- (filename . "/mnt/webdav/finish.org")
- (front-context-string . "** DONE 职业分类图标上传")
- (rear-context-string . "22-09-01 Thu>\n\n\n")
- (position . 390))
+ (filename . "/mnt/webdav/org/inbox.org")
+ (front-context-string . "** DONE 配置jenkin")
+ (rear-context-string . "2023-06-08 Thu>\n")
+ (position . 2946))
 ("nce2"
  (filename . "~/notes/nce2/")
  (front-context-string . "0.NCE2.md\n  -rwx")

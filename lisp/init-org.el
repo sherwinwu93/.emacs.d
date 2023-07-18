@@ -5,7 +5,7 @@
                            ;; (org-indent-mode 1)
                            ;; (hungry-delete-mode 1)
                            ;; 手动添加
-                           ;; (toc-org-mode 1)
+                           (toc-org-mode 1)
                            (setq truncate-lines nil)
                            ))
 ;; ----------------------------------------agenda
@@ -65,7 +65,7 @@
 ;; ----------------------------------------capture
 (setq org-capture-templates
       '(
-        ("a"
+        ("c"
          "中消科捷"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "中消科捷")
@@ -101,7 +101,7 @@
          (file+headline "/mnt/webdav/org/inbox.org" "NCE3")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
          :empty-lines 1)
-        ("c"
+        ("o"
          "未归类"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "未归类")
