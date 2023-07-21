@@ -166,10 +166,15 @@
 
 ;; ------------------------------------------------------------shell
 ;; ------------------------------------------------------------translate
+;; (general-def
+;;   "<f7>"  'youdao-dictionary-search-at-point
+;;   "<f8>"  'youdao-dictionary-search-at-point+
+;;   "s-t" 'wusd/add-pronunciation)
 (general-def
-  "<f7>"  'youdao-dictionary-search-at-point
-  "<f8>"  'youdao-dictionary-search-at-point+
-  "s-t" 'wusd/add-pronunciation)
+  "<f7>"  'bing-dict-brief
+  "<f8>"  'wusd/bing-dict-brief
+  "s-t" 'wusd/add-pronunciation
+  )
 
 ;; ------------------------------------------------------------vc
 (wusd/leader-def "g" 'magit)
