@@ -132,7 +132,6 @@
 ;; ------------------------------------------------------------org
 ;; ----------------------------------------org
 (general-def
-  "<f9>"  'wusd/org-agenda
   "<f10>"  'wusd/org-capture
   )
 (general-def :states 'normal  :keymaps 'org-mode-map
@@ -173,6 +172,7 @@
 (general-def
   "<f7>"  'bing-dict-brief
   "<f8>"  'wusd/bing-dict-brief
+  "<f9>" 'wusd/add-pronunciation
   "s-t" 'wusd/add-pronunciation
   )
 
