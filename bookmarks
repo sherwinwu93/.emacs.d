@@ -17,14 +17,14 @@
  (position . 93))
 ("org-capture-last-stored"
  (filename . "/mnt/webdav/org/inbox.org")
- (front-context-string . "** TODO [#B] git")
- (rear-context-string . "023-06-01 Thu>\n\n")
- (position . 2299))
+ (front-context-string . "** TODO [#B] 根据推")
+ (rear-context-string . "023-07-26 Wed>\n\n")
+ (position . 13629))
 ("org-refile-last-stored"
- (filename . "/mnt/webdav/finish.org")
- (front-context-string . "** DONE 职业分类图标上传")
- (rear-context-string . "22-09-01 Thu>\n\n\n")
- (position . 390))
+ (filename . "/mnt/webdav/org/inbox.org")
+ (front-context-string . "** DONE [#B] 推荐码")
+ (rear-context-string . "2023-07-19 Wed>\n")
+ (position . 13626))
 ("nce2"
  (filename . "~/notes/nce2/")
  (front-context-string . "0.NCE2.md\n  -rwx")

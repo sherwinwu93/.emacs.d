@@ -234,13 +234,6 @@ The value could be `synonym', `antonym', `both', or nil.")
 
 (eval-when-compile (require 'cl))
 
-(defun show-word-expression-other-window(word result)
-	(switch-to-buffer-other-window "*wusd*")
-  (erase-buffer)
-	(insert result)
-  (evil-beginning-of-line)
-  (select-window-1))
-;; (show-word-expression-other-window "wusd" "wushengdong")
 
 (defun bing-dict--message (format-string &rest args)
   (let ((result (apply #'format format-string args)))
@@ -269,7 +262,7 @@ The value could be `synonym', `antonym', `both', or nil.")
           (bing-dict--update-cache))))
     ;; show result in other window
     (let ((word (substring-no-properties (car args))))
-      (show-word-expression-other-window word result))
+      (setq wusd/dict-result result))
 
     ;; add result to the `kill-ring' or not
     (when bing-dict-add-to-kill-ring
@@ -474,7 +467,7 @@ The value could be `synonym', `antonym', `both', or nil.")
           ;; update cached-result's time
           (setcdr (assoc-default word bing-dict--cache) (time-to-seconds))
           (message cached-result)
-          (show-word-expression-other-window "" cached-result))
+          (setq wusd/dict-result cached-result))
       (save-match-data
         (if sync-p
             (with-current-buffer (url-retrieve-synchronously

@@ -12,9 +12,25 @@
   :init
   (setq bing-dict-cache-auto-save t)
   )
-(fset 'wusd/bing-dict-brief
-   (kmacro-lambda-form [f7 return] 0 "%d"))
+(defun show-dict-result-in-other-window()
+  (interactive)
+	(switch-to-buffer-other-window "*wusd*")
+  (erase-buffer)
+	(insert wusd/dict-result)
+  (evil-beginning-of-line)
+  (select-window-1))
+
 (fset 'wusd/add-pronunciation
-   (kmacro-lambda-form [escape ?0 ?v ?e ?  tab ?v ?E ?E ?h ?y ?  tab ?p] 0 "%d"))
+   (kmacro-lambda-form [escape f7 ?0 ?v ?e ?  tab ?v ?E ?E ?h ?y ?  tab ?p ?j ?0] 0 "%d"))
+(fset 'wusd/bing-dict-brief
+   (kmacro-lambda-form [f8 return] 0 "%d"))
 
 (provide 'init-translate)
+
+
+
+
+
+
+
+

@@ -22,10 +22,11 @@
 ;; @ : 切换到该状态时要求输入文字说明
 ;; 如果同时设定@和!,使用@/!
 (setq org-todo-keywords '((sequence "TODO(t)" "DOING(g)" "|" "DONE(d)")
-                          (sequence  "WAITING(w@)" "PROJECT(p)"  "|" "CANCELED(c@)")))
+                          (sequence "TEST(e)" "WAITING(w)" "PROJECT(p)"  "|" "CANCELED(c@)")))
 (setq org-todo-keyword-faces
       (quote (("TODO" :foreground "yellow" :weight bold)
               ("DOING" :foreground "orange" :weight bold)
+	            ("TEST" :foreground "orange" :weight bold)
 	            ("WAITING" :foreground "green" :weight bold)
 	            ("DONE" :foreground "forest green" :weight bold)
               ("PROJECT" :foreground "grey" :weight bold)
@@ -65,7 +66,7 @@
 ;; ----------------------------------------capture
 (setq org-capture-templates
       '(
-        ("a"
+        ("c"
          "中消科捷"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "中消科捷")
@@ -101,7 +102,7 @@
          (file+headline "/mnt/webdav/org/inbox.org" "NCE3")
          "* TODO [#B] %i%?\n SCHEDULED: %t"
          :empty-lines 1)
-        ("c"
+        ("a"
          "未归类"
          entry
          (file+headline "/mnt/webdav/org/inbox.org" "未归类")
