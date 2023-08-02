@@ -170,10 +170,10 @@
 ;;   "<f8>"  'youdao-dictionary-search-at-point+
 ;;   "s-t" 'wusd/add-pronunciation)
 (general-def
-  "<f7>" 'show-dict-result-in-other-window
-  "<f8>"  'bing-dict-brief
-  "<f9>"  'wusd/bing-dict-brief
-  "<f10>" 'wusd/add-pronunciation
+  "<f7>"  'bing-dict-brief
+  "<f8>"  'wusd/bing-dict-brief
+  "<f9>" 'wusd/add-pronunciation
+  "<f10>" 'show-dict-result-in-other-window
   )
 
 ;; ------------------------------------------------------------vc
