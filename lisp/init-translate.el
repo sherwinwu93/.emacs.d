@@ -10,7 +10,7 @@
 (use-package bing-dict
   :load-path "~/.emacs.d/lisp/extensions"
   :init
-  (setq bing-dict-cache-auto-save t)
+  ;; (setq bing-dict-cache-auto-save t)
   )
 (defun show-dict-result-in-other-window()
   (interactive)

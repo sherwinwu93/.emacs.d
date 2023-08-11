@@ -1,5 +1,4 @@
 * wushdng
 wushdng	woo
 | 据说会等宽 | 甲  |   |
-| 我是       | xy |   |
- 
+| 我是       | xy |   | 
