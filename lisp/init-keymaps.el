@@ -89,6 +89,8 @@
   "wm" 'toggle-windows-split
   "we" 'split-window-right-and-focus
   "ws" 'split-window-below-and-focus
+  "j" 'scroll-other-window
+  "k" 'scroll-other-window-down
   ;; 配合evil-repeat重复做使用
   "-" 'shrink-window
   "=" 'enlarge-window
