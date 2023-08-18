@@ -32,7 +32,7 @@
 ;;say word after translation
 ;; (setq sdcv-say-word-p t)
 ;;setup directory of stardict dictionary
-(setq sdcv-dictionary-data-dir "/root/.emacs.d/sdcv/")
+(setq sdcv-dictionary-data-dir "/root/sdcv")
 ;;setup dictionary list for simple search
 (setq sdcv-dictionary-simple-list
       '(
@@ -43,7 +43,6 @@
         "Longman Dictionary of Contemporary English 5th Ed. (En-En)"
         "Oxford Advanced Learner's Dictionary 8th Ed."
         "Longman Dictionary of Contemporary English"
-        "懒虫简明英汉词典"
         ))
 
 (defun copy-buffer-to-buffer (source-buffer target-buffer)
