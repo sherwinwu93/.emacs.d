@@ -42,10 +42,39 @@
       '(
         "Longman Dictionary of Contemporary English 5th Ed. (En-En)"
         "Oxford Advanced Learner's Dictionary 8th Ed."
+        "Longman Dictionary of Contemporary English"
         ))
 
-(provide 'init-translate)
+(defun copy-buffer-to-buffer (source-buffer target-buffer)
+  "Copy the entire content of SOURCE-BUFFER to TARGET-BUFFER."
+  (interactive "bSource buffer: \nbTarget buffer: ")
+  (with-current-buffer source-buffer
+    (setq copied-text (buffer-substring-no-properties (point-min) (point-max))))
+  (with-current-buffer target-buffer
+    (goto-char (point-max))
+    (insert copied-text)))
 
+(defun delete-matched-filenames ()
+  (interactive)
+  (switch-to-buffer "*wusd*")
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "\\([a-zA-Z0-9]+\\)_\\([a-zA-Z0-9_-]+\\)\\.wav" nil t)
+      (replace-match ""))))
+
+(defun wusd/fanyi()
+  (interactive)
+  (sdcv-search-pointer)
+	(switch-to-buffer "*wusd*")
+  (erase-buffer)
+	(switch-to-buffer "*SDCV*")
+  (copy-buffer-to-buffer "*SDCV*" "*wusd*")
+	(switch-to-buffer "*wusd*")
+  (delete-matched-filenames)
+  (select-window-1)
+  )
+
+(provide 'init-translate)
 
 
 
