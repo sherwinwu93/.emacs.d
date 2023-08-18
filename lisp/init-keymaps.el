@@ -144,6 +144,8 @@
 (wusd/local-leader-def :keymaps 'org-mode-map
   "TT" 'org-todo
   "," 'org-ctrl-c-ctrl-c
+  "e" 'org-export-dispatch
+  "t" 'org-title
   "o" 'org-overview
   "w" 'org-refile
   "ds"  'org-schedule
