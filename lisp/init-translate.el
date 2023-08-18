@@ -43,6 +43,7 @@
         "Longman Dictionary of Contemporary English 5th Ed. (En-En)"
         "Oxford Advanced Learner's Dictionary 8th Ed."
         "Longman Dictionary of Contemporary English"
+        "懒虫简明英汉词典"
         ))
 
 (defun copy-buffer-to-buffer (source-buffer target-buffer)
