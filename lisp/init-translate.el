@@ -61,6 +61,10 @@
   (save-excursion
     (goto-char (point-min))
     (while (re-search-forward "\\([a-zA-Z0-9]+\\)_\\([a-zA-Z0-9_-]+\\)\\.wav" nil t)
+      (replace-match "")))
+  (save-excursion
+    (goto-char (point-min))
+    (while (re-search-forward "\"\\(BrE\\|AmE\\|NAmE\\)\"" nil t)
       (replace-match ""))))
 
 (defun wusd/fanyi()
