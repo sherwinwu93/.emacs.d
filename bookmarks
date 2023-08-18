@@ -17,9 +17,9 @@
  (position . 93))
 ("org-capture-last-stored"
  (filename . "/mnt/webdav/org/inbox.org")
- (front-context-string . "** TODO [#B] 学会使")
- (rear-context-string . "023-08-11 Fri>\n\n")
- (position . 19693))
+ (front-context-string . "** TODO [#B] 分成配")
+ (rear-context-string . "023-08-14 Mon>\n\n")
+ (position . 17544))
 ("org-refile-last-stored"
  (filename . "/mnt/webdav/org/inbox.org")
  (front-context-string . "** DONE [#B] 推荐码")

@@ -24,7 +24,6 @@
 ;; ----------------------------------------
 (require 'init-better-defaults)
 (require 'init-files)
-(require 'init-tabs)
 (require 'init-edit)
 ;;(require 'init-tab)
 (require 'init-project)

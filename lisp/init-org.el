@@ -9,6 +9,9 @@
                            (setq company-mode 0)
                            (setq truncate-lines nil)
                            ))
+(defun org-title()
+  (interactive)
+  (insert "#+OPTIONS: \\n:t toc:nil num:nil html-postamble:nil\n"))
 ;; ----------------------------------------agenda
 ;; (add-hook 'org-agenda-mode-hook (lambda()
 ;;                                   (turn-on-evil-mode)
