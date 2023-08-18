@@ -24,16 +24,27 @@
 ;;    (kmacro-lambda-form [escape f10 ?0 ?v ?e ?  tab ?v ?E ?E ?h ?y ?  tab ?p ?j ?0] 0 "%d"))
 ;; (fset 'wusd/bing-dict-brief
 ;;    (kmacro-lambda-form [f7 return] 0 "%d"))
-
-;; If you want English-English dictionary only.
-(use-package fanyi
-  :ensure t
-  :custom
-  (fanyi-providers '(fanyi-etymon-provider
-                     fanyi-longman-provider)))
+(use-package sdcv
+  :load-path "~/.emacs.d/lisp/extensions"
+  :init
+  ;; (setq bing-dict-cache-auto-save t)
+  )
+;;say word after translation
+;; (setq sdcv-say-word-p t)
+;;setup directory of stardict dictionary
+(setq sdcv-dictionary-data-dir "/root/.emacs.d/sdcv/")
+;;setup dictionary list for simple search
+(setq sdcv-dictionary-simple-list
+      '(
+        ))
+;;setup dictionary list for complete search
+(setq sdcv-dictionary-complete-list     
+      '(
+        "Longman Dictionary of Contemporary English 5th Ed. (En-En)"
+        "Oxford Advanced Learner's Dictionary 8th Ed."
+        ))
 
 (provide 'init-translate)
-
 
 
 
