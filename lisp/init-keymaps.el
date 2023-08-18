@@ -89,6 +89,8 @@
   "wm" 'toggle-windows-split
   "we" 'split-window-right-and-focus
   "ws" 'split-window-below-and-focus
+  "j" 'scroll-other-window
+  "k" 'scroll-other-window-down
   ;; 配合evil-repeat重复做使用
   "-" 'shrink-window
   "=" 'enlarge-window
@@ -144,6 +146,8 @@
 (wusd/local-leader-def :keymaps 'org-mode-map
   "TT" 'org-todo
   "," 'org-ctrl-c-ctrl-c
+  "e" 'org-export-dispatch
+  "t" 'org-title
   "o" 'org-overview
   "w" 'org-refile
   "ds"  'org-schedule
@@ -170,8 +174,7 @@
 ;;   "<f8>"  'youdao-dictionary-search-at-point+
 ;;   "s-t" 'wusd/add-pronunciation)
 (general-def
-  "<f7>"  'bing-dict-brief
-  "<f8>"  'wusd/bing-dict-brief
+  "<f8>"  'wusd/fanyi
   "<f9>" 'wusd/add-pronunciation
   "<f10>" 'show-dict-result-in-other-window
   )
