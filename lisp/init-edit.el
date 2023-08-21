@@ -96,6 +96,9 @@
 ;; ----------------------------------------Abbreviation
 (setq-default abbrev-mode t)
 (read-abbrev-file "~/.emacs.d/abbrev_defs")
+(defun open-abbrev-file()
+  (interactive)
+  (find-file "~/.emacs.d/abbrev_defs"))
 ;; ----------------------------------------Flyspell
 (flyspell-mode t)
 
