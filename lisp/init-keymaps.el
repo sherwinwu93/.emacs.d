@@ -69,6 +69,7 @@
 (wusd/leader-def
   "fe" '(:wk "dotfile")
   "fed" 'init-keymaps-file
+  "fea" 'open-abbrev-file
   "fee" 'init-file
   "fer" 'load-init-file)
 ;; ----------------------------------------buffer
@@ -135,6 +136,7 @@
 ;; ----------------------------------------org
 (general-def
   "<f10>"  'wusd/org-capture
+  "<f11>" 'org-insert-structure-template
   )
 (general-def :states 'normal  :keymaps 'org-mode-map
   "<tab>" 'org-cycle)
@@ -176,7 +178,7 @@
 (general-def
   "<f8>"  'wusd/fanyi
   "<f9>" 'wusd/add-pronunciation
-  "<f10>" 'show-dict-result-in-other-window
+  ;; "<f10>" 'show-dict-result-in-other-window
   )
 
 ;; ------------------------------------------------------------vc
@@ -195,7 +197,7 @@
 ;; ------------------------------------------------------------help
 (define-key key-translation-map (kbd "<SPC>h") (kbd "C-h"))
 (general-def
-  "<f11>"  'describe-mode
+  ;; "<f11>"  'describe-mode
   "<f12>"  'describe-key)
 (general-def
   :prefix "C-h"
