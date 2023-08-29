@@ -146,10 +146,10 @@
   "<f10>" 'sync-inbox)
 
 (wusd/local-leader-def :keymaps 'org-mode-map
-  "TT" 'org-todo
+  "t" 'org-todo
   "," 'org-ctrl-c-ctrl-c
-  "e" 'org-export-dispatch
-  "t" 'org-title
+  "h" 'org-export-dispatch
+  "T" 'org-title
   "o" 'org-overview
   "w" 'org-refile
   "ds"  'org-schedule
