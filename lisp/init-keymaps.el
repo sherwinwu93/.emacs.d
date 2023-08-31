@@ -149,6 +149,7 @@
 (wusd/local-leader-def :keymaps 'org-mode-map
   "t" 'org-todo
   "," 'org-ctrl-c-ctrl-c
+  "e" 'org-insert-structure-template
   "h" 'org-export-dispatch
   "T" 'org-title
   "o" 'org-overview
