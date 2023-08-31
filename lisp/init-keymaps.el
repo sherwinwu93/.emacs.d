@@ -92,6 +92,7 @@
   "ws" 'split-window-below-and-focus
   "j" 'scroll-other-window
   "k" 'scroll-other-window-down
+  "l" 'recenter-top-bottom
   ;; 配合evil-repeat重复做使用
   "-" 'shrink-window
   "=" 'enlarge-window
