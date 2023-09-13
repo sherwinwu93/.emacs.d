@@ -23,7 +23,7 @@
   (select-window-1))
 
 (fset 'wusd/add-pronunciation
-   (kmacro-lambda-form [escape f10 ?0 ?v ?e ?  tab ?v ?E ?E ?h ?y ?  tab ?p ?j ?0] 0 "%d"))
+   (kmacro-lambda-form [escape f11 ?0 ?v ?e ?  tab ?v ?E ?E ?h ?y ?  tab ?p ?j ?0] 0 "%d"))
 (fset 'wusd/bing-dict-brief
    (kmacro-lambda-form [menu ?t return] 0 "%d"))
 
