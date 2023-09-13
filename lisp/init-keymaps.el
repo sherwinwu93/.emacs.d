@@ -179,8 +179,10 @@
 ;;   "s-t" 'wusd/add-pronunciation)
 (general-def
   "<f8>"  'wusd/fanyi
-  "<f9>" 'wusd/add-pronunciation
-  ;; "<f10>" 'show-dict-result-in-other-window
+  ;; --------------------bing词典
+  "<f9>" 'bing-dict-brief
+  "<f10>" 'show-dict-result-in-other-window
+  "<f11>" 'wusd/add-pronunciation
   )
 
 ;; ------------------------------------------------------------vc
