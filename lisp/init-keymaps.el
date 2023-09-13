@@ -136,8 +136,6 @@
 ;; ------------------------------------------------------------org
 ;; ----------------------------------------org
 (general-def
-  "<f10>"  'wusd/org-capture
-  "<f11>" 'org-insert-structure-template
   )
 (general-def :states 'normal  :keymaps 'org-mode-map
   "<tab>" 'org-cycle)
@@ -182,7 +180,7 @@
   ;; --------------------bing词典 f9,f11增加发音
   "s-t" 'bing-dict-brief
   "<f9>" 'wusd/bing-dict-brief
-  "<f12>" 'wusd/add-pronunciation
+  "<f10>" 'wusd/add-pronunciation
   "<f11>" 'show-dict-result-in-other-window
   )
 
