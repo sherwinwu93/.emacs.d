@@ -25,7 +25,8 @@
 (fset 'wusd/add-pronunciation
    (kmacro-lambda-form [escape f10 ?0 ?v ?e ?  tab ?v ?E ?E ?h ?y ?  tab ?p ?j ?0] 0 "%d"))
 (fset 'wusd/bing-dict-brief
-   (kmacro-lambda-form [f9 return] 0 "%d"))
+   (kmacro-lambda-form [menu ?t return] 0 "%d"))
+
 
 (use-package sdcv
   :load-path "~/.emacs.d/lisp/extensions"

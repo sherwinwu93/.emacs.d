@@ -179,8 +179,9 @@
 ;;   "s-t" 'wusd/add-pronunciation)
 (general-def
   "<f8>"  'wusd/fanyi
-  ;; --------------------bing词典
-  "<f9>" 'bing-dict-brief
+  ;; --------------------bing词典 f9,f11增加发音
+  "s-t" 'bing-dict-brief
+  "<f9>" 'wusd/bing-dict-brief
   "<f10>" 'show-dict-result-in-other-window
   "<f11>" 'wusd/add-pronunciation
   )
