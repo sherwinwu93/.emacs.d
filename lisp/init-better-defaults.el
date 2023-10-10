@@ -23,10 +23,10 @@
 
 ;; ----------------------------------------Emacs画面
 ;; 设置Emacs默认全屏
-;; (setq initial-frame-alist '((fullscreen . maximized)))
-(set-frame-position (selected-frame) 800 100)
-(set-frame-width (selected-frame) 110)
-(set-frame-height (selected-frame) 50)
+(setq initial-frame-alist '((fullscreen . maximized)))
+;; (set-frame-position (selected-frame) 800 100)
+;; (set-frame-width (selected-frame) 110)
+;; (set-frame-height (selected-frame) 50)
 ;; 关闭启动帮助画面
 (setq inhibit-splash-screen 1)
 (setq initial-scratch-message nil)
