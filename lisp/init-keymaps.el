@@ -179,7 +179,7 @@
   "<f8>"  'wusd/fanyi
   ;; --------------------bing词典 f9,f11增加发音
   "s-t" 'bing-dict-brief
-  "<f9>" 'wusd/bing-dict-brief
+  ;; "<f9>" 'wusd/bing-dict-brief
   "<f10>" 'wusd/add-pronunciation
   "<f11>" 'show-dict-result-in-other-window
   )
