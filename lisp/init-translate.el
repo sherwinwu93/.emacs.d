@@ -45,8 +45,6 @@
 (setq sdcv-dictionary-complete-list     
       '(
         "Longman Dictionary of Contemporary English 5th Ed. (En-En)"
-        "Oxford Advanced Learner's Dictionary 8th Ed."
-        "Longman Dictionary of Contemporary English"
         ))
 
 (defun copy-buffer-to-buffer (source-buffer target-buffer)
